@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="PiaoliuHKOperator.Views.ControlMainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PiaoliuHKOperator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="RegisterPackage_Button" Content="录入包裹" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="RegisterPackage_Button_Click"/>
+        <Button Content="检查未匹配包裹" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+        <Button Content="运单拣货出库" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+        <Button Content="运单签收" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="CustomerList_Button" Content="客户列表" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Click="CustomerList_Button_Click" />
+        <Button x:Name="PackageList_Button" Content="包裹列表" HorizontalAlignment="Left" Margin="10,297,0,0" VerticalAlignment="Top" Click="PackageList_Button_Click" />
+        <Button x:Name="TransitBillList_Button" Content="运单列表" HorizontalAlignment="Left" Margin="10,334,0,0" VerticalAlignment="Top" Click="TransitBillList_Button_Click" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,610,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
