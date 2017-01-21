@@ -12,43 +12,35 @@ namespace PiaoliuHKOperator.Models.core
     public class Package
     {
         public int PackageID { get; set; }
-
+        public string PackageSerialID { get; set; }
         public int PackageOwnerID { get; set; }
-
-        public int PackageOwnerMobile { get; set; }
-
-        public int PackageExpressCompany { get; set; }
-
-        public int PackageExpressTrackNumber { get; set; }
-
+        public string PackageOwnerMobile { get; set; }
+        public string PackageExpressCompany { get; set; }
+        public string PackageExpressTrackNumber { get; set; }
         public string PackageSnapshot { get; set; }
-
-        public int PackageWeight { get; set; }
-
-        public int PackageFare { get; set; }
-
+        public float PackageWeight { get; set; }
+        public float PackageFee { get; set; }
         public int PackageInTimeStamp { get; set; }
-
         public int PackageOutTimeStamp { get; set; }
-
         public int PackageStatus { get; set; }
+        public string PackageRemarks { get; set; }
+        public int PackageWorkerID { get; set; }
+        public string PackageRelatedTransitBillSerialID { get; set; }
 
-        public int PackageChannel { get; set; }
 
-        public int PackageRemarks { get; set; }
-
-        public void findPackagebyExpressTrackNumber(int f_PackageExpressTrackNumber)
+        public void findPackagebyExpressTrackNumber(string f_PackageExpressTrackNumber)
         {
             this.PackageExpressTrackNumber = f_PackageExpressTrackNumber;
             SyncClass SyncClass_Instance = new SyncClass("Package", "findPackagebyExpressTrackNumber", JsonConvert.SerializeObject(this));
-            //SyncClass_Instance.SyncbySocket();
-            //CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.JsonString));
-
-
+            SyncClass_Instance.SyncbySocket();
+            if (SyncClass_Instance.SyncSucceed)
+            {
+                CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.JsonString));
+            }
         }
         private void CloneThis(Package f_Package)
         {
-
+            this.PackageID = f_Package.PackageID;
         }
     }
 }

@@ -12,6 +12,6 @@
         <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="快递公司" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="100" TextChanged="PackageExpressTrackNumber_TextBox_TextChanged" />
         <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="手机号" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="100" TextChanged="PackageExpressTrackNumber_TextBox_TextChanged" />
         <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="收货人" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="100" TextChanged="PackageExpressTrackNumber_TextBox_TextChanged" />
-        <TextBox x:Name="PackageOwnerID_TextBox" HorizontalAlignment="Left" Margin="250,10,0,0" TextWrapping="Wrap" Text="收货人ID" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="100" TextChanged="PackageExpressTrackNumber_TextBox_TextChanged" IsEnabled="False" />
+        <TextBlock x:Name="PackageOwnerID_TextBlock" HorizontalAlignment="Left" Margin="290,10,0,0" TextWrapping="Wrap" Text="收货人ID" VerticalAlignment="Top"/>
     </Grid>
 </Page>

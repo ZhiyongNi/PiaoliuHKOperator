@@ -35,10 +35,10 @@ namespace PiaoliuHKOperator.View
         private void PackageExpressTrackNumber_TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             Package Package_Instance = new Package();
-            Package_Instance.findPackagebyExpressTrackNumber(int.Parse(PackageExpressTrackNumber_TextBox.Text));
+            Package_Instance.findPackagebyExpressTrackNumber(PackageExpressTrackNumber_TextBox.Text);
             if (Package_Instance.PackageOwnerID != 0)
             {
-                PackageOwnerID_TextBox.Text = Package_Instance.PackageOwnerID.ToString();
+                PackageOwnerID_TextBlock.Text = Package_Instance.PackageOwnerID;
 
 
             }
