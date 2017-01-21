@@ -8,9 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="AdminName_Text" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" Text="用户名" VerticalAlignment="Top"/>
+        <TextBox x:Name="AdminName_Text" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" Text="apollonzy" VerticalAlignment="Top"/>
         <Button x:Name="AdminLogin_Button" Content="登陆" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Click="AdminLogin_Button_Click"/>
-        <PasswordBox x:Name="AdminPassword_Text" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="AdminPassword_Text" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Password="19880707apollo"/>
 
     </Grid>
 </Page>

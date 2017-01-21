@@ -31,12 +31,21 @@ namespace PiaoliuHKOperator.Views
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
             CustomerList CustomerList_Instance = new CustomerList();
-            CustomerList_Instance.findCustomerby();
-            ListViewItem a = new ListViewItem();
-            a.Content = "nizhiyong";
-            CustomerList_ListView.Items.Add(a);
+            CustomerList_Instance.findAllCustomerbyFilter("CustomerID > 100");
+
+
+
+
+            for (int i = 0; i < CustomerList_Instance.CustomerItemList.Count; i++)
+            {
+
+                ListViewItem CustomerListViewItem = new ListViewItem();
+                CustomerList_ListView.Items.Add(CustomerListViewItem);
+
+            }
+
         }
 
-       
+
     }
 }

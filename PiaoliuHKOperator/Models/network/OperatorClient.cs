@@ -57,7 +57,7 @@ namespace PiaoliuHKOperator.Models.network
                 k = k + i;
             }
 
-            NS.Dispose();
+            //NS.Dispose();
             string ReturnString = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(System.Text.Encoding.UTF8.GetString(StreamBuffer.ToArray())));
             return ReturnString;
         }
