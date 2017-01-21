@@ -10,14 +10,13 @@ namespace PiaoliuHKOperator.Models.engine
 {
     class CustomerList
     {
+        public String ExcuteCommand;
         public List<Customer> CustomerItemList = new List<Customer>();
         public void findAllCustomerbyFilter(string FilterString)
         {
+            this.ExcuteCommand = FilterString;
 
-            Customer CustomerTemp = new Customer();
-            this.CustomerItemList.Add(CustomerTemp);
-
-            SyncClass SyncClass_Instance = new SyncClass("CustomerList", FilterString, JsonConvert.SerializeObject(this));
+            SyncClass SyncClass_Instance = new SyncClass("CustomerList", "findAllCustomerbyFilter", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
 
             if (SyncClass_Instance.SyncSucceed)

@@ -41,20 +41,19 @@ namespace PiaoliuHKOperator.Models.network
             //ClientSocket_Instance.ReceiveTimeout = 3000;
             MemoryStream StreamBuffer = new MemoryStream();
             byte[] MessageTempData = new byte[1024];
-            int i, k = 0;
+            int i = 0;
             while ((i = NS.Read(MessageTempData, 0, MessageTempData.Length)) != -1)
             {
 
                 if ((System.Text.Encoding.UTF8.GetString(MessageTempData, 0, i)).Contains(SocketDelimiter))
                 {
-                    StreamBuffer.Write(MessageTempData, k, i - 1);
+                    StreamBuffer.Write(MessageTempData, 0, i - 1);
                     break;
                 }
                 else
                 {
-                    StreamBuffer.Write(MessageTempData, k, i);
+                    StreamBuffer.Write(MessageTempData, 0, i);
                 }
-                k = k + i;
             }
 
             //NS.Dispose();
