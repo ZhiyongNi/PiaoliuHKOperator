@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using PiaoliuHKOperator.Models.core;
+using PiaoliuHKOperator.Models.engine;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -23,7 +24,7 @@ namespace PiaoliuHKOperator.View
     /// </summary>
     public sealed partial class RegisterPackagePage : Page
     {
-        private Package Package_Instance;
+
         public RegisterPackagePage()
         {
             this.InitializeComponent();
@@ -32,17 +33,17 @@ namespace PiaoliuHKOperator.View
 
 
 
-        private void PackageExpressTrackNumber_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, TextChangedEventArgs e)
         {
-            Package Package_Instance = new Package();
-            Package_Instance.findPackagebyExpressTrackNumber(PackageExpressTrackNumber_TextBox.Text);
-            if (Package_Instance.PackageOwnerID != 0)
+            PackageList PackageList_Instance = new PackageList();
+            PackageList_Instance.findAllPackagebyFilter("PackageExpressTrackNumber = " + PackageExpressTrackNumber_TextBox.Text);
+
+            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
-                PackageOwnerID_TextBlock.Text = Package_Instance.PackageOwnerID;
-
-
+                ListViewItem PackageListViewItem = new ListViewItem();
+                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
+                PackageSelecting_ListView.Items.Add(PackageListViewItem);
             }
-
         }
     }
 }

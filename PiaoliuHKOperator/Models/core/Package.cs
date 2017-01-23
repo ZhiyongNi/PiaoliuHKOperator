@@ -35,7 +35,7 @@ namespace PiaoliuHKOperator.Models.core
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {
-                CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.JsonString));
+                CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
             }
         }
         private void CloneThis(Package f_Package)
