@@ -22,10 +22,10 @@ namespace PiaoliuHKOperator.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class RegisterPackagePage : Page
+    public sealed partial class PackageDetailsPage : Page
     {
 
-        public RegisterPackagePage()
+        public PackageDetailsPage()
         {
             this.InitializeComponent();
         }
@@ -33,7 +33,9 @@ namespace PiaoliuHKOperator.View
 
 
 
-        private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, TextChangedEventArgs e)
+
+
+        private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             PackageList PackageList_Instance = new PackageList();
             PackageList_Instance.findAllPackagebyFilter("PackageExpressTrackNumber = " + PackageExpressTrackNumber_TextBox.Text);
@@ -44,6 +46,14 @@ namespace PiaoliuHKOperator.View
                 PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
                 PackageSelecting_ListView.Items.Add(PackageListViewItem);
             }
+        }
+
+        private void Submit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Package a = new Package();
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(PackageDetailsPage));
+            
         }
     }
 }
