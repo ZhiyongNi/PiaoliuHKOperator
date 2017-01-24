@@ -31,7 +31,8 @@ namespace PiaoliuHKOperator.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            string a = e.ToString();
+           Package a =(Package) e.Parameter;
+           
         }
     }
 }

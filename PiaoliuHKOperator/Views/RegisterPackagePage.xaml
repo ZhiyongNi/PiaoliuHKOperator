@@ -8,14 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="运单号" VerticalAlignment="Top" ToolTipService.ToolTip="运单号" Width="100" LostFocus="PackageExpressTrackNumber_TextBox_LostFocus"/>
-        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="快递公司" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="100"/>
-        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="手机号" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="100"/>
-        <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="收货人" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="100"/>
+        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="运单号" VerticalAlignment="Top" ToolTipService.ToolTip="运单号" Width="200" LostFocus="PackageExpressTrackNumber_TextBox_LostFocus"/>
+        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="快递公司" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="200"/>
+        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="手机号" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="200"/>
+        <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="收货人" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="200"/>
         <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Height="389" Margin="10,241,0,0" VerticalAlignment="Top" Width="325">
             <ListViewItem Content="Package1"/>
-            <ListViewItem Content="Package2"/>
-            <ListViewItem Background="Gray"/>
         </ListView>
         <Button x:Name="Submit_Button" Content="提交" HorizontalAlignment="Left" Margin="285,10,0,0" VerticalAlignment="Top" Click="Submit_Button_Click"/>
     </Grid>
