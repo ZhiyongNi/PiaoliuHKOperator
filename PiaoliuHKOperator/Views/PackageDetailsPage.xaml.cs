@@ -27,7 +27,11 @@ namespace PiaoliuHKOperator.Views
         public PackageDetailsPage()
         {
             this.InitializeComponent();
-        }
 
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            string a = e.ToString();
+        }
     }
 }

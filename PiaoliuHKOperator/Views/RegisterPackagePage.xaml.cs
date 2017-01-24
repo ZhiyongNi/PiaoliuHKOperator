@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using PiaoliuHKOperator.Models.core;
 using PiaoliuHKOperator.Models.engine;
+using PiaoliuHKOperator.Views;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -22,19 +23,15 @@ namespace PiaoliuHKOperator.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class PackageDetailsPage : Page
+    public sealed partial class RegisterPackagePage : Page
     {
 
-        public PackageDetailsPage()
+        public RegisterPackagePage()
         {
             this.InitializeComponent();
         }
 
-
-
-
-
-
+        
         private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             PackageList PackageList_Instance = new PackageList();
@@ -50,10 +47,10 @@ namespace PiaoliuHKOperator.View
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
-            Package a = new Package();
+            Package PackageDetails_Instance = new Package();
+            //PackageSelecting_ListView.SelectedIndex();
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(PackageDetailsPage));
-            
+            rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
         }
     }
 }
