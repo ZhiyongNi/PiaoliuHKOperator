@@ -31,8 +31,23 @@ namespace PiaoliuHKOperator.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-           Package a =(Package) e.Parameter;
-           
+            Package PackageDetails = (Package)e.Parameter;
+            PackageID_TextBox.Text = PackageDetails.PackageID.ToString();
+            PackageSerialID_TextBox.Text = PackageDetails.PackageSerialID;
+            PackageOwnerID_TextBox.Text = PackageDetails.PackageOwnerID.ToString();
+            PackageOwnerMobile_TextBox.Text = PackageDetails.PackageOwnerMobile;
+            PackageExpressCompany_TextBox.Text = PackageDetails.PackageExpressCompany;
+            PackageExpressTrackNumber_TextBox.Text = PackageDetails.PackageExpressTrackNumber;
+            PackageSnapshot_TextBox.Text = PackageDetails.PackageSnapshot;
+            PackageWeight_TextBox.Text = PackageDetails.PackageWeight.ToString();
+            PackageFee_TextBox.Text = PackageDetails.PackageFee.ToString();
+            PackageInTimeStamp_TextBox.Text = PackageDetails.PackageInTimeStamp.ToString();
+            PackageOutTimeStamp_TextBox.Text = PackageDetails.PackageOutTimeStamp.ToString();
+            PackageStatus_TextBox.Text = PackageDetails.PackageStatus.ToString();
+            PackageRemarks_TextBox.Text = PackageDetails.PackageRemarks;
+            PackageWorkerID_TextBox.Text = PackageDetails.PackageWorkerID.ToString();
+            PackageRelatedTransitBillSerialID_TextBox.Text = PackageDetails.PackageRelatedTransitBillSerialID;
+
         }
     }
 }

@@ -45,7 +45,7 @@ namespace PiaoliuHKOperator.View
             }
         }
 
-        private void Submit_Button_Click(object sender, RoutedEventArgs e)
+        private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)
         {
             Package PackageDetails_Instance = new Package();
             //PackageSelecting_ListView.SelectedIndex();
