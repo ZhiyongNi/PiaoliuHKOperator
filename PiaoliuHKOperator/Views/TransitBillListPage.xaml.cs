@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PiaoliuHKOperator.Models.core;
+using PiaoliuHKOperator.Models.engine;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,31 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class TransitBillListPage : Page
     {
+        TransitBillList TransitBillList_Instance;
         public TransitBillListPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Search_Button_Click(object sender, RoutedEventArgs e)
+        {
+            TransitBillList_Instance.findAllTransitBillbyFilter("PackageOwnerID = 191");
+
+            for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
+            {
+                ListViewItem TransitBillListViewItem = new ListViewItem();
+                TransitBillListViewItem.Content = TransitBillList_Instance.TransitBillItemList[i].TransitBillSerialID;
+                TransitBillList_ListView.Items.Add(TransitBillListViewItem);
+            }
+        }
+
+        private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)
+        {
+            TransitBill TransitBillDetails_Instance = new TransitBill();
+            TransitBillDetails_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillList_ListView.SelectedIndex];
+            //PackageSelecting_ListView.SelectedIndex();
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(TransitBillDetailsPage), TransitBillDetails_Instance);
         }
     }
 }

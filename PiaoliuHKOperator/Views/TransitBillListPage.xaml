@@ -8,6 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="SubmitDetails_Button" Content="提交详情" HorizontalAlignment="Left" Margin="260,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="SubmitDetails_Button_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369">
+            <ComboBoxItem Content="缺省" IsSelected="True"/>
+            <ComboBoxItem Content="男"/>
+            <ComboBoxItem Content="女"/>
+        </ComboBox>
+        <ListView x:Name="TransitBillList_ListView" HorizontalAlignment="Left" Height="481" Margin="10,149,0,0" VerticalAlignment="Top" Width="325">
+        </ListView>
+        <ComboBox HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369">
+            <ComboBoxItem Content="50" IsSelected="True"/>
+            <ComboBoxItem Content="100"/>
+            <ComboBoxItem Content="500"/>
+        </ComboBox>
+        <Button x:Name="Search_Button" Content="搜索" HorizontalAlignment="Left" Margin="285,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="Search_Button_Click"/>
 
     </Grid>
 </Page>

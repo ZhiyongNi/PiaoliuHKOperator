@@ -8,27 +8,45 @@ namespace PiaoliuHKOperator.Models.core
 {
     class TransitBill
     {
-        private int TransitBillID;
+        public int TransitBillID;
 
-        private int TransitBillOwnerID;
+        public string TransitBillSerialID;
 
-        private Array TransitBillRelatedBottleIDArray;
+        public int TransitBillOwnerID;
 
-        private int TransitBillRelatedBottleQuantity;
+        public string TransitBillRelatedPackageSerialID;
 
-        private int TransitBillPrice;
+        public int TransitBillRelatedPackageQuantity;
 
-        private int TransitBillMethod;
+        public float TransitBillPrice;
 
-        private string TransitBillAddress;
+        public int TransitBillMethod;
 
-        private int TransitBillSettlement;
+        public string TransitBillAddress;
 
-        private int TransitBillInitializationTimeStamp;
+        public int TransitBillSettlement;
 
-        private int TransitBillSignDate;
+        public int TransitBillInitializationTimeStamp;
 
-        private int TransitBillStatus;
+        public int TransitBillSignTimeStamp;
+
+        public int TransitBillStatus;
+
+        private void CloneThis(TransitBill f_TransitBill)
+        {
+            this.TransitBillID = f_TransitBill.TransitBillID;
+            this.TransitBillSerialID = f_TransitBill.TransitBillSerialID;
+            this.TransitBillOwnerID = f_TransitBill.TransitBillOwnerID;
+            this.TransitBillRelatedPackageSerialID = f_TransitBill.TransitBillRelatedPackageSerialID;
+            this.TransitBillRelatedPackageQuantity = f_TransitBill.TransitBillRelatedPackageQuantity;
+            this.TransitBillPrice = f_TransitBill.TransitBillPrice;
+            this.TransitBillMethod = f_TransitBill.TransitBillMethod;
+            this.TransitBillAddress = f_TransitBill.TransitBillAddress;
+            this.TransitBillSettlement = f_TransitBill.TransitBillSettlement;
+            this.TransitBillInitializationTimeStamp = f_TransitBill.TransitBillInitializationTimeStamp;
+            this.TransitBillSignTimeStamp = f_TransitBill.TransitBillSignTimeStamp;
+            this.TransitBillStatus = f_TransitBill.TransitBillStatus;
+        }
 
     }
 }
