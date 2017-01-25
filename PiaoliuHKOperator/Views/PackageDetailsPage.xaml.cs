@@ -35,7 +35,7 @@ namespace PiaoliuHKOperator.Views
             PackageID_TextBox.Text = PackageDetails.PackageID.ToString();
             PackageSerialID_TextBox.Text = PackageDetails.PackageSerialID;
             PackageOwnerID_TextBox.Text = PackageDetails.PackageOwnerID.ToString();
-            PackageOwnerMobile_TextBox.Text = PackageDetails.PackageOwnerMobile;
+            /*PackageOwnerMobile_TextBox.Text = PackageDetails.PackageOwnerMobile;
             PackageExpressCompany_TextBox.Text = PackageDetails.PackageExpressCompany;
             PackageExpressTrackNumber_TextBox.Text = PackageDetails.PackageExpressTrackNumber;
             PackageSnapshot_TextBox.Text = PackageDetails.PackageSnapshot;
@@ -47,7 +47,7 @@ namespace PiaoliuHKOperator.Views
             PackageRemarks_TextBox.Text = PackageDetails.PackageRemarks;
             PackageWorkerID_TextBox.Text = PackageDetails.PackageWorkerID.ToString();
             PackageRelatedTransitBillSerialID_TextBox.Text = PackageDetails.PackageRelatedTransitBillSerialID;
-
+*/
         }
     }
 }

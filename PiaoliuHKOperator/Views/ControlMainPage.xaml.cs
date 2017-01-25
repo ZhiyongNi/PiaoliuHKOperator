@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using PiaoliuHKOperator.View;
+using PiaoliuHKOperator.Views;
 using PiaoliuHKOperator.Models.core;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
