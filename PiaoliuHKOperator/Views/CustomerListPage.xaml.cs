@@ -1,4 +1,5 @@
-﻿using PiaoliuHKOperator.Models.engine;
+﻿using PiaoliuHKOperator.Models.core;
+using PiaoliuHKOperator.Models.engine;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +45,16 @@ namespace PiaoliuHKOperator.Views
             }
 
         }
+
+
+        private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Customer CustomerDetails_Instance = new Customer();
+            CustomerDetails_Instance = this.CustomerList_Instance.CustomerItemList[CustomerList_ListView.SelectedIndex];
+            //PackageSelecting_ListView.SelectedIndex();
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(CustomerDetailsPage), CustomerDetails_Instance);
+        }
         private string getFilterStringinPage()
         {
             string FilterString = "";
@@ -53,6 +64,5 @@ namespace PiaoliuHKOperator.Views
             }
             return FilterString;
         }
-
     }
 }

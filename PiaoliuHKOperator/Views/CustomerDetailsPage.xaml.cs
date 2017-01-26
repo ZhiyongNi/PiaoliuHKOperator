@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiaoliuHKOperator.Models.core;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,32 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class CustomerDetailsPage : Page
     {
+        Customer CustomerDetails_Instance;
         public CustomerDetailsPage()
         {
             this.InitializeComponent();
+            CustomerDetails_Instance = new Customer();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            CustomerDetails_Instance = (Customer)e.Parameter;
+            CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID.ToString();
+            CustomerName_TextBox.Text = CustomerDetails_Instance.CustomerName;
+            //CustomerPassword_PasswordBox.Password = CustomerDetails_Instance.CustomerPassword;
+            CustomerRealName_TextBox.Text = CustomerDetails_Instance.CustomerRealName;
+            CustomerGender_TextBox.Text = CustomerDetails_Instance.CustomerGender.ToString();
+            CustomerSelfMobile_TextBox.Text = CustomerDetails_Instance.CustomerSelfMobile;
+            /*CustomerSelfDefaultAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfDefaultAddress;
+            CustomerSelfDirectAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfDirectAddress;
+            CustomerSelfOtherAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfOtherAddress;
+            CustomerCollage_TextBox.Text = CustomerDetails_Instance.CustomerCollage;
+            CustomerMail_TextBox.Text = CustomerDetails_Instance.CustomerMail;
+            CustomerQQ_TextBox.Text = CustomerDetails_Instance.CustomerQQ;
+            CustomerWeixin_TextBox.Text = CustomerDetails_Instance.CustomerWeixin;
+            CustomerAlipay_TextBox.Text = CustomerDetails_Instance.CustomerAlipay;
+            CustomerAvatarMobile_TextBox.Text = CustomerDetails_Instance.CustomerAvatarMobile;
+            CustomerAccountStatus_TextBox.Text = CustomerDetails_Instance.CustomerAccountStatus.ToString();
+            */
         }
     }
 }

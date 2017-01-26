@@ -23,7 +23,7 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class PackageDetailsPage : Page
     {
-        public Package Package_Instance;
+        public Package PackageDetails_Instance;
         public PackageDetailsPage()
         {
             this.InitializeComponent();

@@ -8,20 +8,24 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="CustomerID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="CustomerRealName_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageOutTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,380,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageInTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,343,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageFee_TextBox" HorizontalAlignment="Left" Margin="10,306,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="CustomerSelfDirectAddress_TextBox" HorizontalAlignment="Left" Margin="10,269,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="CustomerSelfDefaultAddress_TextBox" HorizontalAlignment="Left" Margin="10,232,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="CustomerSelfMobile_TextBox" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageID_TextBox_Copy" HorizontalAlignment="Left" Margin="10,417,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageID_TextBox_Copy1" HorizontalAlignment="Left" Margin="10,454,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageID_TextBox_Copy2" HorizontalAlignment="Left" Margin="10,528,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageID_TextBox_Copy3" HorizontalAlignment="Left" Margin="10,491,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="CustomerGender_TextBox" HorizontalAlignment="Left" Margin="10,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="CustomerPassword_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="CustomerName_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBox x:Name="CustomerID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerName_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <PasswordBox x:Name="CustomerPassword_PasswordBox" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerRealName_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerGender_TextBox" HorizontalAlignment="Left" Margin="10,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerSelfMobile_TextBox" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerSelfDefaultAddress_TextBox" HorizontalAlignment="Left" Margin="10,232,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerSelfDirectAddress_TextBox" HorizontalAlignment="Left" Margin="10,269,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerSelfOtherAddress_TextBox" HorizontalAlignment="Left" Margin="10,306,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerCollage_TextBox" HorizontalAlignment="Left" Margin="10,343,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerMail_TextBox" HorizontalAlignment="Left" Margin="10,380,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerQQ_TextBox" HorizontalAlignment="Left" Margin="10,417,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerWeixin_TextBox" HorizontalAlignment="Left" Margin="10,454,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerAlipay_TextBox" HorizontalAlignment="Left" Margin="10,491,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerAvatarMobile_TextBox" HorizontalAlignment="Left" Margin="10,528,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerAvatarAddress_TextBox" HorizontalAlignment="Left" Margin="10,565,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CustomerAccountStatus_TextBox" HorizontalAlignment="Left" Margin="10,602,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <CheckBox x:Name="CustomerID_CheckBox" Content="CustomerID" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.014,0.438"/>
+        <CheckBox x:Name="CustomerName_ChexkBox" Content="CustomerName" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
