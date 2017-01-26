@@ -8,9 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="AdminName_Text" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" Text="apollonzy" VerticalAlignment="Top"/>
+        <TextBox x:Name="AdminName_TextBox" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" Text="apollonzy" VerticalAlignment="Top" Width="147"/>
         <Button x:Name="AdminLogin_Button" Content="登陆" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Click="AdminLogin_Button_Click"/>
-        <PasswordBox x:Name="AdminPassword_Text" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Password="19880707apollo"/>
+        <PasswordBox x:Name="AdminPassword_PasswordBox" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Password="19880707apollo"/>
+        <TextBlock x:Name="SocketStatus_TextBlock" HorizontalAlignment="Left" Margin="10,610,0,0" TextWrapping="Wrap" Text="服务器连接断开" VerticalAlignment="Top"/>
+        <Button x:Name="PasswordLost_Button" Content="忘记密码" HorizontalAlignment="Left" Margin="65,93,0,0" VerticalAlignment="Top" Click="PasswordLost_Button_Click"/>
 
     </Grid>
 </Page>

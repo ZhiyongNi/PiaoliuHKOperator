@@ -29,13 +29,9 @@ namespace PiaoliuHKOperator.Views
         public ControlMainPage()
         {
             this.InitializeComponent();
-            this.textBlock.Text = Global.myAdmin.AdminRealName;
+            if (Global.myAdmin.isAuthorized) { }
+            this.AdminStatus_TextBlock.Text = Global.myAdmin.AdminRealName + "，欢迎你。";
         }
-
-
-
-
-
 
         private void CustomerList_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -57,7 +53,7 @@ namespace PiaoliuHKOperator.Views
             rootFrame.Navigate(typeof(RegisterPackagePage));
         }
 
-       
+
 
         private void TransitBillList_Button_Click(object sender, RoutedEventArgs e)
         {

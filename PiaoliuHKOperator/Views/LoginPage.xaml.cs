@@ -16,6 +16,10 @@ namespace PiaoliuHKOperator.Views
         public LoginPage()
         {
             this.InitializeComponent();
+            if (Global.OperatorClientSocket.Connected)
+            {
+                SocketStatus_TextBlock.Text = "服务器连接成功";
+            }
         }
 
         private void AdminLogin_Button_Click(object sender, RoutedEventArgs e)
@@ -23,18 +27,23 @@ namespace PiaoliuHKOperator.Views
             Admin Admin_Instance = new Admin();
 
             CryptographicHash MD5Tool = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Md5).CreateHash();
-            MD5Tool.Append(CryptographicBuffer.ConvertStringToBinary(AdminPassword_Text.Password, BinaryStringEncoding.Utf8));
+            MD5Tool.Append(CryptographicBuffer.ConvertStringToBinary(AdminPassword_PasswordBox.Password, BinaryStringEncoding.Utf8));
             string AdminPassword_MD5 = CryptographicBuffer.EncodeToHexString(MD5Tool.GetValueAndReset());
 
-            Admin_Instance.AuthAdminbyNameandPassword(AdminName_Text.Text, AdminPassword_MD5);
+            Admin_Instance.AuthAdminbyNameandPassword(AdminName_TextBox.Text, AdminPassword_MD5);
 
             if (Admin_Instance.isAuthorized)
             {
-                AdminName_Text.Text = Admin_Instance.AdminRealName + "你好，成功登陆。";
+                AdminName_TextBox.Text = Admin_Instance.AdminRealName + "你好，成功登陆。";
             }
             Global.myAdmin = Admin_Instance;
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(ControlMainPage));
+
+        }
+
+        private void PasswordLost_Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
