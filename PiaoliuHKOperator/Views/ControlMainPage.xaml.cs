@@ -57,7 +57,8 @@ namespace PiaoliuHKOperator.Views
 
         private void TransitBillList_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(TransitBillListPage));
         }
     }
 }

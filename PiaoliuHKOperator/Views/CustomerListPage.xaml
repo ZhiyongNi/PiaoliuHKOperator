@@ -8,18 +8,16 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="Search_Button" Content="搜索" HorizontalAlignment="Left" Margin="285,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="Search_Button_Click"/>
-        <ComboBox HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369">
-            <ComboBoxItem Content="缺省" IsSelected="True"/>
-            <ComboBoxItem Content="男"/>
-            <ComboBoxItem Content="女"/>
-        </ComboBox>
-        <ListView x:Name="CustomerList_ListView" HorizontalAlignment="Left" Height="481" Margin="10,149,0,0" VerticalAlignment="Top" Width="325">
-        </ListView>
-        <ComboBox HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369">
+        <Button x:Name="Search_Button" Content="搜索" HorizontalAlignment="Left" Margin="260,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="Search_Button_Click"/>
+        <ListView x:Name="CustomerList_ListView" Height="481" Margin="10,150,25,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CustomerCollage_ComboBox" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369">
             <ComboBoxItem Content="50" IsSelected="True"/>
             <ComboBoxItem Content="100"/>
             <ComboBoxItem Content="500"/>
         </ComboBox>
+        <TextBox x:Name="CustomerID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="CustomerID" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CustomerSelfMobile_TextBox" HorizontalAlignment="Left" Margin="135,10,0,0" TextWrapping="Wrap" Text="SelfMobile" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CustomerRealName_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="RealName" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CustomerMail_TextBox" HorizontalAlignment="Left" Margin="135,47,0,0" TextWrapping="Wrap" Text="CustomerMail" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Page>

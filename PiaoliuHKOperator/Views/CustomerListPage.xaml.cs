@@ -23,18 +23,17 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class CustomerListPage : Page
     {
+        CustomerList CustomerList_Instance;
         public CustomerListPage()
         {
             this.InitializeComponent();
+            CustomerList_Instance = new CustomerList();
         }
 
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-            CustomerList CustomerList_Instance = new CustomerList();
-            CustomerList_Instance.findAllCustomerbyFilter("CustomerID < 100");
-
-
-
+            string FilterString = getFilterStringinPage();
+            CustomerList_Instance.findAllCustomerbyFilter(FilterString);
 
             for (int i = 0; i < CustomerList_Instance.CustomerItemList.Count; i++)
             {
@@ -45,7 +44,15 @@ namespace PiaoliuHKOperator.Views
             }
 
         }
-
+        private string getFilterStringinPage()
+        {
+            string FilterString = "";
+            if (CustomerID_TextBox.Text != "")
+            {
+                FilterString = "CustomerID = " + CustomerID_TextBox.Text;
+            }
+            return FilterString;
+        }
 
     }
 }

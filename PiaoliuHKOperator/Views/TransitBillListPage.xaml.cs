@@ -28,11 +28,13 @@ namespace PiaoliuHKOperator.Views
         public TransitBillListPage()
         {
             this.InitializeComponent();
+            TransitBillList_Instance = new TransitBillList();
         }
 
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-            TransitBillList_Instance.findAllTransitBillbyFilter("PackageOwnerID = 191");
+            string FilterString = getFilterStringinPage();
+            TransitBillList_Instance.findAllTransitBillbyFilter(FilterString);
 
             for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
             {
@@ -49,6 +51,15 @@ namespace PiaoliuHKOperator.Views
             //PackageSelecting_ListView.SelectedIndex();
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(TransitBillDetailsPage), TransitBillDetails_Instance);
+        }
+        private string getFilterStringinPage()
+        {
+            string FilterString = "";
+            if (TransitBillOwnerID_TextBox.Text != "")
+            {
+                FilterString = "TransitBillOwnerID = " + TransitBillOwnerID_TextBox.Text;
+            }
+            return FilterString;
         }
     }
 }
