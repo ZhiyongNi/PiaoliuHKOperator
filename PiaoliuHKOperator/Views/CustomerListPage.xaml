@@ -15,7 +15,7 @@
             <ComboBoxItem Content="100"/>
             <ComboBoxItem Content="500"/>
         </ComboBox>
-        <TextBox x:Name="CustomerID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="CustomerID" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CustomerID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="CustomerID" VerticalAlignment="Top" Width="120" />
         <TextBox x:Name="CustomerSelfMobile_TextBox" HorizontalAlignment="Left" Margin="135,10,0,0" TextWrapping="Wrap" Text="SelfMobile" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="CustomerRealName_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="RealName" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="CustomerMail_TextBox" HorizontalAlignment="Left" Margin="135,47,0,0" TextWrapping="Wrap" Text="CustomerMail" VerticalAlignment="Top" Width="120"/>

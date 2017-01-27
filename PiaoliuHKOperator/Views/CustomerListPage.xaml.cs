@@ -58,11 +58,25 @@ namespace PiaoliuHKOperator.Views
         private string getFilterStringinPage()
         {
             string FilterString = "";
-            if (CustomerID_TextBox.Text != "")
+            if (CustomerID_TextBox.Text != "CustomerID" && CustomerID_TextBox.Text != "")
             {
-                FilterString = "CustomerID = " + CustomerID_TextBox.Text;
+                FilterString += "CustomerID = " + CustomerID_TextBox.Text;
+            }
+            if (CustomerSelfMobile_TextBox.Text != "SelfMobile")
+            {
+                FilterString += "CustomerSelfMobile = " + CustomerSelfMobile_TextBox.Text;
+            }
+            if (FilterString != "")
+            {
+                FilterString = "Where " + FilterString;
             }
             return FilterString;
+
+        }
+
+        private void CustomerID_TextBox_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            CustomerID_TextBox.Text = "qwe";
         }
     }
 }
