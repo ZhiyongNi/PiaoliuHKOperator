@@ -60,5 +60,10 @@ namespace PiaoliuHKOperator.Views
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(TransitBillListPage));
         }
+
+        private void goShip_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

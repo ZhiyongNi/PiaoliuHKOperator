@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="RegisterPackage_Button" Content="录入包裹" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="RegisterPackage_Button_Click"/>
         <Button Content="检查未匹配包裹" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
-        <Button Content="运单拣货出库" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="goShip_Button" Content="运单拣货出库" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Click="goShip_Button_Click"/>
         <Button Content="运单签收" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
         <Button x:Name="CustomerList_Button" Content="客户列表" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Click="CustomerList_Button_Click" />
         <Button x:Name="PackageList_Button" Content="包裹列表" HorizontalAlignment="Left" Margin="10,297,0,0" VerticalAlignment="Top" Click="PackageList_Button_Click" />

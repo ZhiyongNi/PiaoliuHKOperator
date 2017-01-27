@@ -9,16 +9,16 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="Search_Button" Content="搜索" HorizontalAlignment="Left" Margin="135,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="Search_Button_Click"/>
-        <ListView x:Name="CustomerList_ListView" Margin="10,150,25,0" Height="481" VerticalAlignment="Top"/>
+        <ListView x:Name="CustomerList_ListView" Margin="10,150,25,0" Height="481" VerticalAlignment="Top" Background="Gray"/>
         <ComboBox x:Name="CustomerCollage_ComboBox" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369">
             <ComboBoxItem Content="50" IsSelected="True"/>
             <ComboBoxItem Content="100"/>
             <ComboBoxItem Content="500"/>
         </ComboBox>
-        <TextBox x:Name="CustomerID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="CustomerID" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="CustomerSelfMobile_TextBox" HorizontalAlignment="Left" Margin="135,10,0,0" TextWrapping="Wrap" Text="SelfMobile" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CustomerRealName_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="RealName" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CustomerMail_TextBox" HorizontalAlignment="Left" Margin="135,47,0,0" TextWrapping="Wrap" Text="CustomerMail" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CustomerID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="CustomerID" VerticalAlignment="Top" Width="120"  GotFocus="CustomerID_TextBox_GotFocus" />
+        <TextBox x:Name="CustomerSelfMobile_TextBox" HorizontalAlignment="Left" Margin="135,10,0,0" TextWrapping="Wrap" Text="SelfMobile" VerticalAlignment="Top" Width="120" GotFocus="CustomerSelfMobile_TextBox_GotFocus"/>
+        <TextBox x:Name="CustomerRealName_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="RealName" VerticalAlignment="Top" Width="120" GotFocus="CustomerRealName_TextBox_GotFocus"/>
+        <TextBox x:Name="CustomerEmail_TextBox" HorizontalAlignment="Left" Margin="135,47,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="120" GotFocus="CustomerEmail_TextBox_GotFocus"/>
         <Button x:Name="SubmitDetails_Button" Content="提交详情" HorizontalAlignment="Left" Margin="270,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="SubmitDetails_Button_Click"/>
     </Grid>
 </Page>

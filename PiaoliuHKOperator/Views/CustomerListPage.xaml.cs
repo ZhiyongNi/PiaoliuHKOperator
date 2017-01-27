@@ -62,9 +62,17 @@ namespace PiaoliuHKOperator.Views
             {
                 FilterString += "CustomerID = " + CustomerID_TextBox.Text;
             }
-            if (CustomerSelfMobile_TextBox.Text != "SelfMobile")
+            if (CustomerSelfMobile_TextBox.Text != "SelfMobile" && CustomerSelfMobile_TextBox.Text != "")
             {
                 FilterString += "CustomerSelfMobile = " + CustomerSelfMobile_TextBox.Text;
+            }
+            if (CustomerRealName_TextBox.Text != "RealName" && CustomerRealName_TextBox.Text != "")
+            {
+                FilterString += "CustomerRealName = " + CustomerRealName_TextBox.Text;
+            }
+            if (CustomerEmail_TextBox.Text != "Email" && CustomerEmail_TextBox.Text != "")
+            {
+                FilterString += "CustomerEmail = " + CustomerEmail_TextBox.Text;
             }
             if (FilterString != "")
             {
@@ -74,9 +82,36 @@ namespace PiaoliuHKOperator.Views
 
         }
 
-        private void CustomerID_TextBox_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void CustomerID_TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            CustomerID_TextBox.Text = "qwe";
+            if (CustomerID_TextBox.Text == "CustomerID")
+            {
+                CustomerID_TextBox.Text = "";
+            }
+        }
+
+        private void CustomerSelfMobile_TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (CustomerSelfMobile_TextBox.Text == "SelfMobile")
+            {
+                CustomerSelfMobile_TextBox.Text = "";
+            }
+        }
+
+        private void CustomerRealName_TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (CustomerRealName_TextBox.Text == "RealName")
+            {
+                CustomerRealName_TextBox.Text = "";
+            }
+        }
+
+        private void CustomerEmail_TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (CustomerEmail_TextBox.Text == "Email")
+            {
+                CustomerEmail_TextBox.Text = "";
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace PiaoliuHKOperator.Models.core
         public string CustomerSelfDirectAddress { get; set; }
         public string CustomerSelfOtherAddress { get; set; }
         public string CustomerCollage { get; set; }
-        public string CustomerMail { get; set; }
+        public string CustomerEmail { get; set; }
         public string CustomerQQ { get; set; }
         public string CustomerWeixin { get; set; }
         public string CustomerAlipay { get; set; }

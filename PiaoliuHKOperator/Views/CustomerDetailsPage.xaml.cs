@@ -50,5 +50,20 @@ namespace PiaoliuHKOperator.Views
             CustomerAccountStatus_TextBox.Text = CustomerDetails_Instance.CustomerAccountStatus.ToString();
             */
         }
+
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }       
+
+        private void RelatedPackageList_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RelatedTransitBillList_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

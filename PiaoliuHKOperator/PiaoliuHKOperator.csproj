@@ -136,6 +136,9 @@
     <Compile Include="Views\TransitBillDetailsPage.xaml.cs">
       <DependentUpon>TransitBillDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TransitBillgoShipPage.xaml.cs">
+      <DependentUpon>TransitBillgoShipPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TransitBillListPage.xaml.cs">
       <DependentUpon>TransitBillListPage.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TransitBillDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TransitBillgoShipPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
