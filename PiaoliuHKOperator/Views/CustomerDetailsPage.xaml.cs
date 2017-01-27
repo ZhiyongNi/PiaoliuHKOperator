@@ -33,7 +33,7 @@ namespace PiaoliuHKOperator.Views
         {
             CustomerDetails_Instance = (Customer)e.Parameter;
             CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID.ToString();
-            CustomerName_TextBox.Text = CustomerDetails_Instance.CustomerName;
+            CustomerName_TextBox.Text = CustomerDetails_Instance.CustomerName == "" ? "" : CustomerDetails_Instance.CustomerName;
             //CustomerPassword_PasswordBox.Password = CustomerDetails_Instance.CustomerPassword;
             CustomerRealName_TextBox.Text = CustomerDetails_Instance.CustomerRealName;
             CustomerGender_TextBox.Text = CustomerDetails_Instance.CustomerGender.ToString();
@@ -42,23 +42,24 @@ namespace PiaoliuHKOperator.Views
             CustomerSelfDirectAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfDirectAddress;
             CustomerSelfOtherAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfOtherAddress;
             CustomerCollage_TextBox.Text = CustomerDetails_Instance.CustomerCollage;
-            CustomerMail_TextBox.Text = CustomerDetails_Instance.CustomerMail;
-            CustomerQQ_TextBox.Text = CustomerDetails_Instance.CustomerQQ;
-            CustomerWeixin_TextBox.Text = CustomerDetails_Instance.CustomerWeixin;
-            CustomerAlipay_TextBox.Text = CustomerDetails_Instance.CustomerAlipay;
-            CustomerAvatarMobile_TextBox.Text = CustomerDetails_Instance.CustomerAvatarMobile;
-            CustomerAccountStatus_TextBox.Text = CustomerDetails_Instance.CustomerAccountStatus.ToString();
-            */
+            CustomerEmail_TextBox.Text = CustomerDetails_Instance.CustomerEmail;*/
+            CustomerQQ_TextBox.Text = CustomerDetails_Instance.CustomerQQ == null ? "" : CustomerDetails_Instance.CustomerQQ;
+            CustomerWeixin_TextBox.Text = CustomerDetails_Instance.CustomerWeixin == null ? "" : CustomerDetails_Instance.CustomerWeixin;
+            CustomerAlipay_TextBox.Text = CustomerDetails_Instance.CustomerAlipay == null ? "" : CustomerDetails_Instance.CustomerAlipay;
+            CustomerAvatarMobile_TextBox.Text = CustomerDetails_Instance.CustomerAvatarMobile == null ? "" : CustomerDetails_Instance.CustomerAvatarMobile;
+            CustomerAccountStatus_TextBox.Text = CustomerDetails_Instance.CustomerAccountStatus == null ? "" : CustomerDetails_Instance.CustomerAccountStatus.ToString();
+
         }
 
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
 
-        }       
+        }
 
         private void RelatedPackageList_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(PackageListPage), CustomerDetails_Instance);
         }
 
         private void RelatedTransitBillList_Button_Click(object sender, RoutedEventArgs e)

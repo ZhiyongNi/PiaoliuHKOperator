@@ -32,6 +32,18 @@ namespace PiaoliuHKOperator.Views
             PackageList_Instance = new PackageList();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+           /* object a = e.Parameter;
+            if (a.GetType().Equals(new Customer()))
+            {
+
+                Customer s = (Customer)a;
+
+            }
+            */
+
+        }
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -52,6 +64,30 @@ namespace PiaoliuHKOperator.Views
             //PackageSelecting_ListView.SelectedIndex();
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
+        }
+
+        private void PackageSerialID_TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (PackageSerialID_TextBox.Text == "SerialID")
+            {
+                PackageSerialID_TextBox.Text = "";
+            }
+        }
+
+        private void PackageOwnerID_TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (PackageOwnerID_TextBox.Text == "OwnerID")
+            {
+                PackageOwnerID_TextBox.Text = "";
+            }
+        }
+
+        private void PackageExpressTrackNumber_TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (PackageExpressTrackNumber_TextBox.Text == "ExpressNum")
+            {
+                PackageExpressTrackNumber_TextBox.Text = "";
+            }
         }
     }
 }
