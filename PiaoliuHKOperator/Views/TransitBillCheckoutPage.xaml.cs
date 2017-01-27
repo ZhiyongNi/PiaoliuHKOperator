@@ -20,11 +20,21 @@ namespace PiaoliuHKOperator.Views
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class TransitBillgoShipPage : Page
+    public sealed partial class TransitBillCheckoutPage : Page
     {
-        public TransitBillgoShipPage()
+        public TransitBillCheckoutPage()
         {
             this.InitializeComponent();
+        }
+
+        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Packup_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

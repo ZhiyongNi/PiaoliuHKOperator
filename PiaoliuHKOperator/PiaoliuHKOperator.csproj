@@ -136,8 +136,8 @@
     <Compile Include="Views\TransitBillDetailsPage.xaml.cs">
       <DependentUpon>TransitBillDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TransitBillgoShipPage.xaml.cs">
-      <DependentUpon>TransitBillgoShipPage.xaml</DependentUpon>
+    <Compile Include="Views\TransitBillCheckoutPage.xaml.cs">
+      <DependentUpon>TransitBillCheckoutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TransitBillListPage.xaml.cs">
       <DependentUpon>TransitBillListPage.xaml</DependentUpon>
@@ -200,7 +200,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TransitBillgoShipPage.xaml">
+    <Page Include="Views\TransitBillCheckoutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
