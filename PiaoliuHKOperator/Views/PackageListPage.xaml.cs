@@ -34,7 +34,6 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
             object TempObject = e.Parameter;
             if (TempObject != null)
             {
@@ -91,31 +90,6 @@ namespace PiaoliuHKOperator.Views
             }
             return FilterString;
 
-        }
-
-
-        private void PackageSerialID_TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (PackageSerialID_TextBox.Text == "SerialID")
-            {
-                PackageSerialID_TextBox.Text = "";
-            }
-        }
-
-        private void PackageOwnerID_TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (PackageOwnerID_TextBox.Text == "OwnerID")
-            {
-                PackageOwnerID_TextBox.Text = "";
-            }
-        }
-
-        private void PackageExpressTrackNumber_TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (PackageExpressTrackNumber_TextBox.Text == "ExpressNum")
-            {
-                PackageExpressTrackNumber_TextBox.Text = "";
-            }
         }
     }
 }

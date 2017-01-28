@@ -31,6 +31,20 @@ namespace PiaoliuHKOperator.Views
             TransitBillList_Instance = new TransitBillList();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            object TempObject = e.Parameter;
+            if (TempObject != null)
+            {
+                switch (TempObject.GetType().FullName)
+                {
+                    case "PiaoliuHKOperator.Models.core.Customer":
+                        Customer CustomerOwner = (Customer)TempObject;
+                        TransitBillOwnerID_TextBox.Text = CustomerOwner.CustomerID.ToString();
+                        break;
+                }
+            }
+        }
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
             string FilterString = getFilterStringinPage();

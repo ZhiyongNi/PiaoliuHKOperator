@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiaoliuHKOperator.Models.core;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,22 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class TransitBillDetailsPage : Page
     {
+        TransitBill TransitBillDetails_Instance;
         public TransitBillDetailsPage()
         {
             this.InitializeComponent();
+            TransitBillDetails_Instance = new TransitBill();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            TransitBillDetails_Instance = (TransitBill)e.Parameter;
+           // CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID == null ? "" : CustomerDetails_Instance.CustomerID.ToString();
+
+
+        }
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

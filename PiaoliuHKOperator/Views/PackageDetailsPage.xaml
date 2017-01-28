@@ -8,21 +8,36 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="PackageID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageOutTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,380,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageInTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,343,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageFee_TextBox" HorizontalAlignment="Left" Margin="10,306,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageWeight_TextBox" HorizontalAlignment="Left" Margin="10,269,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageSnapshot_TextBox" HorizontalAlignment="Left" Margin="10,232,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="10,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageOwnerID_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageSerialID_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageStatus_TextBox" HorizontalAlignment="Left" Margin="10,417,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" />
-        <TextBox x:Name="PackageRelatedTransitBillSerialID_TextBox" HorizontalAlignment="Left" Margin="10,528,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageWorkerID_TextBox" HorizontalAlignment="Left" Margin="10,491,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="PackageRemarks_TextBox" HorizontalAlignment="Left" Margin="10,454,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-
+        <Button x:Name="Update_Button" Content="更新" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Click="Update_Button_Click"/>
+        <TextBox x:Name="PackageID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageID"/>
+        <TextBox x:Name="PackageSerialID_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageSerialID"/>
+        <TextBox x:Name="PackageOwnerID_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageOwnerID"/>
+        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageOwnerMobile"/>
+        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="10,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageExpressCompany"/>
+        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageExpressTrackNumber"/>
+        <TextBox x:Name="PackageSnapshot_TextBox" HorizontalAlignment="Left" Margin="10,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageSnapshot"/>
+        <TextBox x:Name="PackageWeight_TextBox" HorizontalAlignment="Left" Margin="10,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageWeight"/>
+        <TextBox x:Name="PackageFee_TextBox" HorizontalAlignment="Left" Margin="10,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageFee"/>
+        <TextBox x:Name="PackageOutTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,380,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageOutTimeStamp"/>
+        <TextBox x:Name="PackageInTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageInTimeStamp"/>
+        <TextBox x:Name="PackageStatus_TextBox" HorizontalAlignment="Left" Margin="10,417,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageStatus"/>
+        <TextBox x:Name="PackageRemarks_TextBox" HorizontalAlignment="Left" Margin="10,454,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageRemarks"/>
+        <TextBox x:Name="PackageWorkerID_TextBox" HorizontalAlignment="Left" Margin="10,491,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageWorkerID"/>
+        <TextBox x:Name="PackageRelatedTransitBillSerialID_TextBox" HorizontalAlignment="Left" Margin="10,528,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageRelatedTransitBillSerialID"/>
+        <CheckBox x:Name="PackageID_CheckBox" Content="ID" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageSerialID_CheckBox" Content="SerialID" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageOwnerID_CheckBox" Content="OwnerID" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageOwnerMobile_CheckBox" Content="OwnerMobile" HorizontalAlignment="Left" Margin="165,121,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageExpressCompany_CheckBox" Content="ExpressCompany" HorizontalAlignment="Left" Margin="165,158,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageExpressTrackNumber_CheckBox" Content="ExpressTrackNumber" HorizontalAlignment="Left" Margin="165,195,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageSnapshot_CheckBox" Content="Snapshot" HorizontalAlignment="Left" Margin="165,232,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageWeight_CheckBox" Content="Weight" HorizontalAlignment="Left" Margin="165,269,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageFee_CheckBox" Content="Fee" HorizontalAlignment="Left" Margin="165,306,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageInTimeStamp_CheckBox" Content="InTimeStamp" HorizontalAlignment="Left" Margin="165,343,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageOutTimeStamp_CheckBox" Content="OutTimeStamp" HorizontalAlignment="Left" Margin="165,380,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageStatus_CheckBox" Content="Status" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageRemarks_CheckBox" Content="Remarks" HorizontalAlignment="Left" Margin="165,454,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageWorkerID_CheckBox" Content="WorkerID" HorizontalAlignment="Left" Margin="165,491,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageRelatedTransitBillSerialID_CheckBox" Content="RelatedTransitBillSerialID" HorizontalAlignment="Left" Margin="165,528,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

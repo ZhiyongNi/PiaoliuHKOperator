@@ -81,37 +81,5 @@ namespace PiaoliuHKOperator.Views
             return FilterString;
 
         }
-
-        private void CustomerID_TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (CustomerID_TextBox.Text == "CustomerID")
-            {
-                CustomerID_TextBox.Text = "";
-            }
-        }
-
-        private void CustomerSelfMobile_TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (CustomerSelfMobile_TextBox.Text == "SelfMobile")
-            {
-                CustomerSelfMobile_TextBox.Text = "";
-            }
-        }
-
-        private void CustomerRealName_TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (CustomerRealName_TextBox.Text == "RealName")
-            {
-                CustomerRealName_TextBox.Text = "";
-            }
-        }
-
-        private void CustomerEmail_TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (CustomerEmail_TextBox.Text == "Email")
-            {
-                CustomerEmail_TextBox.Text = "";
-            }
-        }
     }
 }

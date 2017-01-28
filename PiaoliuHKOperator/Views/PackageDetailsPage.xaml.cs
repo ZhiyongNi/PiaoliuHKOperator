@@ -27,7 +27,7 @@ namespace PiaoliuHKOperator.Views
         public PackageDetailsPage()
         {
             this.InitializeComponent();
-
+            PackageDetails_Instance = new Package();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -48,6 +48,11 @@ namespace PiaoliuHKOperator.Views
             PackageWorkerID_TextBox.Text = PackageDetails.PackageWorkerID.ToString();
             PackageRelatedTransitBillSerialID_TextBox.Text = PackageDetails.PackageRelatedTransitBillSerialID;
 */
+        }
+
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

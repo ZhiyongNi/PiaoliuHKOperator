@@ -33,7 +33,7 @@ namespace PiaoliuHKOperator.Views
         {
             CustomerDetails_Instance = (Customer)e.Parameter;
             CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID == null ? "" : CustomerDetails_Instance.CustomerID.ToString();
-            CustomerName_TextBox.Text = CustomerName_TextBox.Text == null ? "" : CustomerName_TextBox.Text;
+            CustomerName_TextBox.Text = CustomerDetails_Instance.CustomerName == null ? "" : CustomerDetails_Instance.CustomerName;
             CustomerPassword_PasswordBox.Password = CustomerDetails_Instance.CustomerPassword == null ? "" : CustomerDetails_Instance.CustomerPassword;
             CustomerRealName_TextBox.Text = CustomerDetails_Instance.CustomerRealName == null ? "" : CustomerDetails_Instance.CustomerRealName;
             CustomerGender_TextBox.Text = CustomerDetails_Instance.CustomerGender == null ? "" : CustomerDetails_Instance.CustomerGender.ToString();
@@ -65,7 +65,8 @@ namespace PiaoliuHKOperator.Views
 
         private void RelatedTransitBillList_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(TransitBillListPage), CustomerDetails_Instance);
         }
     }
 }
