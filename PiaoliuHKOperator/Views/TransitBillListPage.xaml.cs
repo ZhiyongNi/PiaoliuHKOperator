@@ -69,9 +69,21 @@ namespace PiaoliuHKOperator.Views
         private string getFilterStringinPage()
         {
             string FilterString = "";
+            if (TransitBillSerialID_TextBox.Text != "")
+            {
+                FilterString = "TransitBillSerialID = " + TransitBillSerialID_TextBox.Text;
+            }
             if (TransitBillOwnerID_TextBox.Text != "")
             {
                 FilterString = "TransitBillOwnerID = " + TransitBillOwnerID_TextBox.Text;
+            }
+            if (TransitBillStatus_TextBox.Text != "")
+            {
+                FilterString = "TransitBillStatus = " + TransitBillStatus_TextBox.Text;
+            }
+            if (FilterString != "")
+            {
+                FilterString = "Where " + FilterString;
             }
             return FilterString;
         }

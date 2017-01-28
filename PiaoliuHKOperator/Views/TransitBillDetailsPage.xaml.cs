@@ -32,10 +32,20 @@ namespace PiaoliuHKOperator.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             TransitBillDetails_Instance = (TransitBill)e.Parameter;
-           // CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID == null ? "" : CustomerDetails_Instance.CustomerID.ToString();
-
-
+            TransitBillID_TextBox.Text = TransitBillDetails_Instance.TransitBillID == null ? "" : TransitBillDetails_Instance.TransitBillID.ToString();
+            TransitBillSerialID_TextBox.Text = TransitBillDetails_Instance.TransitBillSerialID == null ? "" : TransitBillDetails_Instance.TransitBillSerialID;
+            TransitBillOwnerID_TextBox.Text = TransitBillDetails_Instance.TransitBillOwnerID == null ? "" : TransitBillDetails_Instance.TransitBillOwnerID.ToString();
+            TransitBillRelatedPackageSerialID_TextBox.Text = TransitBillDetails_Instance.TransitBillRelatedPackageSerialID == null ? "" : TransitBillDetails_Instance.TransitBillRelatedPackageSerialID;
+            TransitBillRelatedPackageQuantity_TextBox.Text = TransitBillDetails_Instance.TransitBillRelatedPackageQuantity == null ? "" : TransitBillDetails_Instance.TransitBillRelatedPackageQuantity.ToString();
+            TransitBillPrice_TextBox.Text = TransitBillDetails_Instance.TransitBillPrice == null ? "" : TransitBillDetails_Instance.TransitBillPrice.ToString();
+            TransitBillMethod_TextBox.Text = TransitBillDetails_Instance.TransitBillMethod == null ? "" : TransitBillDetails_Instance.TransitBillMethod.ToString();
+            TransitBillAddress_TextBox.Text = TransitBillDetails_Instance.TransitBillAddress == null ? "" : TransitBillDetails_Instance.TransitBillAddress;
+            TransitBillSettlement_TextBox.Text = TransitBillDetails_Instance.TransitBillSettlement == null ? "" : TransitBillDetails_Instance.TransitBillSettlement.ToString();
+            TransitBillInitializationTimeStamp_TextBox.Text = TransitBillDetails_Instance.TransitBillInitializationTimeStamp == null ? "" : TransitBillDetails_Instance.TransitBillInitializationTimeStamp.ToString();
+            TransitBillSignTimeStamp_TextBox.Text = TransitBillDetails_Instance.TransitBillSignTimeStamp == null ? "" : TransitBillDetails_Instance.TransitBillSignTimeStamp.ToString();
+            TransitBillStatus_TextBox.Text = TransitBillDetails_Instance.TransitBillStatus == null ? "" : TransitBillDetails_Instance.TransitBillStatus.ToString();
         }
+
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
 
