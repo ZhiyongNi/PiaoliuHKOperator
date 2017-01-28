@@ -32,21 +32,22 @@ namespace PiaoliuHKOperator.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             CustomerDetails_Instance = (Customer)e.Parameter;
-            CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID.ToString();
-            CustomerName_TextBox.Text = CustomerDetails_Instance.CustomerName == "" ? "" : CustomerDetails_Instance.CustomerName;
-            //CustomerPassword_PasswordBox.Password = CustomerDetails_Instance.CustomerPassword;
-            CustomerRealName_TextBox.Text = CustomerDetails_Instance.CustomerRealName;
-            CustomerGender_TextBox.Text = CustomerDetails_Instance.CustomerGender.ToString();
-            CustomerSelfMobile_TextBox.Text = CustomerDetails_Instance.CustomerSelfMobile;
-            /*CustomerSelfDefaultAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfDefaultAddress;
-            CustomerSelfDirectAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfDirectAddress;
-            CustomerSelfOtherAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfOtherAddress;
-            CustomerCollage_TextBox.Text = CustomerDetails_Instance.CustomerCollage;
-            CustomerEmail_TextBox.Text = CustomerDetails_Instance.CustomerEmail;*/
+            CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID == null ? "" : CustomerDetails_Instance.CustomerID.ToString();
+            CustomerName_TextBox.Text = CustomerName_TextBox.Text == null ? "" : CustomerName_TextBox.Text;
+            CustomerPassword_PasswordBox.Password = CustomerDetails_Instance.CustomerPassword == null ? "" : CustomerDetails_Instance.CustomerPassword;
+            CustomerRealName_TextBox.Text = CustomerDetails_Instance.CustomerRealName == null ? "" : CustomerDetails_Instance.CustomerRealName;
+            CustomerGender_TextBox.Text = CustomerDetails_Instance.CustomerGender == null ? "" : CustomerDetails_Instance.CustomerGender.ToString();
+            CustomerSelfMobile_TextBox.Text = CustomerDetails_Instance.CustomerSelfMobile == null ? "" : CustomerDetails_Instance.CustomerSelfMobile;
+            CustomerSelfDefaultAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfDefaultAddress == null ? "" : CustomerDetails_Instance.CustomerSelfDefaultAddress;
+            CustomerSelfDirectAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfDirectAddress == null ? "" : CustomerDetails_Instance.CustomerSelfDirectAddress;
+            CustomerSelfOtherAddress_TextBox.Text = CustomerDetails_Instance.CustomerSelfOtherAddress == null ? "" : CustomerDetails_Instance.CustomerSelfOtherAddress;
+            CustomerCollage_TextBox.Text = CustomerDetails_Instance.CustomerCollage == null ? "" : CustomerDetails_Instance.CustomerCollage;
+            CustomerEmail_TextBox.Text = CustomerDetails_Instance.CustomerEmail == null ? "" : CustomerDetails_Instance.CustomerEmail;
             CustomerQQ_TextBox.Text = CustomerDetails_Instance.CustomerQQ == null ? "" : CustomerDetails_Instance.CustomerQQ;
             CustomerWeixin_TextBox.Text = CustomerDetails_Instance.CustomerWeixin == null ? "" : CustomerDetails_Instance.CustomerWeixin;
             CustomerAlipay_TextBox.Text = CustomerDetails_Instance.CustomerAlipay == null ? "" : CustomerDetails_Instance.CustomerAlipay;
             CustomerAvatarMobile_TextBox.Text = CustomerDetails_Instance.CustomerAvatarMobile == null ? "" : CustomerDetails_Instance.CustomerAvatarMobile;
+            CustomerAvatarAddress_TextBox.Text = CustomerDetails_Instance.CustomerAvatarMobile == null ? "" : CustomerDetails_Instance.CustomerAvatarMobile;
             CustomerAccountStatus_TextBox.Text = CustomerDetails_Instance.CustomerAccountStatus == null ? "" : CustomerDetails_Instance.CustomerAccountStatus.ToString();
 
         }
