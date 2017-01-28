@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PiaoliuHKOperator.Models.core;
+using PiaoliuHKOperator.Models.engine;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,13 +24,40 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class TransitBillCheckoutPage : Page
     {
+        TransitBillList TransitBillList_Instance;
+        PackageList PackageList_Instance;
         public TransitBillCheckoutPage()
         {
             this.InitializeComponent();
+            TransitBillList_Instance = new TransitBillList();
+            PackageList_Instance = new PackageList();
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            //string FilterString = getFilterStringinPage();
+            string FilterString = "TransitBillStatus = 1";
+            TransitBillList_Instance.findAllTransitBillbyFilter(FilterString);
 
+            for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
+            {
+                ListViewItem TransitBillListViewItem = new ListViewItem();
+                TransitBillListViewItem.Content = TransitBillList_Instance.TransitBillItemList[i].TransitBillSerialID;
+                TransitBillSelecting_ListView.Items.Add(TransitBillListViewItem);
+            }
+        }
         private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
+            TransitBill TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
+
+            string FilterString = "TransitBillStatus = 1";
+            PackageList_Instance.findAllPackagebyFilter(FilterString);
+
+            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            {
+                ListViewItem PackageListViewItem = new ListViewItem();
+                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageID;
+                PackageSelecting_ListView.Items.Add(PackageListViewItem);
+            }
 
         }
 

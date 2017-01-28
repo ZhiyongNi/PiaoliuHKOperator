@@ -8,8 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="340" Margin="10,10,0,0" VerticalAlignment="Top" Width="225" Background="Gray"/>
-        <ListView x:Name="listView_Copy" HorizontalAlignment="Left" Height="340" Margin="295,10,0,0" VerticalAlignment="Top" Width="225" Background="Gray"/>
+        <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Height="340" Margin="10,10,0,0" VerticalAlignment="Top" Width="225" Background="Gray"/>
+        <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Height="340" Margin="295,10,0,0" VerticalAlignment="Top" Width="225" Background="Gray"/>
         <Button x:Name="ExtendTransitBill_Button" Content="展开" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" Click="ExtendTransitBill_Button_Click"/>
         <Button x:Name="Packup_Button" Content="打包" HorizontalAlignment="Left" Margin="525,10,0,0" VerticalAlignment="Top" Click="Packup_Button_Click"/>
 
