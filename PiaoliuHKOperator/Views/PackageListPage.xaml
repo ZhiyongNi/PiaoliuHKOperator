@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="Search_Button" Content="搜索" HorizontalAlignment="Left" Margin="135,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="Search_Button_Click"/>
         <TextBox x:Name="PackageSerialID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="SerialID" VerticalAlignment="Top" Width="120"  GotFocus="PackageSerialID_TextBox_GotFocus" />
         <TextBox x:Name="PackageOwnerID_TextBox" HorizontalAlignment="Left" Margin="135,10,0,0" TextWrapping="Wrap" Text="OwnerID" VerticalAlignment="Top" Width="120"  GotFocus="PackageOwnerID_TextBox_GotFocus" />
         <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="ExpressNum" VerticalAlignment="Top" Width="120"  GotFocus="PackageExpressTrackNumber_TextBox_GotFocus" />
@@ -22,7 +23,6 @@
             <ComboBoxItem Content="500"/>
         </ComboBox>
         <Button x:Name="SubmitDetails_Button" Content="提交详情" HorizontalAlignment="Left" Margin="270,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="SubmitDetails_Button_Click"/>
-        <Button x:Name="Search_Button" Content="搜索" HorizontalAlignment="Left" Margin="135,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,1.979" Click="Search_Button_Click"/>
         <ListView x:Name="PackageList_ListView" HorizontalAlignment="Left" Height="481" Margin="10,149,0,0" VerticalAlignment="Top" Width="325">
         </ListView>
     </Grid>

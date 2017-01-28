@@ -34,20 +34,23 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-           /* object a = e.Parameter;
-            if (a.GetType().Equals(new Customer()))
+
+            object TempObject = e.Parameter;
+            if (TempObject != null)
             {
-
-                Customer s = (Customer)a;
-
+                switch (TempObject.GetType().FullName)
+                {
+                    case "PiaoliuHKOperator.Models.core.Customer":
+                        Customer CustomerOwner = (Customer)TempObject;
+                        PackageOwnerID_TextBox.Text = CustomerOwner.CustomerID.ToString();
+                        break;
+                }
             }
-            */
-
         }
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-
-            PackageList_Instance.findAllPackagebyFilter("PackageOwnerID = 191");
+            string FilterString = getFilterStringinPage();
+            PackageList_Instance.findAllPackagebyFilter(FilterString);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
@@ -65,6 +68,31 @@ namespace PiaoliuHKOperator.Views
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
         }
+
+        private string getFilterStringinPage()
+        {
+            string FilterString = "";
+            if (PackageSerialID_TextBox.Text != "SerialID" && PackageSerialID_TextBox.Text != "")
+            {
+                FilterString += "PackageSerialID = " + PackageSerialID_TextBox.Text;
+            }
+            if (PackageOwnerID_TextBox.Text != "OwnerID" && PackageOwnerID_TextBox.Text != "")
+            {
+                FilterString += "PackageOwnerID = " + PackageOwnerID_TextBox.Text;
+            }
+            if (PackageExpressTrackNumber_TextBox.Text != "ExpressNum" && PackageExpressTrackNumber_TextBox.Text != "")
+            {
+                FilterString += "PackageExpressTrackNumber = " + PackageExpressTrackNumber_TextBox.Text;
+            }
+
+            if (FilterString != "")
+            {
+                FilterString = "Where " + FilterString;
+            }
+            return FilterString;
+
+        }
+
 
         private void PackageSerialID_TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
