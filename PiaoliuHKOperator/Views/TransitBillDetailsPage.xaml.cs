@@ -53,12 +53,14 @@ namespace PiaoliuHKOperator.Views
 
         private void RelatedPackageList_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(PackageListPage), this.TransitBillDetails_Instance);
         }
 
         private void CustomerOwnerList_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(CustomerListPage), this.TransitBillDetails_Instance);
         }
     }
 }

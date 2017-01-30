@@ -58,7 +58,7 @@ namespace PiaoliuHKOperator.Views
         private void CustomerOwnerList_Button_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(TransitBillListPage), this.PackageDetails_Instance);
+            rootFrame.Navigate(typeof(CustomerListPage), this.PackageDetails_Instance);
         }
 
         private void RelatedTransitBillList_Button_Click(object sender, RoutedEventArgs e)
