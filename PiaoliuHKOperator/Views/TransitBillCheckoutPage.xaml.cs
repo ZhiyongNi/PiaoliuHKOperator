@@ -36,7 +36,7 @@ namespace PiaoliuHKOperator.Views
         {
             //string FilterString = getFilterStringinPage();
             string FilterString = "where TransitBillStatus = 1";
-            TransitBillList_Instance.findAllTransitBillbyFilter(FilterString);
+            //TransitBillList_Instance.findAllTransitBillbyFilter(FilterString);
 
             for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
             {

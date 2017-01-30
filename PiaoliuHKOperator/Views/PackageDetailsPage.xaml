@@ -9,6 +9,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="Update_Button" Content="更新" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Click="Update_Button_Click"/>
+        <Button x:Name="CustomerOwnerList_Button" Content="Ta的主人" HorizontalAlignment="Left" Margin="265,47,0,0" VerticalAlignment="Top" Click="RelatedPackageList_Button_Click"/>
+        <Button x:Name="RelatedTransitBillList_Button" Content="关联运单" HorizontalAlignment="Left" Margin="265,84,0,0" VerticalAlignment="Top" Click="RelatedTransitBillList_Button_Click"/>
         <TextBox x:Name="PackageID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageID"/>
         <TextBox x:Name="PackageSerialID_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageSerialID"/>
         <TextBox x:Name="PackageOwnerID_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageOwnerID"/>
