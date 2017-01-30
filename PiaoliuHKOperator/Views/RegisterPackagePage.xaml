@@ -8,13 +8,13 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="运单号" VerticalAlignment="Top" ToolTipService.ToolTip="运单号" Width="200" LostFocus="PackageExpressTrackNumber_TextBox_LostFocus"/>
-        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="快递公司" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="200"/>
-        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="手机号" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="200"/>
-        <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="收货人" VerticalAlignment="Top" ToolTipService.ToolTip="快递公司" Width="200"/>
+        <Button x:Name="SubmitDetails_Button" Content="提交详情" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Click="SubmitDetails_Button_Click"/>
+        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" LostFocus="PackageExpressTrackNumber_TextBox_LostFocus" PlaceholderText="运单号"/>
+        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" PlaceholderText="快递公司"/>
+        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" PlaceholderText="OwnerMobile"/>
+        <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" PlaceholderText="OwnerName"/>
         <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Height="389" Margin="10,241,0,0" VerticalAlignment="Top" Width="325">
             <ListViewItem Content="Package1"/>
         </ListView>
-        <Button x:Name="SubmitDetails_Button" Content="提交详情" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Click="SubmitDetails_Button_Click"/>
-    </Grid>
+           </Grid>
 </Page>

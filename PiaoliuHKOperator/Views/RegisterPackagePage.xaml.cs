@@ -35,7 +35,7 @@ namespace PiaoliuHKOperator.Views
         private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             PackageList PackageList_Instance = new PackageList();
-            //PackageList_Instance.findAllPackagebyFilter("PackageExpressTrackNumber = " + PackageExpressTrackNumber_TextBox.Text);
+            PackageList_Instance.findAllPackagebyFilter(getFilterArrayinPage());
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
@@ -51,6 +51,28 @@ namespace PiaoliuHKOperator.Views
             //PackageSelecting_ListView.SelectedIndex();
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
+        }
+        private List<string> getFilterArrayinPage()
+        {
+
+            List<string> FilterArray = new List<string>();
+            if (PackageExpressTrackNumber_TextBox.Text != "")
+            {
+                FilterArray.Add("PackageExpressTrackNumber = \'" + PackageExpressTrackNumber_TextBox.Text + "\'");
+            }
+            if (PackageExpressCompany_TextBox.Text != "")
+            {
+                FilterArray.Add("PackageExpressCompany = \'" + PackageExpressCompany_TextBox.Text + "\'");
+            }
+            if (PackageOwnerMobile_TextBox.Text != "")
+            {
+                FilterArray.Add("PackageOwnerMobile = \'" + PackageOwnerMobile_TextBox.Text + "\'");
+            }
+            if (PackageOwnerName_TextBox.Text != "")
+            {
+                FilterArray.Add("PackageOwnerName = \'" + PackageOwnerName_TextBox.Text + "\'");
+            }
+            return FilterArray;
         }
     }
 }
