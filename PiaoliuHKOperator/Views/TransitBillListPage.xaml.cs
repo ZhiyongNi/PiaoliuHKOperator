@@ -42,6 +42,10 @@ namespace PiaoliuHKOperator.Views
                         Customer CustomerOwner = (Customer)TempObject;
                         TransitBillOwnerID_TextBox.Text = CustomerOwner.CustomerID.ToString();
                         break;
+                    case "PiaoliuHKOperator.Models.core.Package":
+                        Package PackageRelated = (Package)TempObject;
+                        TransitBillSerialID_TextBox.Text = PackageRelated.PackageRelatedTransitBillSerialID;
+                        break;
                 }
             }
         }

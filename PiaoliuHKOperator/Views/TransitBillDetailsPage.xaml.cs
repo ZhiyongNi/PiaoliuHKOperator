@@ -50,5 +50,15 @@ namespace PiaoliuHKOperator.Views
         {
 
         }
+
+        private void RelatedPackageList_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CustomerOwnerList_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

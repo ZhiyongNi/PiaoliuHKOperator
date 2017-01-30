@@ -31,7 +31,7 @@ namespace PiaoliuHKOperator.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            CustomerDetails_Instance = (Customer)e.Parameter;
+            this.CustomerDetails_Instance = (Customer)e.Parameter;
             CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID == null ? "" : CustomerDetails_Instance.CustomerID.ToString();
             CustomerName_TextBox.Text = CustomerDetails_Instance.CustomerName == null ? "" : CustomerDetails_Instance.CustomerName;
             CustomerPassword_PasswordBox.Password = CustomerDetails_Instance.CustomerPassword == null ? "" : CustomerDetails_Instance.CustomerPassword;
@@ -60,13 +60,13 @@ namespace PiaoliuHKOperator.Views
         private void RelatedPackageList_Button_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(PackageListPage), CustomerDetails_Instance);
+            rootFrame.Navigate(typeof(PackageListPage), this.CustomerDetails_Instance);
         }
 
         private void RelatedTransitBillList_Button_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(TransitBillListPage), CustomerDetails_Instance);
+            rootFrame.Navigate(typeof(TransitBillListPage), this.CustomerDetails_Instance);
         }
     }
 }
