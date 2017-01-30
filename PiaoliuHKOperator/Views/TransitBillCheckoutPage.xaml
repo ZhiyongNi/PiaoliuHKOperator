@@ -8,10 +8,13 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Height="340" Margin="10,10,0,0" VerticalAlignment="Top" Width="225" Background="Gray"/>
-        <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Height="340" Margin="295,10,0,0" VerticalAlignment="Top" Width="225" Background="Gray"/>
-        <Button x:Name="ExtendTransitBill_Button" Content="展开" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" Click="ExtendTransitBill_Button_Click"/>
-        <Button x:Name="Packup_Button" Content="打包" HorizontalAlignment="Left" Margin="525,10,0,0" VerticalAlignment="Top" Click="Packup_Button_Click"/>
-
+        <ComboBox x:Name="TransitBillAddress_ComboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="All" IsSelected="True"/>
+        </ComboBox>
+        <Button x:Name="SearchTransitBill_Button" Content="搜索" HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top" Click="SearchTransitBill_Button_Click"/>
+        <Button x:Name="ExtendTransitBill_Button" Content="展开" HorizontalAlignment="Left" Margin="240,47,0,0" VerticalAlignment="Top" Click="ExtendTransitBill_Button_Click"/>
+        <Button x:Name="Packup_Button" Content="打包" HorizontalAlignment="Left" Margin="525,47,0,0" VerticalAlignment="Top" Click="Packup_Button_Click"/>
+        <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Height="303" Margin="10,47,0,0" VerticalAlignment="Top" Width="225" Background="Gray"/>
+        <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Margin="295,47,0,0" Width="225" Background="Gray" Height="303" VerticalAlignment="Top"/>
     </Grid>
 </Page>

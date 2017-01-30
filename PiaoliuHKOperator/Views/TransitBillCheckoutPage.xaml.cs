@@ -25,18 +25,43 @@ namespace PiaoliuHKOperator.Views
     public sealed partial class TransitBillCheckoutPage : Page
     {
         TransitBillList TransitBillList_Instance;
+        TransitBill TransitBill_Instance;
         PackageList PackageList_Instance;
+        Package Package_Instance;
+
         public TransitBillCheckoutPage()
         {
             this.InitializeComponent();
             TransitBillList_Instance = new TransitBillList();
+            TransitBill_Instance = new TransitBill();
             PackageList_Instance = new PackageList();
+            Package_Instance = new Package();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
-            //string FilterString = getFilterStringinPage();
-            string FilterString = "where TransitBillStatus = 1";
-            //TransitBillList_Instance.findAllTransitBillbyFilter(FilterString);
+            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
+
+            List<string> FilterArray=new List<string>();
+            FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
+            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+
+            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            {
+                ListViewItem PackageListViewItem = new ListViewItem();
+                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
+                PackageSelecting_ListView.Items.Add(PackageListViewItem);
+            }
+        }
+
+        private void Packup_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> FilterArray = getFilterArrayinPage();
+            TransitBillList_Instance.findAllTransitBillbyFilter(FilterArray);
 
             for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
             {
@@ -45,25 +70,14 @@ namespace PiaoliuHKOperator.Views
                 TransitBillSelecting_ListView.Items.Add(TransitBillListViewItem);
             }
         }
-        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        private List<string> getFilterArrayinPage()
         {
-            TransitBill TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
-
-            string FilterString = "where PackageRelatedTransitBillSerialID = " + TransitBill_Instance.TransitBillSerialID;
-            //PackageList_Instance.findAllPackagebyFilter(FilterString);
-
-            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            List<string> FilterArray = new List<string>();
+            /*if (TransitBillAddress_ComboBox.GetValue() != "")
             {
-                ListViewItem PackageListViewItem = new ListViewItem();
-                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageID;
-                PackageSelecting_ListView.Items.Add(PackageListViewItem);
-            }
-
-        }
-
-        private void Packup_Button_Click(object sender, RoutedEventArgs e)
-        {
-
+                FilterArray.Add("TransitBillSerialID = \'" + TransitBillSerialID_TextBox.Text + "\'");
+            }*/
+            return FilterArray;
         }
     }
 }

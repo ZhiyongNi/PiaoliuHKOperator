@@ -25,17 +25,18 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class RegisterPackagePage : Page
     {
+        PackageList PackageList_Instance;
 
         public RegisterPackagePage()
         {
             this.InitializeComponent();
+            PackageList_Instance = new PackageList();
         }
 
         
         private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            PackageList PackageList_Instance = new PackageList();
-            PackageList_Instance.findAllPackagebyFilter(getFilterArrayinPage());
+             PackageList_Instance.findAllPackagebyFilter(getFilterArrayinPage());
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
@@ -48,6 +49,7 @@ namespace PiaoliuHKOperator.Views
         private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)
         {
             Package PackageDetails_Instance = new Package();
+            PackageDetails_Instance = this.PackageList_Instance.PackageItemList[PackageSelecting_ListView.SelectedIndex];
             //PackageSelecting_ListView.SelectedIndex();
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
