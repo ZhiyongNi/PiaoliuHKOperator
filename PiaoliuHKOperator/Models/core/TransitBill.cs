@@ -8,29 +8,18 @@ namespace PiaoliuHKOperator.Models.core
 {
     class TransitBill
     {
-        public int TransitBillID;
-
-        public string TransitBillSerialID;
-
-        public int TransitBillOwnerID;
-
-        public string TransitBillRelatedPackageSerialID;
-
-        public int TransitBillRelatedPackageQuantity;
-
-        public float TransitBillPrice;
-
-        public int TransitBillMethod;
-
-        public string TransitBillAddress;
-
-        public int TransitBillSettlement;
-
-        public int TransitBillInitializationTimeStamp;
-
-        public int TransitBillSignTimeStamp;
-
-        public int TransitBillStatus;
+        public int TransitBillID { get; set; }
+        public string TransitBillSerialID { get; set; }
+        public int TransitBillOwnerID { get; set; }
+        public string TransitBillRelatedPackageSerialID { get; set; }
+        public int TransitBillRelatedPackageQuantity { get; set; }
+        public float TransitBillPrice { get; set; }
+        public int TransitBillMethod { get; set; }
+        public string TransitBillAddress { get; set; }
+        public int TransitBillSettlement { get; set; }
+        public int TransitBillInitializationTimeStamp { get; set; }
+        public int TransitBillSignTimeStamp { get; set; }
+        public int TransitBillStatus { get; set; }
 
         private void CloneThis(TransitBill f_TransitBill)
         {

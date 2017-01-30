@@ -33,8 +33,8 @@ namespace PiaoliuHKOperator.Views
 
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-            string FilterString = getFilterStringinPage();
-            CustomerList_Instance.findAllCustomerbyFilter(FilterString);
+            List<string> FilterArray = getFilterArrayinPage();
+            CustomerList_Instance.findAllCustomerbyFilter(FilterArray);
 
             for (int i = 0; i < CustomerList_Instance.CustomerItemList.Count; i++)
             {
@@ -55,31 +55,26 @@ namespace PiaoliuHKOperator.Views
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(CustomerDetailsPage), CustomerDetails_Instance);
         }
-        private string getFilterStringinPage()
+        private List<string> getFilterArrayinPage()
         {
-            string FilterString = "";
-            if (CustomerID_TextBox.Text != "CustomerID" && CustomerID_TextBox.Text != "")
+            List<string> FilterArray = new List<string>();
+            if (CustomerID_TextBox.Text != "")
             {
-                FilterString += "CustomerID = " + CustomerID_TextBox.Text;
+                FilterArray.Add("CustomerID = \'" + CustomerID_TextBox.Text + "\'");
             }
-            if (CustomerSelfMobile_TextBox.Text != "SelfMobile" && CustomerSelfMobile_TextBox.Text != "")
+            if (CustomerSelfMobile_TextBox.Text != "")
             {
-                FilterString += "CustomerSelfMobile = " + CustomerSelfMobile_TextBox.Text;
+                FilterArray.Add("CustomerSelfMobile = \'" + CustomerSelfMobile_TextBox.Text + "\'");
             }
-            if (CustomerRealName_TextBox.Text != "RealName" && CustomerRealName_TextBox.Text != "")
+            if (CustomerRealName_TextBox.Text != "")
             {
-                FilterString += "CustomerRealName = " + CustomerRealName_TextBox.Text;
+                FilterArray.Add("CustomerRealName = \'" + CustomerRealName_TextBox.Text + "\'");
             }
-            if (CustomerEmail_TextBox.Text != "Email" && CustomerEmail_TextBox.Text != "")
+            if (CustomerEmail_TextBox.Text != "")
             {
-                FilterString += "CustomerEmail = " + CustomerEmail_TextBox.Text;
+                FilterArray.Add("CustomerEmail = \'" + CustomerEmail_TextBox.Text + "\'");
             }
-            if (FilterString != "")
-            {
-                FilterString = "Where " + FilterString;
-            }
-            return FilterString;
-
+            return FilterArray;
         }
     }
 }

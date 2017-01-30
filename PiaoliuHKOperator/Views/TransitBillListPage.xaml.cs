@@ -47,8 +47,8 @@ namespace PiaoliuHKOperator.Views
         }
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-            string FilterString = getFilterStringinPage();
-            TransitBillList_Instance.findAllTransitBillbyFilter(FilterString);
+            List<string> FilterArray = getFilterArrayinPage();
+            TransitBillList_Instance.findAllTransitBillbyFilter(FilterArray);
 
             for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
             {
@@ -66,26 +66,22 @@ namespace PiaoliuHKOperator.Views
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(TransitBillDetailsPage), TransitBillDetails_Instance);
         }
-        private string getFilterStringinPage()
+        private List<string> getFilterArrayinPage()
         {
-            string FilterString = "";
+            List<string> FilterArray = new List<string>();
             if (TransitBillSerialID_TextBox.Text != "")
             {
-                FilterString = "TransitBillSerialID = " + TransitBillSerialID_TextBox.Text;
+                FilterArray.Add("TransitBillSerialID = \'" + TransitBillSerialID_TextBox.Text + "\'");
             }
             if (TransitBillOwnerID_TextBox.Text != "")
             {
-                FilterString = "TransitBillOwnerID = " + TransitBillOwnerID_TextBox.Text;
+                FilterArray.Add("TransitBillOwnerID = \'" + TransitBillOwnerID_TextBox.Text + "\'");
             }
             if (TransitBillStatus_TextBox.Text != "")
             {
-                FilterString = "TransitBillStatus = " + TransitBillStatus_TextBox.Text;
+                FilterArray.Add("TransitBillStatus = \'" + TransitBillStatus_TextBox.Text + "\'");
             }
-            if (FilterString != "")
-            {
-                FilterString = "Where " + FilterString;
-            }
-            return FilterString;
+            return FilterArray;
         }
     }
 }

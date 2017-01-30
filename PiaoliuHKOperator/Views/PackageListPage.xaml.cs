@@ -3,6 +3,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using PiaoliuHKOperator.Models.engine;
 using PiaoliuHKOperator.Models.core;
+using System.Collections.Generic;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -36,8 +37,8 @@ namespace PiaoliuHKOperator.Views
         }
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
-            string FilterString = getFilterStringinPage();
-            PackageList_Instance.findAllPackagebyFilter(FilterString);
+            List<string> FilterArray = getFilterArrayinPage();
+            PackageList_Instance.findAllPackagebyFilter(FilterArray);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
@@ -56,28 +57,22 @@ namespace PiaoliuHKOperator.Views
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
         }
 
-        private string getFilterStringinPage()
+        private List<string> getFilterArrayinPage()
         {
-            string FilterString = "";
-            if (PackageSerialID_TextBox.Text != "SerialID" && PackageSerialID_TextBox.Text != "")
+            List<string> FilterArray = new List<string>();
+            if (PackageSerialID_TextBox.Text != "")
             {
-                FilterString += "PackageSerialID = " + PackageSerialID_TextBox.Text;
+                FilterArray.Add("PackageSerialID = \'" + PackageSerialID_TextBox.Text + "\'");
             }
-            if (PackageOwnerID_TextBox.Text != "OwnerID" && PackageOwnerID_TextBox.Text != "")
+            if (PackageOwnerID_TextBox.Text != "")
             {
-                FilterString += "PackageOwnerID = " + PackageOwnerID_TextBox.Text;
+                FilterArray.Add("PackageOwnerID = \'" + PackageOwnerID_TextBox.Text + "\'");
             }
-            if (PackageExpressTrackNumber_TextBox.Text != "ExpressNum" && PackageExpressTrackNumber_TextBox.Text != "")
+            if (PackageExpressTrackNumber_TextBox.Text != "")
             {
-                FilterString += "PackageExpressTrackNumber = " + PackageExpressTrackNumber_TextBox.Text;
+                FilterArray.Add("PackageExpressTrackNumber = \'" + PackageExpressTrackNumber_TextBox.Text + "\'");
             }
-
-            if (FilterString != "")
-            {
-                FilterString = "Where " + FilterString;
-            }
-            return FilterString;
-
+            return FilterArray;
         }
     }
 }

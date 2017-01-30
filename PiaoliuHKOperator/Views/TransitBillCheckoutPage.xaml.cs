@@ -35,7 +35,7 @@ namespace PiaoliuHKOperator.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             //string FilterString = getFilterStringinPage();
-            string FilterString = "TransitBillStatus = 1";
+            string FilterString = "where TransitBillStatus = 1";
             TransitBillList_Instance.findAllTransitBillbyFilter(FilterString);
 
             for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
@@ -49,8 +49,8 @@ namespace PiaoliuHKOperator.Views
         {
             TransitBill TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
 
-            string FilterString = "TransitBillStatus = 1";
-            PackageList_Instance.findAllPackagebyFilter(FilterString);
+            string FilterString = "where PackageRelatedTransitBillSerialID = " + TransitBill_Instance.TransitBillSerialID;
+            //PackageList_Instance.findAllPackagebyFilter(FilterString);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {

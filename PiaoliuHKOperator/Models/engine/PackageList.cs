@@ -10,11 +10,11 @@ namespace PiaoliuHKOperator.Models.engine
 {
     class PackageList
     {
-        public String ExcuteCommand;
+        public List<string> SQLExecuteArray;
         public List<Package> PackageItemList = new List<Package>();
-        public void findAllPackagebyFilter(string FilterString)
+        public void findAllPackagebyFilter(List<string> FilterArray)
         {
-            this.ExcuteCommand = FilterString;
+            this.SQLExecuteArray = FilterArray;
 
             SyncClass SyncClass_Instance = new SyncClass("PackageList", "findAllPackagebyFilter", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
@@ -23,12 +23,10 @@ namespace PiaoliuHKOperator.Models.engine
             {
                 CloneThis(JsonConvert.DeserializeObject<PackageList>(SyncClass_Instance.SyncJsonString));
             }
-
-
-
         }
         private void CloneThis(PackageList f_PackageList)
         {
+            this.SQLExecuteArray = f_PackageList.SQLExecuteArray;
             this.PackageItemList = f_PackageList.PackageItemList;
         }
     }

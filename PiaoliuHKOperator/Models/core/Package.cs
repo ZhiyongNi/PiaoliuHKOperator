@@ -41,6 +41,20 @@ namespace PiaoliuHKOperator.Models.core
         private void CloneThis(Package f_Package)
         {
             this.PackageID = f_Package.PackageID;
+            this.PackageSerialID = f_Package.PackageSerialID;
+            this.PackageOwnerID = f_Package.PackageOwnerID;
+            this.PackageOwnerMobile = f_Package.PackageOwnerMobile;
+            this.PackageExpressCompany = f_Package.PackageExpressCompany;
+            this.PackageExpressTrackNumber = f_Package.PackageExpressTrackNumber;
+            this.PackageSnapshot = f_Package.PackageSnapshot;
+            this.PackageWeight = f_Package.PackageWeight;
+            this.PackageFee = f_Package.PackageFee;
+            this.PackageInTimeStamp = f_Package.PackageInTimeStamp;
+            this.PackageOutTimeStamp = f_Package.PackageOutTimeStamp;
+            this.PackageStatus = f_Package.PackageStatus;
+            this.PackageRemarks = f_Package.PackageRemarks;
+            this.PackageWorkerID = f_Package.PackageWorkerID;
+            this.PackageRelatedTransitBillSerialID = f_Package.PackageRelatedTransitBillSerialID;
         }
     }
 }
