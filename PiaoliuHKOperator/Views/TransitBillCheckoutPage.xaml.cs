@@ -39,31 +39,11 @@ namespace PiaoliuHKOperator.Views
             PackageList_Instance = new PackageList();
             Package_Instance = new Package();
         }
-        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
-        {
-            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
-
-            List<string> FilterArray = new List<string>();
-            FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findAllPackagebyFilter(FilterArray);
-
-            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
-            {
-                ListViewItem PackageListViewItem = new ListViewItem();
-                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
-                PackageSelecting_ListView.Items.Add(PackageListViewItem);
-            }
-        }
-
-        private void Packup_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void SearchTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
             List<string> FilterArray = getFilterArrayinPage();
-            TransitBillList_Instance.findAllTransitBillbyFilter(FilterArray);
+            TransitBillList_Instance.findINSYSTransitBillbyFilter(FilterArray);
 
             for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
             {
@@ -82,40 +62,53 @@ namespace PiaoliuHKOperator.Views
             return FilterArray;
         }
 
-        private async void PrintQR_Button_Click(object sender, RoutedEventArgs e)
+
+        private void IgnorePackage_Button_Click(object sender, RoutedEventArgs e)
         {
-            /*if (Windows.Graphics.Printing.PrintManager.IsSupported())
-            {
-                try
-                {
-                    // Show print UI
-                    await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
+            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
 
-                }
-                catch
-                {
-                    // Printing cannot proceed at this time
-                    ContentDialog noPrintingDialog = new ContentDialog()
-                    {
-                        Title = "Printing error",
-                        Content = "\nSorry, printing can' t proceed at this time.",
-                        PrimaryButtonText = "OK"
-                    };
-                    await noPrintingDialog.ShowAsync();
-                }
+            List<string> FilterArray = new List<string>();
+            FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
+            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+
+            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            {
+                ListViewItem PackageListViewItem = new ListViewItem();
+                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
+                PackageSelecting_ListView.Items.Add(PackageListViewItem);
             }
-            else
-            {
-                // Printing is not supported on this device
-                ContentDialog noPrintingDialog = new ContentDialog()
-                {
-                    Title = "Printing not supported",
-                    Content = "\nSorry, printing is not supported on this device.",
-                    PrimaryButtonText = "OK"
-                };
-                await noPrintingDialog.ShowAsync();
-            }*/
+        }
 
+        private void PackupTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        {
+            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
+
+            List<string> FilterArray = new List<string>();
+            FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
+            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+
+            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            {
+                ListViewItem PackageListViewItem = new ListViewItem();
+                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
+                PackageSelecting_ListView.Items.Add(PackageListViewItem);
+            }
+        }
+
+        private void CSVDownload_Button_Click(object sender, RoutedEventArgs e)
+        {
+            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
+
+            List<string> FilterArray = new List<string>();
+            FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
+            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+
+            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            {
+                ListViewItem PackageListViewItem = new ListViewItem();
+                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
+                PackageSelecting_ListView.Items.Add(PackageListViewItem);
+            }
         }
     }
 }
