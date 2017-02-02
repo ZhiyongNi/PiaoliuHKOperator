@@ -106,6 +106,8 @@
     <Compile Include="Models\core\Porter.cs" />
     <Compile Include="Models\core\TransitBill.cs" />
     <Compile Include="Models\core\User.cs" />
+    <Compile Include="Models\engine\DataCSV\CheckoutCSVItem.cs" />
+    <Compile Include="Models\engine\DataCSV\DataToCSV.cs" />
     <Compile Include="Models\engine\CustomerList.cs" />
     <Compile Include="Models\engine\PackageList.cs" />
     <Compile Include="Models\network\SyncClass.cs" />
@@ -132,6 +134,9 @@
     </Compile>
     <Compile Include="Views\RegisterPackagePage.xaml.cs">
       <DependentUpon>RegisterPackagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransitBillinOrderPage.xaml.cs">
+      <DependentUpon>TransitBillinOrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TransitBillDetailsPage.xaml.cs">
       <DependentUpon>TransitBillDetailsPage.xaml</DependentUpon>
@@ -195,6 +200,10 @@
     <Page Include="Views\RegisterPackagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TransitBillinOrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\TransitBillDetailsPage.xaml">
       <SubType>Designer</SubType>

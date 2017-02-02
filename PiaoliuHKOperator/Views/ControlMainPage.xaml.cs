@@ -68,5 +68,15 @@ namespace PiaoliuHKOperator.Views
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(TransitBillCheckoutPage));
         }
+
+        private void TransitBillinOrderList_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RestoreTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

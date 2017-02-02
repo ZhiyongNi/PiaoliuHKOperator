@@ -76,7 +76,9 @@ namespace PiaoliuHKOperator
             new SelfPickupAddress_Struct { ID = 10, ChineseName = "葵兴自提点", EnglishName = "KwaiHing",Address = "葵兴自提点（待填写）" },
             new SelfPickupAddress_Struct { ID = 11, ChineseName = "沙田自提点", EnglishName = "ShaTin",Address = "沙田自提点（待填写）" },
             new SelfPickupAddress_Struct { ID = 12, ChineseName = "大围自提点", EnglishName = "TaiWai",Address = "大围自提点（待填写）" },
-            new SelfPickupAddress_Struct { ID = 13, ChineseName = "湾仔四合院自提点", EnglishName = "WanChai",Address = "湾仔四合院自提点（待填写）" }
+            new SelfPickupAddress_Struct { ID = 13, ChineseName = "湾仔四合院自提点", EnglishName = "WanChai",Address = "湾仔四合院自提点（待填写）" },
+            new SelfPickupAddress_Struct { ID = 14, ChineseName = "十二味麻辣自提点", EnglishName = "ShiErWei",Address = "十二味麻辣自提点（待填写）" },
+            new SelfPickupAddress_Struct { ID = 99, ChineseName = "未定义", EnglishName = "undefined",Address = "未定义（待填写）" }
         };
     }
 }

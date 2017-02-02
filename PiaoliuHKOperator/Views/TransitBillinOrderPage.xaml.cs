@@ -16,11 +16,6 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.Storage.Pickers;
-using Windows.Storage;
-using Windows.Storage.Provider;
-using System.Text;
-using PiaoliuHKOperator.Models.engine.DataCSV;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -29,22 +24,20 @@ namespace PiaoliuHKOperator.Views
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class TransitBillCheckoutPage : Page
+    public sealed partial class TransitBillinOrderPage : Page
     {
-        List<CheckoutCSVItem> CheckoutCSVItemList;
         TransitBillList TransitBillList_Instance;
         TransitBill TransitBill_Instance;
         PackageList PackageList_Instance;
         Package Package_Instance;
 
-        public TransitBillCheckoutPage()
+        public TransitBillinOrderPage()
         {
             this.InitializeComponent();
             TransitBillList_Instance = new TransitBillList();
             TransitBill_Instance = new TransitBill();
             PackageList_Instance = new PackageList();
             Package_Instance = new Package();
-            CheckoutCSVItemList = new List<CheckoutCSVItem>();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -66,7 +59,6 @@ namespace PiaoliuHKOperator.Views
             {
                 ListViewItem TransitBillListViewItem = new ListViewItem();
                 TransitBillListViewItem.Content = TransitBillList_Instance.TransitBillItemList[i].TransitBillSerialID;
-                //TransitBillListViewItem.Tag = TransitBillList_Instance.TransitBillItemList[i].TransitBillSerialID;
                 TransitBillSelecting_ListView.Items.Add(TransitBillListViewItem);
             }
         }
@@ -78,6 +70,7 @@ namespace PiaoliuHKOperator.Views
             {
                 FilterArray.Add("TransitBillAddress = \'" + ComboBoxItem_Selected.Tag + "\'");
             }
+
             return FilterArray;
         }
 
@@ -86,7 +79,7 @@ namespace PiaoliuHKOperator.Views
         {
             TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
 
-            /*List<string> FilterArray = new List<string>();
+            List<string> FilterArray = new List<string>();
             FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
             PackageList_Instance.findAllPackagebyFilter(FilterArray);
 
@@ -95,7 +88,7 @@ namespace PiaoliuHKOperator.Views
                 ListViewItem PackageListViewItem = new ListViewItem();
                 PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
                 PackageSelecting_ListView.Items.Add(PackageListViewItem);
-            }*/
+            }
         }
 
         private void PackupTransitBill_Button_Click(object sender, RoutedEventArgs e)
@@ -114,57 +107,13 @@ namespace PiaoliuHKOperator.Views
             }
         }
 
-        private async void CSVDownload_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-            ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)TransitBillAddress_ComboBox.SelectedItem;
-
-            foreach (TransitBill TransitBill_Cell in this.TransitBillList_Instance.TransitBillItemList)
-            {
-                CheckoutCSVItem CheckoutCSVItem_Cell = new CheckoutCSVItem(TransitBill_Cell);
-                CheckoutCSVItem_Cell.CompleteSelfInfo();
-                CheckoutCSVItemList.Add(CheckoutCSVItem_Cell);
-            }
-            string CSVContent = DataToCSV.parseListToCSV(this.CheckoutCSVItemList);
-
-            FileSavePicker FileSavePicker_Instance = new FileSavePicker();
-            FileSavePicker_Instance.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
-
-            FileSavePicker_Instance.FileTypeChoices.Add("CSV（逗号分隔）", new List<string>() { ".csv" });
-            FileSavePicker_Instance.SuggestedFileName = DateTime.Now.ToString("yyyyMMdd") + ".SZ." + (string)ComboBoxItem_Selected.Content + "_List";
-
-
-            StorageFile TargetCSVFile = await FileSavePicker_Instance.PickSaveFileAsync();
-            if (TargetCSVFile != null)
-            {
-                // 在用户完成更改并调用CompleteUpdatesAsync之前，阻止对文件的更新
-                CachedFileManager.DeferUpdates(TargetCSVFile);
-
-                await FileIO.WriteBytesAsync(TargetCSVFile, Encoding.ASCII.GetBytes(CSVContent));
-                // 当完成更改时，其他应用程序才可以对该文件进行更改。
-                FileUpdateStatus updateStatus = await CachedFileManager.CompleteUpdatesAsync(TargetCSVFile);
-                if (updateStatus == FileUpdateStatus.Complete)
-                {
-                    textBlock.Text = TargetCSVFile.Name + " 已经保存好了。";
-                }
-                else
-                {
-                    textBlock.Text = TargetCSVFile.Name + " 保存失败了。";
-                }
-            }
-            else
-            {
-                textBlock.Text = "保存操作被取消。";
-            }
-        }
-
-        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        private void CSVDownload_Button_Click(object sender, RoutedEventArgs e)
         {
             TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
 
             List<string> FilterArray = new List<string>();
             FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findINSYSPackagebyFilter(FilterArray);
+            PackageList_Instance.findAllPackagebyFilter(FilterArray);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
