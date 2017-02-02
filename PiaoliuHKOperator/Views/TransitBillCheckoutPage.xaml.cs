@@ -31,7 +31,7 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class TransitBillCheckoutPage : Page
     {
-        List<CheckoutCSVItem> CheckoutCSVItemList;
+        List<TransitBillCheckoutCSVItem> TransitBillCheckoutCSVItem_List;
         TransitBillList TransitBillList_Instance;
         TransitBill TransitBill_Instance;
         PackageList PackageList_Instance;
@@ -44,7 +44,7 @@ namespace PiaoliuHKOperator.Views
             TransitBill_Instance = new TransitBill();
             PackageList_Instance = new PackageList();
             Package_Instance = new Package();
-            CheckoutCSVItemList = new List<CheckoutCSVItem>();
+            TransitBillCheckoutCSVItem_List = new List<TransitBillCheckoutCSVItem>();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -121,11 +121,11 @@ namespace PiaoliuHKOperator.Views
 
             foreach (TransitBill TransitBill_Cell in this.TransitBillList_Instance.TransitBillItemList)
             {
-                CheckoutCSVItem CheckoutCSVItem_Cell = new CheckoutCSVItem(TransitBill_Cell);
+                TransitBillCheckoutCSVItem CheckoutCSVItem_Cell = new TransitBillCheckoutCSVItem(TransitBill_Cell);
                 CheckoutCSVItem_Cell.CompleteSelfInfo();
-                CheckoutCSVItemList.Add(CheckoutCSVItem_Cell);
+                TransitBillCheckoutCSVItem_List.Add(CheckoutCSVItem_Cell);
             }
-            string CSVContent = DataToCSV.parseListToCSV(this.CheckoutCSVItemList);
+            string CSVContent = DataToCSV.parseListToCSV(this.TransitBillCheckoutCSVItem_List);
 
             FileSavePicker FileSavePicker_Instance = new FileSavePicker();
             FileSavePicker_Instance.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;

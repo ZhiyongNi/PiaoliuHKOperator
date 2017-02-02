@@ -18,7 +18,7 @@ namespace PiaoliuHKOperator.Models.engine.DataCSV
         {
             IList DataList = f_DataList;
             StringBuilder CSVString = new StringBuilder();
-            TypeInfo propertyInfos = typeof(CheckoutCSVItem).GetTypeInfo();
+            TypeInfo propertyInfos = typeof(TransitBillinOrderCSVItem).GetTypeInfo();
 
             if (true)//includeHeaderLine
             {

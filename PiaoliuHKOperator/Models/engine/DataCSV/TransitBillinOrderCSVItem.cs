@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PiaoliuHKOperator.Models.engine.DataCSV
 {
-    class CheckoutCSVItem
+    class TransitBillinOrderCSVItem
     {
         public string TransitBillSerialID { get; set; }
         public int TransitBillOwnerID { get; set; }
@@ -30,9 +30,9 @@ namespace PiaoliuHKOperator.Models.engine.DataCSV
         public float TransitBillPrice { get; set; }
         public string TransitBillAddress { get; set; }
 
-        public CheckoutCSVItem()
+        public TransitBillinOrderCSVItem()
         { }
-        public CheckoutCSVItem(TransitBill f_TransitBill)
+        public TransitBillinOrderCSVItem(TransitBill f_TransitBill)
         {
             this.TransitBillSerialID = f_TransitBill.TransitBillSerialID;
             this.TransitBillOwnerID = f_TransitBill.TransitBillOwnerID;
@@ -47,10 +47,10 @@ namespace PiaoliuHKOperator.Models.engine.DataCSV
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {
-                CloneThis(JsonConvert.DeserializeObject<CheckoutCSVItem>(SyncClass_Instance.SyncJsonString));
+                CloneThis(JsonConvert.DeserializeObject<TransitBillinOrderCSVItem>(SyncClass_Instance.SyncJsonString));
             }
         }
-        private void CloneThis(CheckoutCSVItem f_CheckoutCSVItem)
+        private void CloneThis(TransitBillinOrderCSVItem f_CheckoutCSVItem)
         {
             this.CustomerInfo_List = f_CheckoutCSVItem.CustomerInfo_List;
             this.PackageInfo_List = f_CheckoutCSVItem.PackageInfo_List;
