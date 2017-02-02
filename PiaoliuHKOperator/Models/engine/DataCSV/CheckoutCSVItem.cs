@@ -13,10 +13,19 @@ namespace PiaoliuHKOperator.Models.engine.DataCSV
     {
         public string TransitBillSerialID { get; set; }
         public int TransitBillOwnerID { get; set; }
-        public string CustomerRealName { get; set; }
-        public string CustomerSelfMobile { get; set; }
-        public List<string> TransitBillRelatedPackageSerialID_List { get; set; }
-        public List<float> PackageWeight_List { get; set; }
+        public class CustomerInfo
+        {
+            public string CustomerRealName { get; set; }
+            public string CustomerSelfMobile { get; set; }
+        }
+        public class PackageInfo
+        {
+            public string PackageSerialID { get; set; }
+            public float PackageWeight { get; set; }
+        }
+        public List<CustomerInfo> CustomerInfo_List { get; set; }
+        public List<PackageInfo> PackageInfo_List { get; set; }
+
         public int TransitBillRelatedPackageQuantity { get; set; }
         public float TransitBillPrice { get; set; }
         public string TransitBillAddress { get; set; }
@@ -27,7 +36,6 @@ namespace PiaoliuHKOperator.Models.engine.DataCSV
         {
             this.TransitBillSerialID = f_TransitBill.TransitBillSerialID;
             this.TransitBillOwnerID = f_TransitBill.TransitBillOwnerID;
-            //this.TransitBillRelatedPackageSerialID = f_TransitBill.TransitBillRelatedPackageSerialID;
             this.TransitBillRelatedPackageQuantity = f_TransitBill.TransitBillRelatedPackageQuantity;
             this.TransitBillPrice = f_TransitBill.TransitBillPrice;
             this.TransitBillAddress = f_TransitBill.TransitBillAddress;
@@ -44,10 +52,8 @@ namespace PiaoliuHKOperator.Models.engine.DataCSV
         }
         private void CloneThis(CheckoutCSVItem f_CheckoutCSVItem)
         {
-            this.CustomerRealName = f_CheckoutCSVItem.CustomerRealName;
-            this.CustomerSelfMobile = f_CheckoutCSVItem.CustomerSelfMobile;
-            this.TransitBillRelatedPackageSerialID_List = f_CheckoutCSVItem.TransitBillRelatedPackageSerialID_List;
-            this.PackageWeight_List = f_CheckoutCSVItem.PackageWeight_List;
+            this.CustomerInfo_List = f_CheckoutCSVItem.CustomerInfo_List;
+            this.PackageInfo_List = f_CheckoutCSVItem.PackageInfo_List;
         }
     }
 }
