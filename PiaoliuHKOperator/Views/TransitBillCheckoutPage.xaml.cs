@@ -140,7 +140,7 @@ namespace PiaoliuHKOperator.Views
                 // 在用户完成更改并调用CompleteUpdatesAsync之前，阻止对文件的更新
                 CachedFileManager.DeferUpdates(TargetCSVFile);
 
-                await FileIO.WriteBytesAsync(TargetCSVFile, Encoding.ASCII.GetBytes(CSVContent));
+                await FileIO.WriteBytesAsync(TargetCSVFile, Encoding.UTF8.GetBytes(CSVContent));
                 // 当完成更改时，其他应用程序才可以对该文件进行更改。
                 FileUpdateStatus updateStatus = await CachedFileManager.CompleteUpdatesAsync(TargetCSVFile);
                 if (updateStatus == FileUpdateStatus.Complete)
