@@ -17,6 +17,6 @@
         <Button x:Name="CSVDownload_Button" Content="下载CSV" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Click="CSVDownload_Button_Click" RenderTransformOrigin="0.45,-0.719"/>
         <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Margin="10,47,0,10" Width="225" Background="Gray"/>
         <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Margin="295,47,0,10" Width="225" Background="Gray"/>
-        <CheckBox x:Name="checkBox" Content="All" HorizontalAlignment="Left" Margin="525,318,-5,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ItemAllSelected_CheckBox" Content="全选" HorizontalAlignment="Left" Margin="525,318,-5,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

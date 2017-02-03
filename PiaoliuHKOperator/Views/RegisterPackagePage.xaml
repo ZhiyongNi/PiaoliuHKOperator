@@ -9,11 +9,11 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="SubmitDetails_Button" Content="提交详情" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top" Click="SubmitDetails_Button_Click"/>
-        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" LostFocus="PackageExpressTrackNumber_TextBox_LostFocus" PlaceholderText="运单号"/>
-        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="165,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" PlaceholderText="快递公司"/>
-        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" PlaceholderText="OwnerMobile"/>
-        <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="165,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip="" Width="150" PlaceholderText="OwnerName"/>
+        <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" LostFocus="PackageExpressTrackNumber_TextBox_LostFocus" PlaceholderText="运单号"/>
+        <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="165,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PlaceholderText="快递公司"/>
+        <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PlaceholderText="OwnerMobile"/>
+        <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="165,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PlaceholderText="OwnerName"/>
         <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Height="480" Margin="10,150,0,0" VerticalAlignment="Top" Width="325" />
-        <CheckBox x:Name="Matched_CheckBox" Content="配对" HorizontalAlignment="Left" Margin="250,85,-10,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="Matched_CheckBox" Content="配对" HorizontalAlignment="Left" Margin="250,85,-10,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -3,6 +3,7 @@ using PiaoliuHKOperator.Models.core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,11 +13,12 @@ namespace PiaoliuHKOperator.Models.engine
     {
         public List<string> SQLExecuteArray;
         public List<Package> PackageItemList = new List<Package>();
-        public void findAllPackagebyFilter(List<string> FilterArray)
+        public void findALLPackagebyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
 
-            SyncClass SyncClass_Instance = new SyncClass("PackageList", "findAllPackagebyFilter", JsonConvert.SerializeObject(this));
+            //SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, "findALLPackagebyFilter", JsonConvert.SerializeObject(this));
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "findALLPackagebyFilter", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
 
             if (SyncClass_Instance.SyncSucceed)

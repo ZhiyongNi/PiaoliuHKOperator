@@ -27,16 +27,32 @@ namespace PiaoliuHKOperator.Models.core
         public int PackageWorkerID { get; set; }
         public string PackageRelatedTransitBillSerialID { get; set; }
 
+        public List<string> f_Argument_List = new List<string>();
+
 
         public void findPackagebyExpressTrackNumber(string f_PackageExpressTrackNumber)
         {
             this.PackageExpressTrackNumber = f_PackageExpressTrackNumber;
-            SyncClass SyncClass_Instance = new SyncClass("Package", "findPackagebyExpressTrackNumber", JsonConvert.SerializeObject(this));
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "findPackagebyExpressTrackNumber", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
             }
+        }
+        public void updatePackageItemInfo(List<string> f_Argument_List)
+        {
+
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updatePackageItemInfo", JsonConvert.SerializeObject(this));
+            SyncClass_Instance.SyncbySocket();
+            if (SyncClass_Instance.SyncSucceed)
+            {
+                CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
+            }
+
+
+
+
         }
         private void CloneThis(Package f_Package)
         {

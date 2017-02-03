@@ -38,7 +38,7 @@ namespace PiaoliuHKOperator.Views
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
             List<string> FilterArray = getFilterArrayinPage();
-            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+            PackageList_Instance.findALLPackagebyFilter(FilterArray);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {

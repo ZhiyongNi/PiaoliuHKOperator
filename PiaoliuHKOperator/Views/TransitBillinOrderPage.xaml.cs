@@ -80,7 +80,7 @@ namespace PiaoliuHKOperator.Views
 
             List<string> FilterArray = new List<string>();
             FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+            PackageList_Instance.findALLPackagebyFilter(FilterArray);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
@@ -96,7 +96,7 @@ namespace PiaoliuHKOperator.Views
 
             List<string> FilterArray = new List<string>();
             FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+            PackageList_Instance.findALLPackagebyFilter(FilterArray);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {
@@ -112,7 +112,7 @@ namespace PiaoliuHKOperator.Views
 
             List<string> FilterArray = new List<string>();
             FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+            PackageList_Instance.findALLPackagebyFilter(FilterArray);
 
             for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
             {

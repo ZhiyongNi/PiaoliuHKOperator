@@ -30,27 +30,37 @@ namespace PiaoliuHKOperator.Views
         public RegisterPackagePage()
         {
             this.InitializeComponent();
-            PackageList_Instance = new PackageList();
         }
 
-        
+
         private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-             PackageList_Instance.findAllPackagebyFilter(getFilterArrayinPage());
+            PackageList_Instance = new PackageList();
+            PackageList_Instance.findUNMATCHEDPackagebyFilter(getFilterArrayinPage());
 
-            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            if (PackageList_Instance.PackageItemList.Count != 0)
             {
-                ListViewItem PackageListViewItem = new ListViewItem();
-                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
-                PackageSelecting_ListView.Items.Add(PackageListViewItem);
+                Matched_CheckBox.IsChecked = true;
+                for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+                {
+                    ListViewItem PackageListViewItem = new ListViewItem();
+                    PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
+                    PackageListViewItem.Tag = i;
+                    PackageSelecting_ListView.Items.Add(PackageListViewItem);
+                }
+                PackageSelecting_ListView.SelectedIndex = 0;
             }
+
         }
 
         private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)
         {
             Package PackageDetails_Instance = new Package();
-            PackageDetails_Instance = this.PackageList_Instance.PackageItemList[PackageSelecting_ListView.SelectedIndex];
-            //PackageSelecting_ListView.SelectedIndex();
+            if (Matched_CheckBox.IsChecked == true)
+            {
+                int IndexTag = (int)((ListViewItem)PackageSelecting_ListView.SelectedItem).Tag;
+                PackageDetails_Instance = this.PackageList_Instance.PackageItemList[IndexTag];
+            }
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
         }

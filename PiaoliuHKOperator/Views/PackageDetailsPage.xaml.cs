@@ -52,9 +52,16 @@ namespace PiaoliuHKOperator.Views
 
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.PackageDetails_Instance.updatePackageItemInfo(getArgumentArrayinPage());
         }
 
+        private List<string> getArgumentArrayinPage()
+        {
+            List<string> ArgumentArray = new List<string>();
+
+            return ArgumentArray;
+
+        }
         private void CustomerOwnerList_Button_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
@@ -65,6 +72,16 @@ namespace PiaoliuHKOperator.Views
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(TransitBillListPage), this.PackageDetails_Instance);
+        }
+
+        private void PackageID_CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            PackageID_TextBox.IsEnabled = true;
+        }
+
+        private void PackageID_CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            PackageID_TextBox.IsEnabled = false;
         }
     }
 }
