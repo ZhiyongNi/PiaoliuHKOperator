@@ -52,7 +52,7 @@ namespace PiaoliuHKOperator.Views
 
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.PackageDetails_Instance.updatePackageItemInfo(getArgumentArrayinPage());
+            this.PackageDetails_Instance.updatePackageArgumentInfo(getArgumentArrayinPage());
         }
 
         private List<string> getArgumentArrayinPage()

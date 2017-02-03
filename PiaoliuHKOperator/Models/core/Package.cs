@@ -40,10 +40,10 @@ namespace PiaoliuHKOperator.Models.core
                 CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
             }
         }
-        public void updatePackageItemInfo(List<string> f_Argument_List)
+        public void updatePackageArgumentInfo(List<string> f_Argument_List)
         {
 
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updatePackageItemInfo", JsonConvert.SerializeObject(this));
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updatePackageArgumentInfo", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {
