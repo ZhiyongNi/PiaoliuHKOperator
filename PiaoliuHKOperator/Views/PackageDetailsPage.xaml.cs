@@ -60,27 +60,80 @@ namespace PiaoliuHKOperator.Views
             List<string> ArgumentArray = new List<string>();
             if (PackageID_CheckBox.IsChecked == true)
             {
-                this.PackageDetails_Instance.PackageID = int.Parse(PackageID_TextBox.Text);
-                ArgumentArray.Add("PackageID");
+                //this.PackageDetails_Instance.PackageID = int.Parse(PackageID_TextBox.Text);
+                ArgumentArray.Add("PackageID=" + PackageID_TextBox.Text);
             }
             if (PackageSerialID_CheckBox.IsChecked == true)
             {
-                this.PackageDetails_Instance.PackageSerialID = PackageSerialID_TextBox.Text;
-                ArgumentArray.Add("PackageSerialID");
+                //this.PackageDetails_Instance.PackageSerialID = PackageSerialID_TextBox.Text;
+                ArgumentArray.Add("PackageSerialID=" + PackageSerialID_TextBox.Text);
             }
             if (PackageOwnerID_CheckBox.IsChecked == true)
             {
-                this.PackageDetails_Instance.PackageOwnerID = int.Parse(PackageOwnerID_TextBox.Text);
-                ArgumentArray.Add("PackageOwnerID");
+                //this.PackageDetails_Instance.PackageOwnerID = int.Parse(PackageOwnerID_TextBox.Text);
+                ArgumentArray.Add("PackageOwnerID=" + PackageOwnerID_TextBox.Text);
             }
             if (PackageOwnerMobile_CheckBox.IsChecked == true)
             {
-                this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
-                ArgumentArray.Add("PackageID");
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageOwnerMobile=" + PackageOwnerMobile_TextBox.Text);
             }
-
+            if (PackageExpressCompany_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageExpressCompany=" + PackageExpressCompany_TextBox.Text);
+            }
+            if (PackageExpressTrackNumber_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageExpressTrackNumber=" + PackageExpressTrackNumber_TextBox.Text);
+            }
+            if (PackageSnapshot_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageSnapshot=" + PackageSnapshot_TextBox.Text);
+            }
+            if (PackageWeight_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageWeight=" + PackageWeight_TextBox.Text);
+            }
+            if (PackageFee_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageFee=" + PackageFee_TextBox.Text);
+            }
+            if (PackageInTimeStamp_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageInTimeStamp=" + PackageInTimeStamp_TextBox.Text);
+            }
+            if (PackageOutTimeStamp_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageOutTimeStamp=" + PackageOutTimeStamp_TextBox.Text);
+            }
+            if (PackageStatus_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageStatus=" + PackageStatus_TextBox.Text);
+            }
+            if (PackageRemarks_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageRemarks=" + PackageRemarks_TextBox.Text);
+            }
+            if (PackageWorkerID_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageWorkerID=" + PackageWorkerID_TextBox.Text);
+            }
+            if (PackageRelatedTransitBillSerialID_CheckBox.IsChecked == true)
+            {
+                //this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageRelatedTransitBillSerialID=" + PackageRelatedTransitBillSerialID_TextBox.Text);
+            }
             return ArgumentArray;
-
         }
         private void CustomerOwnerList_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -102,6 +155,30 @@ namespace PiaoliuHKOperator.Views
         private void PackageID_CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             PackageID_TextBox.IsEnabled = false;
+            PackageID_TextBox.Text = this.PackageDetails_Instance.PackageID.ToString();
+        }
+
+        private void PackageSerialID_CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            PackageSerialID_TextBox.IsEnabled = true;
+        }
+
+        private void PackageSerialID_CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            PackageSerialID_TextBox.IsEnabled = false;
+            PackageSerialID_TextBox.Text = this.PackageDetails_Instance.PackageSerialID;
+        }
+
+        private void PackageOwnerID_CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            PackageOwnerID_TextBox.IsEnabled = true;
+        }
+
+        private void PackageOwnerID_CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            PackageOwnerID_TextBox.IsEnabled = false;
+            PackageOwnerID_TextBox.Text = this.PackageDetails_Instance.PackageOwnerID.ToString();
+
         }
     }
 }

@@ -42,6 +42,7 @@ namespace PiaoliuHKOperator.Models.core
         }
         public void updatePackageArgumentInfo(List<string> f_Argument_List)
         {
+            this.PackageCell_Argument_List = f_Argument_List;
             SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updatePackageArgumentInfo", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
