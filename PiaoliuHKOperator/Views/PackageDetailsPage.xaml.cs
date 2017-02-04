@@ -178,7 +178,17 @@ namespace PiaoliuHKOperator.Views
         {
             PackageOwnerID_TextBox.IsEnabled = false;
             PackageOwnerID_TextBox.Text = this.PackageDetails_Instance.PackageOwnerID.ToString();
+        }
 
+        private void PackageOwnerMobile_CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            PackageOwnerMobile_TextBox.IsEnabled = true;
+        }
+
+        private void PackageOwnerMobile_CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            PackageOwnerMobile_TextBox.IsEnabled = false;
+            PackageOwnerMobile_TextBox.Text = this.PackageDetails_Instance.PackageOwnerMobile;
         }
     }
 }
