@@ -27,7 +27,7 @@ namespace PiaoliuHKOperator.Models.core
         public int PackageWorkerID { get; set; }
         public string PackageRelatedTransitBillSerialID { get; set; }
 
-        public List<string> f_Argument_List = new List<string>();
+        public List<string> PackageCell_Argument_List = new List<string>();
 
 
         public void findPackagebyExpressTrackNumber(string f_PackageExpressTrackNumber)
@@ -48,10 +48,6 @@ namespace PiaoliuHKOperator.Models.core
             {
                 CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
             }
-
-
-
-
         }
         private void CloneThis(Package f_Package)
         {
