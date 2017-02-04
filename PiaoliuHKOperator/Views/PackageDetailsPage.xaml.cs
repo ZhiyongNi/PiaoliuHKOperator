@@ -58,6 +58,26 @@ namespace PiaoliuHKOperator.Views
         private List<string> getArgumentArrayinPage()
         {
             List<string> ArgumentArray = new List<string>();
+            if (PackageID_CheckBox.IsChecked == true)
+            {
+                this.PackageDetails_Instance.PackageID = int.Parse(PackageID_TextBox.Text);
+                ArgumentArray.Add("PackageID");
+            }
+            if (PackageSerialID_CheckBox.IsChecked == true)
+            {
+                this.PackageDetails_Instance.PackageSerialID = PackageSerialID_TextBox.Text;
+                ArgumentArray.Add("PackageSerialID");
+            }
+            if (PackageOwnerID_CheckBox.IsChecked == true)
+            {
+                this.PackageDetails_Instance.PackageOwnerID = int.Parse(PackageOwnerID_TextBox.Text);
+                ArgumentArray.Add("PackageOwnerID");
+            }
+            if (PackageOwnerMobile_CheckBox.IsChecked == true)
+            {
+                this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+                ArgumentArray.Add("PackageID");
+            }
 
             return ArgumentArray;
 
