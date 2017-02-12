@@ -42,7 +42,6 @@ namespace PiaoliuHKOperator.Views
             PackageList_Instance.findALLPackagebyFilter(FilterArray);
 
             PackageList_ListView.ItemsSource = PackageList_Instance.PackageItemList;
-            PackageList_ListView.HeaderTemplate.
         }
 
         private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)
