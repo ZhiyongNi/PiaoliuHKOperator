@@ -23,7 +23,20 @@
             <ComboBoxItem Content="100"/>
             <ComboBoxItem Content="500"/>
         </ComboBox>
-        <ListView x:Name="PackageList_ListView" HorizontalAlignment="Left" Height="481" Margin="10,149,0,0" VerticalAlignment="Top" Width="325">
+        <ListView x:Name="PackageList_ListView" Margin="10,150,10,10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding PackageSerialID}" FontWeight="Bold" Margin="12" Width="160"/>
+                        <TextBlock Text="{Binding PackageOwnerMobile}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageExpressCompany}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageExpressTrackNumber}" TextWrapping="NoWrap" Margin="12"  Width="160"/>
+                        <TextBlock Text="{Binding PackageWeight}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageStatus}" TextWrapping="NoWrap" Margin="12"  Width="120"/>
+                        <TextBlock Text="{Binding PackageRemarks}" TextWrapping="NoWrap" Margin="12"  Width="200"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>

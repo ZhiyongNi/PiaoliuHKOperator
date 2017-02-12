@@ -13,7 +13,21 @@
         <TextBox x:Name="PackageExpressCompany_TextBox" HorizontalAlignment="Left" Margin="165,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PlaceholderText="快递公司"/>
         <TextBox x:Name="PackageOwnerMobile_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PlaceholderText="OwnerMobile"/>
         <TextBox x:Name="PackageOwnerName_TextBox" HorizontalAlignment="Left" Margin="165,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" PlaceholderText="OwnerName"/>
-        <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Height="480" Margin="10,150,0,0" VerticalAlignment="Top" Width="325" />
         <CheckBox x:Name="Matched_CheckBox" Content="配对" HorizontalAlignment="Left" Margin="250,85,-10,0" VerticalAlignment="Top"/>
+        <ListView x:Name="PackageSelecting_ListView" Margin="10,150,10,10" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding PackageSerialID}" FontWeight="Bold" Margin="12" Width="160"/>
+                        <TextBlock Text="{Binding PackageOwnerMobile}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageExpressCompany}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageExpressTrackNumber}" TextWrapping="NoWrap" Margin="12"  Width="160"/>
+                        <TextBlock Text="{Binding PackageWeight}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageStatus}" TextWrapping="NoWrap" Margin="12"  Width="120"/>
+                        <TextBlock Text="{Binding PackageRemarks}" TextWrapping="NoWrap" Margin="12"  Width="200"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

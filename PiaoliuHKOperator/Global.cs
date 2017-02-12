@@ -11,8 +11,8 @@ namespace PiaoliuHKOperator
     class Global
     {
         public static TcpClient OperatorClientSocket;
-        //public static String OperatorServer_Host = "127.0.0.1";
-        public static String OperatorServer_Host = "192.168.31.142";
+        public static String OperatorServer_Host = "127.0.0.1";
+        //public static String OperatorServer_Host = "192.168.31.142";
         public static Int16 OperatorServer_Port = 20000;
         public static char SocketDelimiter = '\n';
         public static char SyncDelimiter = '|';
@@ -23,11 +23,19 @@ namespace PiaoliuHKOperator
         {
             static int Signed = 1;
             static String SignedChinese = "已签收";
-            static int inShip = 2;
-            static String inShipChinese = "在途";
-            static int Checkout = 3;
-            static String CheckoutChinese = "需出库";
-            static int Pending = 4;
+            static int Pickingup = 2;
+            static String PickingupChinese = "派件中";
+            static int Loading = 3;
+            static String LoadingChinese = "已装车";
+            static int Scheduling = 4;
+            static String SchedulingChinese = "正安排出库";
+            static int Checkin = 5;
+            static String CheckinChinese = "待香港收包";
+            static int inCustoms = 6;
+            static String inCustomsChinese = "海关清关中";
+            static int Checkout = 7;
+            static String CheckoutChinese = "待深圳库出包";
+            static int Pending = 8;
             static String PendingChinese = "待配齐";
         }
         public static class PiaoliuHK_Configs_GlobalConstant_StationAddress

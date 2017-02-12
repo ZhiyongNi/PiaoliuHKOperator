@@ -41,13 +41,7 @@ namespace PiaoliuHKOperator.Views
             if (PackageList_Instance.PackageItemList.Count != 0)
             {
                 Matched_CheckBox.IsChecked = true;
-                for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
-                {
-                    ListViewItem PackageListViewItem = new ListViewItem();
-                    PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
-                    PackageListViewItem.Tag = i;
-                    PackageSelecting_ListView.Items.Add(PackageListViewItem);
-                }
+                PackageSelecting_ListView.ItemsSource = PackageList_Instance.PackageItemList;
                 PackageSelecting_ListView.SelectedIndex = 0;
             }
 
@@ -58,8 +52,7 @@ namespace PiaoliuHKOperator.Views
             Package PackageDetails_Instance = new Package();
             if (Matched_CheckBox.IsChecked == true)
             {
-                int IndexTag = (int)((ListViewItem)PackageSelecting_ListView.SelectedItem).Tag;
-                PackageDetails_Instance = this.PackageList_Instance.PackageItemList[IndexTag];
+                PackageDetails_Instance = this.PackageList_Instance.PackageItemList[PackageSelecting_ListView.SelectedIndex];
             }
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);

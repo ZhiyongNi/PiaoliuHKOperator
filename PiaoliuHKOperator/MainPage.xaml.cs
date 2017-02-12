@@ -23,6 +23,7 @@ using PiaoliuHKOperator.Models.engine;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
+using System.Collections.ObjectModel;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -53,7 +54,6 @@ namespace PiaoliuHKOperator
                 Frame rootFrame = Window.Current.Content as Frame;
                 rootFrame.Navigate(typeof(LoginPage));
             }
-
         }
     }
 }

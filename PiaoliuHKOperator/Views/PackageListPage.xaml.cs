@@ -34,18 +34,15 @@ namespace PiaoliuHKOperator.Views
                         break;
                 }
             }
+
         }
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
             List<string> FilterArray = getFilterArrayinPage();
             PackageList_Instance.findALLPackagebyFilter(FilterArray);
 
-            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
-            {
-                ListViewItem PackageListViewItem = new ListViewItem();
-                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
-                PackageList_ListView.Items.Add(PackageListViewItem);
-            }
+            PackageList_ListView.ItemsSource = PackageList_Instance.PackageItemList;
+            PackageList_ListView.HeaderTemplate.
         }
 
         private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)

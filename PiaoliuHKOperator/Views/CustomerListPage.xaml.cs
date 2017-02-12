@@ -35,14 +35,7 @@ namespace PiaoliuHKOperator.Views
         {
             List<string> FilterArray = getFilterArrayinPage();
             CustomerList_Instance.findAllCustomerbyFilter(FilterArray);
-
-            for (int i = 0; i < CustomerList_Instance.CustomerItemList.Count; i++)
-            {
-                ListViewItem CustomerListViewItem = new ListViewItem();
-                CustomerListViewItem.Content = CustomerList_Instance.CustomerItemList[i].CustomerRealName;
-                CustomerList_ListView.Items.Add(CustomerListViewItem);
-
-            }
+            CustomerList_ListView.ItemsSource = CustomerList_Instance.CustomerItemList;
 
         }
 
