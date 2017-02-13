@@ -19,25 +19,23 @@ namespace PiaoliuHKOperator
 
         public static Admin myAdmin;
 
-        public static class TransitBillStatus
+        public struct TransitBillStatus_Struct
         {
-            static int Signed = 1;
-            static String SignedChinese = "已签收";
-            static int Pickingup = 2;
-            static String PickingupChinese = "派件中";
-            static int Loading = 3;
-            static String LoadingChinese = "已装车";
-            static int Scheduling = 4;
-            static String SchedulingChinese = "正安排出库";
-            static int Checkin = 5;
-            static String CheckinChinese = "待香港收包";
-            static int inCustoms = 6;
-            static String inCustomsChinese = "海关清关中";
-            static int Checkout = 7;
-            static String CheckoutChinese = "待深圳库出包";
-            static int Pending = 8;
-            static String PendingChinese = "待配齐";
-        }
+            public int Tag;
+            public string Chinese;
+            public string English;
+        };
+
+        public static List<TransitBillStatus_Struct> TransitBillStatus_List = new List<TransitBillStatus_Struct>() {
+            new TransitBillStatus_Struct { Tag = 1, Chinese = "已签收", English = "Signed" },
+            new TransitBillStatus_Struct { Tag = 2, Chinese = "派件中", English = "Pickingup" },
+            new TransitBillStatus_Struct { Tag = 3, Chinese = "已装车", English = "Loading" },
+            new TransitBillStatus_Struct { Tag = 4, Chinese = "正安排出库", English = "Scheduling" },
+            new TransitBillStatus_Struct { Tag = 5, Chinese = "待香港收包", English = "Checkin" },
+            new TransitBillStatus_Struct { Tag = 6, Chinese = "海关清关中", English = "inCustoms" },
+            new TransitBillStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" },
+            new TransitBillStatus_Struct { Tag = 7, Chinese = "待配齐", English = "Pending" }
+        };
         public static class PiaoliuHK_Configs_GlobalConstant_StationAddress
         {
             static String Country = "中国";
@@ -71,7 +69,7 @@ namespace PiaoliuHKOperator
             public string EnglishName;
             public string Address;
         };
-        public static List<SelfPickupAddress_Struct> SelfPickupAddress_List = new List<SelfPickupAddress_Struct> {
+        public static List<SelfPickupAddress_Struct> SelfPickupAddress_List = new List<SelfPickupAddress_Struct>() {
             new SelfPickupAddress_Struct { ID = 1, ChineseName = "香港城市大学", EnglishName = "CityUniversityofHongKong", Address = "香港城市大学（香港城市法学图书馆门口）" },
             new SelfPickupAddress_Struct { ID = 2, ChineseName = "香港浸会大学", EnglishName = "HongKongBaptistUniversity",Address = "香港浸会大学（九龙塘地铁站A2出口）" },
             new SelfPickupAddress_Struct { ID = 3, ChineseName = "香港中文大学", EnglishName = "ChineseUniversityofHongKong",Address = "香港中文大学（大学地铁站A出口）" },

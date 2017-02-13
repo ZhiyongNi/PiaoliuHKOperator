@@ -79,5 +79,10 @@ namespace PiaoliuHKOperator.Views
         {
 
         }
+
+        private void runScript_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
