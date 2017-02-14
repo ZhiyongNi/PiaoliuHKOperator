@@ -47,6 +47,7 @@ namespace PiaoliuHKOperator.Views
                         TransitBillSerialID_TextBox.Text = PackageRelated.PackageRelatedTransitBillSerialID;
                         break;
                 }
+                Search_Button_Click(null, null);
             }
         }
         private void Search_Button_Click(object sender, RoutedEventArgs e)

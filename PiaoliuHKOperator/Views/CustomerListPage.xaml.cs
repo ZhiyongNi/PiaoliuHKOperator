@@ -31,6 +31,26 @@ namespace PiaoliuHKOperator.Views
             CustomerList_Instance = new CustomerList();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            object TempObject = e.Parameter;
+            if (TempObject != null)
+            {
+                switch (TempObject.GetType().FullName)
+                {
+                    case "PiaoliuHKOperator.Models.core.Package":
+                        Package PackageRelated = (Package)TempObject;
+                        CustomerID_TextBox.Text = PackageRelated.PackageOwnerID.ToString();
+                        break;
+                    case "PiaoliuHKOperator.Models.core.TransitBill":
+                        TransitBill TransitBillRelated = (TransitBill)TempObject;
+                        CustomerID_TextBox.Text = TransitBillRelated.TransitBillOwnerID.ToString();
+                        break;
+                }
+                Search_Button_Click(null, null);
+            }
+        }
+
         private void Search_Button_Click(object sender, RoutedEventArgs e)
         {
             List<string> FilterArray = getFilterArrayinPage();

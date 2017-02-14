@@ -4,6 +4,7 @@ using Windows.UI.Xaml.Navigation;
 using PiaoliuHKOperator.Models.engine;
 using PiaoliuHKOperator.Models.core;
 using System.Collections.Generic;
+using System;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -37,7 +38,7 @@ namespace PiaoliuHKOperator.Views
                         PackageRelatedTransitBillSerialID_TextBox.Text = TransitBillTemp.TransitBillSerialID;
                         break;
                 }
-                this.SubmitDetails_Button_Click;
+                Search_Button_Click(null, null);
             }
 
         }
