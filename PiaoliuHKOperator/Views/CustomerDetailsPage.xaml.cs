@@ -68,5 +68,27 @@ namespace PiaoliuHKOperator.Views
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(TransitBillListPage), this.CustomerDetails_Instance);
         }
+
+        private void CustomerID_CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            CustomerID_TextBox.IsEnabled = true;
+        }
+
+        private void CustomerID_CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CustomerID_TextBox.IsEnabled = false;
+            CustomerID_TextBox.Text = CustomerDetails_Instance.CustomerID == null ? "" : CustomerDetails_Instance.CustomerID.ToString();
+        }
+
+        private void CustomerSelfMobile_CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            CustomerSelfMobile_TextBox.IsEnabled = true;
+        }
+
+        private void CustomerSelfMobile_CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CustomerSelfMobile_TextBox.IsEnabled = false;
+            CustomerSelfMobile_TextBox.Text = CustomerDetails_Instance.CustomerSelfMobile == null ? "" : CustomerDetails_Instance.CustomerSelfMobile;
+        }
     }
 }
