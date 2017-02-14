@@ -54,12 +54,7 @@ namespace PiaoliuHKOperator.Views
             List<string> FilterArray = getFilterArrayinPage();
             TransitBillList_Instance.findAllTransitBillbyFilter(FilterArray);
 
-            for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
-            {
-                ListViewItem TransitBillListViewItem = new ListViewItem();
-                TransitBillListViewItem.Content = TransitBillList_Instance.TransitBillItemList[i].TransitBillSerialID;
-                TransitBillList_ListView.Items.Add(TransitBillListViewItem);
-            }
+            TransitBillList_ListView.ItemsSource = TransitBillList_Instance.TransitBillItemList;
         }
 
         private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)

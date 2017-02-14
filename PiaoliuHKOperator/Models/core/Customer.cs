@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PiaoliuHKOperator.Models.engine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +28,18 @@ namespace PiaoliuHKOperator.Models.core
         public string CustomerAvatarAddress { get; set; }
         public int CustomerAccountStatus { get; set; }
 
+        public List<string> CustomerCell_Argument_List = new List<string>();
+
+        public void updateCustomerArgumentInfo(List<string> f_Argument_List)
+        {
+            this.CustomerCell_Argument_List = f_Argument_List;
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updateCustomerArgumentInfo", JsonConvert.SerializeObject(this));
+            SyncClass_Instance.SyncbySocket();
+            if (SyncClass_Instance.SyncSucceed)
+            {
+                CloneThis(JsonConvert.DeserializeObject<Customer>(SyncClass_Instance.SyncJsonString));
+            }
+        }
         private void CloneThis(Customer f_Customer)
         {
             this.CustomerID = f_Customer.CustomerID;
