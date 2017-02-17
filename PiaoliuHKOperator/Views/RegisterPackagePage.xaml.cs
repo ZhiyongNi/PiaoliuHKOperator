@@ -40,8 +40,9 @@ namespace PiaoliuHKOperator.Views
 
             if (PackageList_Instance.PackageItemList.Count != 0)
             {
-                Matched_CheckBox.IsChecked = true;
                 PackageSelecting_ListView.ItemsSource = PackageList_Instance.PackageItemList;
+
+                Matched_CheckBox.IsChecked = true;
                 PackageSelecting_ListView.SelectedIndex = 0;
             }
 

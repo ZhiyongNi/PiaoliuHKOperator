@@ -37,7 +37,7 @@
         <CheckBox x:Name="PackageFee_CheckBox" Content="Fee" HorizontalAlignment="Left" Margin="165,306,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="PackageInTimeStamp_CheckBox" Content="InTimeStamp" HorizontalAlignment="Left" Margin="165,343,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="PackageOutTimeStamp_CheckBox" Content="OutTimeStamp" HorizontalAlignment="Left" Margin="165,380,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageStatus_CheckBox" Content="Status" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageStatus_CheckBox" Content="Status" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <CheckBox x:Name="PackageRemarks_CheckBox" Content="Remarks" HorizontalAlignment="Left" Margin="165,454,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="PackageWorkerID_CheckBox" Content="WorkerID" HorizontalAlignment="Left" Margin="165,491,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="PackageRelatedTransitBillSerialID_CheckBox" Content="RelatedTransitBillSerialID" HorizontalAlignment="Left" Margin="165,528,0,0" VerticalAlignment="Top"/>

@@ -34,7 +34,7 @@ namespace PiaoliuHKOperator
             new TransitBillStatus_Struct { Tag = 5, Chinese = "待香港收包", English = "Checkin" },
             new TransitBillStatus_Struct { Tag = 6, Chinese = "海关清关中", English = "inCustoms" },
             new TransitBillStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" },
-            new TransitBillStatus_Struct { Tag = 7, Chinese = "待配齐", English = "Pending" }
+            new TransitBillStatus_Struct { Tag = 8, Chinese = "待配齐", English = "Pending" }
         };
         public static class PiaoliuHK_Configs_GlobalConstant_StationAddress
         {
