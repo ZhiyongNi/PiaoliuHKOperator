@@ -24,6 +24,19 @@ namespace PiaoliuHKOperator.Models.engine
                 CloneThis(JsonConvert.DeserializeObject<TransitBillList>(SyncClass_Instance.SyncJsonString));
             }
         }
+        public void findSIGNEDTransitBillbyFilter(List<string> FilterArray)
+        {
+            this.SQLExecuteArray = FilterArray;
+
+            SyncClass SyncClass_Instance = new SyncClass("TransitBillList", "findSIGNEDTransitBillbyFilter", JsonConvert.SerializeObject(this));
+            SyncClass_Instance.SyncbySocket();
+
+            if (SyncClass_Instance.SyncSucceed)
+            {
+                CloneThis(JsonConvert.DeserializeObject<TransitBillList>(SyncClass_Instance.SyncJsonString));
+            }
+        }
+
         public void findINSYSTransitBillbyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;

@@ -36,6 +36,24 @@ namespace PiaoliuHKOperator
             new TransitBillStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" },
             new TransitBillStatus_Struct { Tag = 8, Chinese = "待配齐", English = "Pending" }
         };
+        public struct PackageStatus_Struct
+        {
+            public int Tag;
+            public string Chinese;
+            public string English;
+        };
+
+        public static List<PackageStatus_Struct> PackageStatus_List = new List<PackageStatus_Struct>() {
+            new PackageStatus_Struct { Tag = 1, Chinese = "已签收", English = "Signed" },
+            new PackageStatus_Struct { Tag = 2, Chinese = "派件中", English = "Pickingup" },
+            new PackageStatus_Struct { Tag = 3, Chinese = "已装车", English = "Loading" },
+            new PackageStatus_Struct { Tag = 4, Chinese = "正安排出库", English = "Scheduling" },
+            new PackageStatus_Struct { Tag = 5, Chinese = "待香港收包", English = "Checkin" },
+            new PackageStatus_Struct { Tag = 6, Chinese = "海关清关中", English = "inCustoms" },
+            new PackageStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" },
+            new PackageStatus_Struct { Tag = 8, Chinese = "待配齐", English = "Pending" },
+            new PackageStatus_Struct { Tag = 9, Chinese = "未查询匹配", English = "unMatched" }
+        };
         public static class PiaoliuHK_Configs_GlobalConstant_StationAddress
         {
             static String Country = "中国";
@@ -62,29 +80,29 @@ namespace PiaoliuHKOperator
         }
 
 
-        public struct SelfPickupAddress_Struct
+        public struct CustomerSelfDefaultAddress_Struct
         {
-            public int ID;
+            public int Tag;
             public string ChineseName;
             public string EnglishName;
             public string Address;
         };
-        public static List<SelfPickupAddress_Struct> SelfPickupAddress_List = new List<SelfPickupAddress_Struct>() {
-            new SelfPickupAddress_Struct { ID = 1, ChineseName = "香港城市大学", EnglishName = "CityUniversityofHongKong", Address = "香港城市大学（香港城市法学图书馆门口）" },
-            new SelfPickupAddress_Struct { ID = 2, ChineseName = "香港浸会大学", EnglishName = "HongKongBaptistUniversity",Address = "香港浸会大学（九龙塘地铁站A2出口）" },
-            new SelfPickupAddress_Struct { ID = 3, ChineseName = "香港中文大学", EnglishName = "ChineseUniversityofHongKong",Address = "香港中文大学（大学地铁站A出口）" },
-            new SelfPickupAddress_Struct { ID = 4, ChineseName = "香港教育大学", EnglishName = "EducationUniversityofHongKong",Address = "香港教育大学（待填写）" },
-            new SelfPickupAddress_Struct { ID = 5, ChineseName = "香港科技大学", EnglishName = "HongKongUniversityofScienceTechnology",Address = "香港科技大学（待填写）" },
-            new SelfPickupAddress_Struct { ID = 6, ChineseName = "香港理工大学", EnglishName = "HongKongPolytechnicUniversity",Address = "香港理工大学（红磡地铁站A1出口）" },
-            new SelfPickupAddress_Struct { ID = 7, ChineseName = "香港大学", EnglishName = "UniversityofHongKong",Address = "香港大学（新威餐厅）" },
-            new SelfPickupAddress_Struct { ID = 8, ChineseName = "香港岭南大学", EnglishName = "LingnanUniversity",Address = "香港岭南大学（待填写）" },
-            new SelfPickupAddress_Struct { ID = 9, ChineseName = "旺角自提点", EnglishName = "MongKok",Address = "旺角自提点（待填写）" },
-            new SelfPickupAddress_Struct { ID = 10, ChineseName = "葵兴自提点", EnglishName = "KwaiHing",Address = "葵兴自提点（待填写）" },
-            new SelfPickupAddress_Struct { ID = 11, ChineseName = "沙田自提点", EnglishName = "ShaTin",Address = "沙田自提点（待填写）" },
-            new SelfPickupAddress_Struct { ID = 12, ChineseName = "大围自提点", EnglishName = "TaiWai",Address = "大围自提点（待填写）" },
-            new SelfPickupAddress_Struct { ID = 13, ChineseName = "湾仔四合院自提点", EnglishName = "WanChai",Address = "湾仔四合院自提点（待填写）" },
-            new SelfPickupAddress_Struct { ID = 14, ChineseName = "十二味麻辣自提点", EnglishName = "ShiErWei",Address = "十二味麻辣自提点（待填写）" },
-            new SelfPickupAddress_Struct { ID = 99, ChineseName = "未定义", EnglishName = "undefined",Address = "未定义（待填写）" }
+        public static List<CustomerSelfDefaultAddress_Struct> CustomerSelfDefaultAddress_List = new List<CustomerSelfDefaultAddress_Struct>() {
+            new CustomerSelfDefaultAddress_Struct { Tag = 1, ChineseName = "香港城市大学", EnglishName = "CityUniversityofHongKong", Address = "香港城市大学（香港城市法学图书馆门口）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 2, ChineseName = "香港浸会大学", EnglishName = "HongKongBaptistUniversity",Address = "香港浸会大学（九龙塘地铁站A2出口）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 3, ChineseName = "香港中文大学", EnglishName = "ChineseUniversityofHongKong",Address = "香港中文大学（大学地铁站A出口）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 4, ChineseName = "香港教育大学", EnglishName = "EducationUniversityofHongKong",Address = "香港教育大学（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 5, ChineseName = "香港科技大学", EnglishName = "HongKongUniversityofScienceTechnology",Address = "香港科技大学（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 6, ChineseName = "香港理工大学", EnglishName = "HongKongPolytechnicUniversity",Address = "香港理工大学（红磡地铁站A1出口）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 7, ChineseName = "香港大学", EnglishName = "UniversityofHongKong",Address = "香港大学（新威餐厅）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 8, ChineseName = "香港岭南大学", EnglishName = "LingnanUniversity",Address = "香港岭南大学（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 9, ChineseName = "旺角自提点", EnglishName = "MongKok",Address = "旺角自提点（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 10, ChineseName = "葵兴自提点", EnglishName = "KwaiHing",Address = "葵兴自提点（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 11, ChineseName = "沙田自提点", EnglishName = "ShaTin",Address = "沙田自提点（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 12, ChineseName = "大围自提点", EnglishName = "TaiWai",Address = "大围自提点（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 13, ChineseName = "湾仔四合院自提点", EnglishName = "WanChai",Address = "湾仔四合院自提点（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 14, ChineseName = "十二味麻辣自提点", EnglishName = "ShiErWei",Address = "十二味麻辣自提点（待填写）" },
+            new CustomerSelfDefaultAddress_Struct { Tag = 99, ChineseName = "未定义", EnglishName = "undefined",Address = "未定义（待填写）" }
         };
     }
 }

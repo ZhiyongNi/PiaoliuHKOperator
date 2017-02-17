@@ -41,11 +41,11 @@ namespace PiaoliuHKOperator.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            for (int i = 0; i < Global.SelfPickupAddress_List.Count; i++)
+            for (int i = 0; i < Global.CustomerSelfDefaultAddress_List.Count; i++)
             {
                 ComboBoxItem TransitBill_ComboBoxItem = new ComboBoxItem();
-                TransitBill_ComboBoxItem.Tag = Global.SelfPickupAddress_List[i].ID;
-                TransitBill_ComboBoxItem.Content = Global.SelfPickupAddress_List[i].ChineseName;
+                TransitBill_ComboBoxItem.Tag = Global.CustomerSelfDefaultAddress_List[i].Tag;
+                TransitBill_ComboBoxItem.Content = Global.CustomerSelfDefaultAddress_List[i].ChineseName;
 
                 TransitBillAddress_ComboBox.Items.Add(TransitBill_ComboBoxItem);
             }

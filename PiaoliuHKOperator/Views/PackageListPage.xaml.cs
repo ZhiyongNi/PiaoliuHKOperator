@@ -24,11 +24,11 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            for (int i = 0; i < Global.TransitBillStatus_List.Count; i++)
+            for (int i = 0; i < Global.PackageStatus_List.Count; i++)
             {
                 ComboBoxItem PackageStatus_ComboBoxItem = new ComboBoxItem();
-                PackageStatus_ComboBoxItem.Tag = Global.TransitBillStatus_List[i].Tag;
-                PackageStatus_ComboBoxItem.Content = Global.TransitBillStatus_List[i].Chinese;
+                PackageStatus_ComboBoxItem.Tag = Global.PackageStatus_List[i].Tag;
+                PackageStatus_ComboBoxItem.Content = Global.PackageStatus_List[i].Chinese;
 
                 PackageStatus_ComboBox.Items.Add(PackageStatus_ComboBoxItem);
             }
@@ -87,9 +87,10 @@ namespace PiaoliuHKOperator.Views
             {
                 FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + PackageRelatedTransitBillSerialID_TextBox.Text + "\'");
             }
-            if (PackageStatus_ComboBox.SelectedItem != null)
+
+            ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)PackageStatus_ComboBox.SelectedItem;
+            if (!ComboBoxItem_Selected.Tag.Equals("0"))
             {
-                ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)PackageStatus_ComboBox.SelectedItem;
                 FilterArray.Add("PackageStatus = \'" + ComboBoxItem_Selected.Tag + "\'");
             }
             return FilterArray;

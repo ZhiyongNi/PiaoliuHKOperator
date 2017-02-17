@@ -30,16 +30,6 @@ namespace PiaoliuHKOperator.Models.core
         public List<string> PackageCell_Argument_List = new List<string>();
 
 
-        public void findPackagebyExpressTrackNumber(string f_PackageExpressTrackNumber)
-        {
-            this.PackageExpressTrackNumber = f_PackageExpressTrackNumber;
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "findPackagebyExpressTrackNumber", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
-            }
-        }
         public void updatePackageArgumentInfo(List<string> f_Argument_List)
         {
             this.PackageCell_Argument_List = f_Argument_List;

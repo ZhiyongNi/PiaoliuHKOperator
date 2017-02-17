@@ -36,7 +36,7 @@ namespace PiaoliuHKOperator.Views
         private void PackageExpressTrackNumber_TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             PackageList_Instance = new PackageList();
-            PackageList_Instance.findUNMATCHEDPackagebyFilter(getFilterArrayinPage());
+            //PackageList_Instance.findUNMATCHEDPackagebyFilter(getFilterArrayinPage());
 
             if (PackageList_Instance.PackageItemList.Count != 0)
             {

@@ -14,7 +14,9 @@
         <TextBox x:Name="PackageOwnerID_TextBox" HorizontalAlignment="Left" Margin="135,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PlaceholderText="OwnerID" />
         <TextBox x:Name="PackageExpressTrackNumber_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"   PlaceholderText="ExpressNum" />
         <TextBox x:Name="PackageRelatedTransitBillSerialID_TextBox" HorizontalAlignment="Left" Margin="135,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"   PlaceholderText="RelatedTransitBillSerialID" />
-        <ComboBox x:Name="PackageStatus_ComboBox" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369" />
+        <ComboBox x:Name="PackageStatus_ComboBox" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.529,0.369" >
+            <ComboBoxItem Content="ALL" IsSelected="True" Tag="0"/>
+        </ComboBox>
         <ListView x:Name="PackageList_ListView" Margin="10,150,10,10">
             <ListView.ItemTemplate>
                  <DataTemplate>

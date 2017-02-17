@@ -33,6 +33,15 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            for (int i = 0; i < Global.CustomerSelfDefaultAddress_List.Count; i++)
+            {
+                ComboBoxItem CustomerSelfDefaultAddress_ComboBoxItem = new ComboBoxItem();
+                CustomerSelfDefaultAddress_ComboBoxItem.Tag = Global.CustomerSelfDefaultAddress_List[i].Tag;
+                CustomerSelfDefaultAddress_ComboBoxItem.Content = Global.CustomerSelfDefaultAddress_List[i].ChineseName;
+
+                CustomerSelfDefaultAddress_ComboBox.Items.Add(CustomerSelfDefaultAddress_ComboBoxItem);
+            }
+
             object TempObject = e.Parameter;
             if (TempObject != null)
             {
@@ -86,6 +95,12 @@ namespace PiaoliuHKOperator.Views
             if (CustomerEmail_TextBox.Text != "")
             {
                 FilterArray.Add("CustomerEmail = \'" + CustomerEmail_TextBox.Text + "\'");
+            }
+
+            ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)CustomerSelfDefaultAddress_ComboBox.SelectedItem;
+            if (!ComboBoxItem_Selected.Tag.Equals("0"))
+            {
+                FilterArray.Add("CustomerSelfDefaultAddress = \'" + ComboBoxItem_Selected.Tag + "\'");
             }
             return FilterArray;
         }

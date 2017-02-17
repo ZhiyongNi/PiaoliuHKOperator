@@ -33,6 +33,15 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            for (int i = 0; i < Global.TransitBillStatus_List.Count; i++)
+            {
+                ComboBoxItem TransitBillStatus_ComboBoxItem = new ComboBoxItem();
+                TransitBillStatus_ComboBoxItem.Tag = Global.TransitBillStatus_List[i].Tag;
+                TransitBillStatus_ComboBoxItem.Content = Global.TransitBillStatus_List[i].Chinese;
+
+                TransitBillStatus_ComboBox.Items.Add(TransitBillStatus_ComboBoxItem);
+            }
+
             object TempObject = e.Parameter;
             if (TempObject != null)
             {
@@ -77,9 +86,11 @@ namespace PiaoliuHKOperator.Views
             {
                 FilterArray.Add("TransitBillOwnerID = \'" + TransitBillOwnerID_TextBox.Text + "\'");
             }
-            if (TransitBillStatus_TextBox.Text != "")
+
+            ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)TransitBillStatus_ComboBox.SelectedItem;
+            if (!ComboBoxItem_Selected.Tag.Equals("0"))
             {
-                FilterArray.Add("TransitBillStatus = \'" + TransitBillStatus_TextBox.Text + "\'");
+                FilterArray.Add("TransitBillStatus = \'" + ComboBoxItem_Selected.Tag + "\'");
             }
             return FilterArray;
         }
