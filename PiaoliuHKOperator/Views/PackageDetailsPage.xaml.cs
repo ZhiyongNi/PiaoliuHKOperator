@@ -43,7 +43,20 @@ namespace PiaoliuHKOperator.Views
             PackageFee_TextBox.Text = PackageDetails_Instance.PackageFee == null ? "" : PackageDetails_Instance.PackageFee.ToString();
             PackageInTimeStamp_TextBox.Text = PackageDetails_Instance.PackageInTimeStamp == null ? "" : PackageDetails_Instance.PackageInTimeStamp.ToString();
             PackageOutTimeStamp_TextBox.Text = PackageDetails_Instance.PackageOutTimeStamp == null ? "" : PackageDetails_Instance.PackageOutTimeStamp.ToString();
-            PackageStatus_TextBox.Text = PackageDetails_Instance.PackageStatus == null ? "" : PackageDetails_Instance.PackageStatus.ToString();
+
+            for (int i = 0; i < Global.PackageStatus_List.Count; i++)
+            {
+                ComboBoxItem PackageStatus_ComboBoxItem = new ComboBoxItem();
+                PackageStatus_ComboBoxItem.Tag = Global.PackageStatus_List[i].Tag;
+                PackageStatus_ComboBoxItem.Content = Global.PackageStatus_List[i].Chinese;
+
+                PackageStatus_ComboBox.Items.Add(PackageStatus_ComboBoxItem);
+                if (PackageStatus_ComboBoxItem.Tag.Equals(PackageDetails_Instance.PackageStatus))
+                {
+                    PackageStatus_ComboBox.SelectedItem = PackageStatus_ComboBoxItem;
+                }
+            }
+
             PackageRemarks_TextBox.Text = PackageDetails_Instance.PackageRemarks == null ? "" : PackageDetails_Instance.PackageRemarks;
             PackageWorkerID_TextBox.Text = PackageDetails_Instance.PackageWorkerID == null ? "" : PackageDetails_Instance.PackageWorkerID.ToString();
             PackageRelatedTransitBillSerialID_TextBox.Text = PackageDetails_Instance.PackageRelatedTransitBillSerialID == null ? "" : PackageDetails_Instance.PackageRelatedTransitBillSerialID;
@@ -102,10 +115,10 @@ namespace PiaoliuHKOperator.Views
             {
                 ArgumentArray.Add("PackageOutTimeStamp=" + PackageOutTimeStamp_TextBox.Text);
             }
-            if (PackageStatus_CheckBox.IsChecked == true)
+            /*if (PackageStatus_CheckBox.IsChecked == true)
             {
                 ArgumentArray.Add("PackageStatus=" + PackageStatus_TextBox.Text);
-            }
+            }*/
             if (PackageRemarks_CheckBox.IsChecked == true)
             {
                 ArgumentArray.Add("PackageRemarks=" + PackageRemarks_TextBox.Text);
