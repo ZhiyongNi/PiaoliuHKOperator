@@ -30,28 +30,43 @@ namespace PiaoliuHKOperator.Views
             this.InitializeComponent();
         }
 
-        private void StepFirst_Button_Click(object sender, RoutedEventArgs e)
+        private void run_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.ScriptCommand_Instance.IDRepeatChecks();
-
-            foreach (string ResultReturn in this.ScriptCommand_Instance.ResultReturnList)
+            if (IDRepeatChecks_CheckBox.IsChecked == true)
             {
-                Return_TextBlock.Inlines.Add(new Run() { Text = ResultReturn });
-                Return_TextBlock.Inlines.Add(new LineBreak());
+                this.ScriptCommand_Instance.IDRepeatChecks();
+
+                foreach (string ResultReturn in this.ScriptCommand_Instance.ResultReturnList)
+                {
+                    Return_TextBlock.Inlines.Add(new Run() { Text = ResultReturn });
+                    Return_TextBlock.Inlines.Add(new LineBreak());
+                }
+                this.ScriptCommand_Instance.ResultReturnList.Clear();
             }
-            this.ScriptCommand_Instance.ResultReturnList.Clear();
-        }
 
-        private void StepSecond_Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.ScriptCommand_Instance.TransitBillCheckout();
-
-            foreach (string ResultReturn in this.ScriptCommand_Instance.ResultReturnList)
+            if (INSYSPackageRelatedTransitBillCheck_CheckBox.IsChecked == true)
             {
-                Return_TextBlock.Inlines.Add(new Run() { Text = ResultReturn });
-                Return_TextBlock.Inlines.Add(new LineBreak());
+                this.ScriptCommand_Instance.INSYSPackageRelatedTransitBillCheck();
+
+                foreach (string ResultReturn in this.ScriptCommand_Instance.ResultReturnList)
+                {
+                    Return_TextBlock.Inlines.Add(new Run() { Text = ResultReturn });
+                    Return_TextBlock.Inlines.Add(new LineBreak());
+                }
+                this.ScriptCommand_Instance.ResultReturnList.Clear();
             }
-            this.ScriptCommand_Instance.ResultReturnList.Clear();
+
+            if (SIGNEDPackageRelatedTransitBillCheck_CheckBox.IsChecked == true)
+            {
+                this.ScriptCommand_Instance.SIGNEDPackageRelatedTransitBillCheck();
+
+                foreach (string ResultReturn in this.ScriptCommand_Instance.ResultReturnList)
+                {
+                    Return_TextBlock.Inlines.Add(new Run() { Text = ResultReturn });
+                    Return_TextBlock.Inlines.Add(new LineBreak());
+                }
+                this.ScriptCommand_Instance.ResultReturnList.Clear();
+            }
         }
     }
 }

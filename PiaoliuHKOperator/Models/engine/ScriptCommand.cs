@@ -22,6 +22,28 @@ namespace PiaoliuHKOperator.Models.engine
             }
         }
 
+        public void INSYSPackageRelatedTransitBillCheck()
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "INSYSPackageRelatedTransitBillCheck", JsonConvert.SerializeObject(this));
+            SyncClass_Instance.SyncbySocket();
+
+            if (SyncClass_Instance.SyncSucceed)
+            {
+                CloneThis(JsonConvert.DeserializeObject<ScriptCommand>(SyncClass_Instance.SyncJsonString));
+            }
+        }
+
+        public void SIGNEDPackageRelatedTransitBillCheck()
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "SIGNEDPackageRelatedTransitBillCheck", JsonConvert.SerializeObject(this));
+            SyncClass_Instance.SyncbySocket();
+
+            if (SyncClass_Instance.SyncSucceed)
+            {
+                CloneThis(JsonConvert.DeserializeObject<ScriptCommand>(SyncClass_Instance.SyncJsonString));
+            }
+        }
+
         public void TransitBillCheckout()
         {
             SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "TransitBillCheckout", JsonConvert.SerializeObject(this));

@@ -13,7 +13,7 @@ namespace PiaoliuHKOperator.Models.core
         public int TransitBillID { get; set; }
         public string TransitBillSerialID { get; set; }
         public int TransitBillOwnerID { get; set; }
-        public string TransitBillRelatedPackageSerialID { get; set; }
+        public List<string> TransitBillRelatedPackageSerialID { get; set; }
         public int TransitBillRelatedPackageQuantity { get; set; }
         public float TransitBillPrice { get; set; }
         public int TransitBillMethod { get; set; }

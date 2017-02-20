@@ -8,8 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="StepFirst_Button" Content="StepFirst" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="StepFirst_Button_Click"/>
-        <Button x:Name="StepSecond_Button" Content="StepSecond" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Click="StepSecond_Button_Click"/>
+        <Button x:Name="run_Button" Content="RUN" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top" Click="run_Button_Click"/>
+        <CheckBox x:Name="IDRepeatChecks_CheckBox" Content="IDRepeatChecks" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="checkBox_Copy" Content="CheckBox" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="INSYSPackageRelatedTransitBillCheck_CheckBox" Content="INSYSPackageRelatedTransitBillCheck" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SIGNEDPackageRelatedTransitBillCheck_CheckBox" Content="SIGNEDPackageRelatedTransitBillCheck" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="Return_TextBlock" Margin="10,350,10,10" TextWrapping="Wrap" Text="">
         </TextBlock>
 

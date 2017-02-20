@@ -14,7 +14,6 @@
         <TextBox x:Name="TransitBillID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="TransitBillID" Width="150" IsEnabled="False"/>
         <TextBox x:Name="TransitBillSerialID_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillSerialID" IsEnabled="False"/>
         <TextBox x:Name="TransitBillOwnerID_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillOwnerID" IsEnabled="False"/>
-        <TextBox x:Name="TransitBillRelatedPackageSerialID_TextBox" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillRelatedPackageSerialID"/>
         <TextBox x:Name="TransitBillRelatedPackageQuantity_TextBox" HorizontalAlignment="Left" Margin="10,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillRelatedPackageQuantity"/>
         <TextBox x:Name="TransitBillPrice_TextBox" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillPrice"/>
         <TextBox x:Name="TransitBillMethod_TextBox" HorizontalAlignment="Left" Margin="10,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillMethod"/>
@@ -35,5 +34,7 @@
         <CheckBox x:Name="TransitBillRelatedPackageSerialID_CheckBox" Content="RelatedPackageSerialID" HorizontalAlignment="Left" Margin="165,121,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="TransitBillOwnerID_CheckBox" Content="OwnerID" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top" Checked="TransitBillOwnerID_CheckBox_Checked" Unchecked="TransitBillOwnerID_CheckBox_Unchecked"/>
         <CheckBox x:Name="TransitBillSerialID_CheckBox" Content="SerialID" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top" Checked="TransitBillSerialID_CheckBox_Checked" Unchecked="TransitBillSerialID_CheckBox_Unchecked"/>
+        <ComboBox x:Name="TransitBillRelatedPackageSerialID_ComboBox" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="150" />
+
     </Grid>
 </Page>

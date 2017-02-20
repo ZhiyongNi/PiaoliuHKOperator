@@ -35,7 +35,16 @@ namespace PiaoliuHKOperator.Views
             TransitBillID_TextBox.Text = TransitBillDetails_Instance.TransitBillID == null ? "" : TransitBillDetails_Instance.TransitBillID.ToString();
             TransitBillSerialID_TextBox.Text = TransitBillDetails_Instance.TransitBillSerialID == null ? "" : TransitBillDetails_Instance.TransitBillSerialID;
             TransitBillOwnerID_TextBox.Text = TransitBillDetails_Instance.TransitBillOwnerID == null ? "" : TransitBillDetails_Instance.TransitBillOwnerID.ToString();
-            TransitBillRelatedPackageSerialID_TextBox.Text = TransitBillDetails_Instance.TransitBillRelatedPackageSerialID == null ? "" : TransitBillDetails_Instance.TransitBillRelatedPackageSerialID;
+
+            for (int i = 0; i < TransitBillDetails_Instance.TransitBillRelatedPackageSerialID.Count; i++)
+            {
+                CheckBox TransitBillRelatedPackageSerialID_CheckBox = new CheckBox();
+                TransitBillRelatedPackageSerialID_CheckBox.Content = TransitBillDetails_Instance.TransitBillRelatedPackageSerialID[i];
+                TransitBillRelatedPackageSerialID_CheckBox.IsChecked = true;
+                TransitBillRelatedPackageSerialID_ComboBox.Items.Add(TransitBillRelatedPackageSerialID_CheckBox);
+            }
+            TransitBillRelatedPackageSerialID_ComboBox.SelectedIndex = 0;
+
             TransitBillRelatedPackageQuantity_TextBox.Text = TransitBillDetails_Instance.TransitBillRelatedPackageQuantity == null ? "" : TransitBillDetails_Instance.TransitBillRelatedPackageQuantity.ToString();
             TransitBillPrice_TextBox.Text = TransitBillDetails_Instance.TransitBillPrice == null ? "" : TransitBillDetails_Instance.TransitBillPrice.ToString();
             TransitBillMethod_TextBox.Text = TransitBillDetails_Instance.TransitBillMethod == null ? "" : TransitBillDetails_Instance.TransitBillMethod.ToString();
@@ -96,5 +105,9 @@ namespace PiaoliuHKOperator.Views
             TransitBillOwnerID_TextBox.Text = TransitBillDetails_Instance.TransitBillOwnerID == null ? "" : TransitBillDetails_Instance.TransitBillOwnerID.ToString();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
