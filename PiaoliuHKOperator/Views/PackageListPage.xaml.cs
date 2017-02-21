@@ -5,6 +5,7 @@ using PiaoliuHKOperator.Models.engine;
 using PiaoliuHKOperator.Models.core;
 using System.Collections.Generic;
 using System;
+using System.Reflection;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -24,11 +25,10 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            for (int i = 0; i < Global.PackageStatus_List.Count; i++)
-            {
+            foreach (Global.PackageStatus_Struct PackageStatus_Struct_Item in Global.PackageStatus_Dictionary.Values) {
                 ComboBoxItem PackageStatus_ComboBoxItem = new ComboBoxItem();
-                PackageStatus_ComboBoxItem.Tag = Global.PackageStatus_List[i].Tag;
-                PackageStatus_ComboBoxItem.Content = Global.PackageStatus_List[i].Chinese;
+                PackageStatus_ComboBoxItem.Tag = PackageStatus_Struct_Item.Tag;
+                PackageStatus_ComboBoxItem.Content = PackageStatus_Struct_Item.Chinese;
 
                 PackageStatus_ComboBox.Items.Add(PackageStatus_ComboBoxItem);
             }

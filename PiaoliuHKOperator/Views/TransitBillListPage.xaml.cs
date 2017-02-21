@@ -33,11 +33,11 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            for (int i = 0; i < Global.TransitBillStatus_List.Count; i++)
+            foreach (Global.TransitBillStatus_Struct TransitBillStatus_Struct_Item in Global.TransitBillStatus_Dictionary.Values)
             {
                 ComboBoxItem TransitBillStatus_ComboBoxItem = new ComboBoxItem();
-                TransitBillStatus_ComboBoxItem.Tag = Global.TransitBillStatus_List[i].Tag;
-                TransitBillStatus_ComboBoxItem.Content = Global.TransitBillStatus_List[i].Chinese;
+                TransitBillStatus_ComboBoxItem.Tag = TransitBillStatus_Struct_Item.Tag;
+                TransitBillStatus_ComboBoxItem.Content = TransitBillStatus_Struct_Item.Chinese;
 
                 TransitBillStatus_ComboBox.Items.Add(TransitBillStatus_ComboBoxItem);
             }

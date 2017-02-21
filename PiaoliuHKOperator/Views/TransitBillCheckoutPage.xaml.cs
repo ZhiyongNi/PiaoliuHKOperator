@@ -67,7 +67,7 @@ namespace PiaoliuHKOperator.Views
             if ((string)ComboBoxItem_Selected.Content != "All")
             {
                 FilterArray.Add("TransitBillAddress = \'" + ComboBoxItem_Selected.Tag + "\'");
-                FilterArray.Add("TransitBillStatus = \'" + "8" + "\'");
+                FilterArray.Add("TransitBillStatus = \'" + Global.PackageStatus_Dictionary["Pending"].Tag + "\'");
             }
             return FilterArray;
         }
