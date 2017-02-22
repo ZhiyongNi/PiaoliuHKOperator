@@ -44,9 +44,9 @@ namespace PiaoliuHKOperator.Models.engine
             }
         }
 
-        public void TransitBillCheckout()
+        public void PendingtoCheckoutTransitBill()
         {
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "TransitBillCheckout", JsonConvert.SerializeObject(this));
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "PendingtoCheckoutTransitBill", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
 
             if (SyncClass_Instance.SyncSucceed)

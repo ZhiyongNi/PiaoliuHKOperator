@@ -56,6 +56,18 @@ namespace PiaoliuHKOperator.Views
                 this.ScriptCommand_Instance.ResultReturnList.Clear();
             }
 
+            if (PendingtoCheckoutTransitBill_CheckBox.IsChecked == true)
+            {
+                this.ScriptCommand_Instance.PendingtoCheckoutTransitBill();
+
+                foreach (string ResultReturn in this.ScriptCommand_Instance.ResultReturnList)
+                {
+                    Return_TextBlock.Inlines.Add(new Run() { Text = ResultReturn });
+                    Return_TextBlock.Inlines.Add(new LineBreak());
+                }
+                this.ScriptCommand_Instance.ResultReturnList.Clear();
+            }
+
             if (SIGNEDPackageRelatedTransitBillCheck_CheckBox.IsChecked == true)
             {
                 this.ScriptCommand_Instance.SIGNEDPackageRelatedTransitBillCheck();
