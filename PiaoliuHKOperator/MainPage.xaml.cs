@@ -24,6 +24,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using System.Collections.ObjectModel;
+using Windows.UI.ViewManagement;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -37,6 +38,8 @@ namespace PiaoliuHKOperator
         public MainPage()
         {
             this.InitializeComponent();
+            ApplicationView.GetForCurrentView().TryResizeView(new Size { Width = 1280, Height = 720 });
+
         }
 
 

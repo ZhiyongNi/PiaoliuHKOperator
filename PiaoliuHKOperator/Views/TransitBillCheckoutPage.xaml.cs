@@ -11,6 +11,8 @@ using Windows.Storage.Provider;
 using System.Text;
 using PiaoliuHKOperator.Models.engine.DataCSV;
 using static PiaoliuHKOperator.Global;
+using Windows.UI.ViewManagement;
+using Windows.Foundation;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -38,6 +40,15 @@ namespace PiaoliuHKOperator.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            foreach (Global.TransitBillStatus_Struct TransitBillStatusItem in Global.TransitBillStatus_Dictionary.Values)
+            {
+                ComboBoxItem TransitBillStatus_ComboBoxItem = new ComboBoxItem();
+                TransitBillStatus_ComboBoxItem.Tag = TransitBillStatusItem.Tag;
+                TransitBillStatus_ComboBoxItem.Content = TransitBillStatusItem.Chinese;
+
+                TransitBillStatus_ComboBox.Items.Add(TransitBillStatus_ComboBoxItem);
+            }
+
             for (int i = 0; i < Global.CustomerSelfDefaultAddress_List.Count; i++)
             {
                 ComboBoxItem TransitBill_ComboBoxItem = new ComboBoxItem();
@@ -52,13 +63,7 @@ namespace PiaoliuHKOperator.Views
             List<string> FilterArray = getFilterArrayinPage();
             TransitBillList_Instance.findINSYSTransitBillbyFilter(FilterArray);
 
-            for (int i = 0; i < TransitBillList_Instance.TransitBillItemList.Count; i++)
-            {
-                ListViewItem TransitBillListViewItem = new ListViewItem();
-                TransitBillListViewItem.Content = TransitBillList_Instance.TransitBillItemList[i].TransitBillSerialID;
-                //TransitBillListViewItem.Tag = TransitBillList_Instance.TransitBillItemList[i].TransitBillSerialID;
-                TransitBillSelecting_ListView.Items.Add(TransitBillListViewItem);
-            }
+            TransitBillSelecting_ListView.ItemsSource = TransitBillList_Instance.TransitBillItemList;
         }
         private List<string> getFilterArrayinPage()
         {
@@ -67,7 +72,11 @@ namespace PiaoliuHKOperator.Views
             if ((string)ComboBoxItem_Selected.Content != "All")
             {
                 FilterArray.Add("TransitBillAddress = \'" + ComboBoxItem_Selected.Tag + "\'");
-                FilterArray.Add("TransitBillStatus = \'" + Global.PackageStatus_Dictionary["Pending"].Tag + "\'");
+            }
+            ComboBoxItem_Selected = (ComboBoxItem)TransitBillStatus_ComboBox.SelectedItem;
+            if ((string)ComboBoxItem_Selected.Content != "All")
+            {
+                FilterArray.Add("TransitBillStatus = \'" + ComboBoxItem_Selected.Tag + "\'");
             }
             return FilterArray;
         }

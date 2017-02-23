@@ -2,6 +2,7 @@
 using PiaoliuHKOperator.Models.core;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace PiaoliuHKOperator.Models.engine
     class TransitBillList
     {
         public List<string> SQLExecuteArray;
-        public List<TransitBill> TransitBillItemList = new List<TransitBill>();
+        public ObservableCollection<TransitBill> TransitBillItemList = new ObservableCollection<TransitBill>();
         public void findAllTransitBillbyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;

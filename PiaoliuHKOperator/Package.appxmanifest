@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="a0c9c54e-bd5e-456e-98ee-d2e1e5297c57" Publisher="CN=zhiyo" Version="0.4.1.0" />
+  <Identity Name="a0c9c54e-bd5e-456e-98ee-d2e1e5297c58" Publisher="CN=zhiyo" Version="0.4.1.0" />
   <mp:PhoneIdentity PhoneProductId="a0c9c54e-bd5e-456e-98ee-d2e1e5297c57" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>PiaoliuHKOperator</DisplayName>
