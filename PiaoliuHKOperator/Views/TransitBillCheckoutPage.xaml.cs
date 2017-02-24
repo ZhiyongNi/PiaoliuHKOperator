@@ -96,8 +96,23 @@ namespace PiaoliuHKOperator.Views
             FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
             PackageList_Instance.findINSYSPackagebyFilter(FilterArray);
 
+            TransitBill_TextBlock.Text = TransitBill_Instance.TransitBillSerialID;
             PackageSelecting_ListView.ItemsSource = PackageList_Instance.PackageItemList;
             PackageRemoved_ListView.ItemsSource = PackageRemoveItem_Collection;
+
+            FilterArray = new List<string>();
+            FilterArray.Add("TransitBillOwnerID = \'" + TransitBill_Instance.TransitBillOwnerID + "\'");
+            FilterArray.Add("TransitBillStatus = \'" + (TransitBill_Instance.TransitBillStatus + 1) + "\'");
+            TransitBillList TransitBillListTemp = new TransitBillList();
+            TransitBillListTemp.findINSYSTransitBillbyFilter(FilterArray);
+            foreach (TransitBill TransitBillItem in TransitBillListTemp.TransitBillItemList)
+            {
+                ComboBoxItem TransitBillItem_ComboBoxItem = new ComboBoxItem();
+                TransitBillItem_ComboBoxItem.Tag = TransitBillItem.TransitBillID;
+                TransitBillItem_ComboBoxItem.Content = TransitBillItem.TransitBillSerialID;
+                TransitBillTarget_ComboBox.Items.Add(TransitBillItem_ComboBoxItem);
+            }
+            TransitBillTargetQuantity_TextBlock.Text = "Row: " + (TransitBillListTemp.TransitBillItemList.Count + 1).ToString();
         }
 
         private void PackupTransitBill_Button_Click(object sender, RoutedEventArgs e)

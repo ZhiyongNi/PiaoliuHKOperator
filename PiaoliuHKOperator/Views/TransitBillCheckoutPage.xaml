@@ -16,10 +16,11 @@
         </ComboBox>
         <Button x:Name="SearchTransitBill_Button" Content="搜索" HorizontalAlignment="Left" Margin="320,10,0,0" VerticalAlignment="Top" Click="SearchTransitBill_Button_Click"/>
         <Button x:Name="ExtendTransitBill_Button" Content="展开" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Click="ExtendTransitBill_Button_Click"/>
-        <Button x:Name="RemoveTransitBill_Button" Content="去除" HorizontalAlignment="Left" Margin="765,47,0,0" VerticalAlignment="Top" Click="RemoveTransitBill_Button_Click"/>
+        <TextBlock x:Name="TransitBill_TextBlock" HorizontalAlignment="Left" Margin="65,369,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="RemoveTransitBill_Button" Content="移除" HorizontalAlignment="Left" Margin="765,47,0,0" VerticalAlignment="Top" Click="RemoveTransitBill_Button_Click"/>
         <Button x:Name="SubmitTransitbill_Button" Content="确定" HorizontalAlignment="Left" Margin="765,288,0,0" VerticalAlignment="Top" Click="SubmitTransitbill_Button_Click"/>
         <Button x:Name="IgnoreTransitBill_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,325,0,0" VerticalAlignment="Top" Click="IgnoreTransitBill_Button_Click"/>
-        <Button x:Name="RemovePackage_Button" Content="去除" HorizontalAlignment="Left" Margin="765,400,0,0" VerticalAlignment="Top" Click="RemovePackage_Button_Click"/>
+        <Button x:Name="RemovePackage_Button" Content="移除" HorizontalAlignment="Left" Margin="765,400,0,0" VerticalAlignment="Top" Click="RemovePackage_Button_Click"/>
         <Button x:Name="SubmitPackage_Button" Content="确定" HorizontalAlignment="Left" Margin="765,641,0,0" VerticalAlignment="Top" Click="SubmitPackage_Button_Click"/>
         <Button x:Name="IgnorePackage_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,678,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
         <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Margin="10,47,0,363" Width="750" Background="Gray" Height="310">
@@ -70,9 +71,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ComboBox x:Name="TransitBillTarget_ComboBox" HorizontalAlignment="Left" Margin="820,400,0,0" VerticalAlignment="Top" Width="450">
-            <ComboBoxItem Content="All" IsSelected="True"/>
+        <ComboBox x:Name="TransitBillTarget_ComboBox" HorizontalAlignment="Left" Margin="820,400,0,0" VerticalAlignment="Top" Width="386">
         </ComboBox>
+        <TextBlock x:Name="TransitBillTargetQuantity_TextBlock" HorizontalAlignment="Left" Margin="1211,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60"/>
         <Button x:Name="PackupTransitBill_Button" Content="打包" HorizontalAlignment="Left" Margin="765,10,0,0" VerticalAlignment="Top" Click="PackupTransitBill_Button_Click"/>
         <Button x:Name="CSVDownload_Button" Content="下载CSV" HorizontalAlignment="Left" Margin="375,10,0,0" VerticalAlignment="Top" Click="CSVDownload_Button_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="457,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
