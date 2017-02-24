@@ -104,6 +104,7 @@
     <Compile Include="Models\core\Order.cs" />
     <Compile Include="Models\core\Package.cs" />
     <Compile Include="Models\core\Porter.cs" />
+    <Compile Include="Models\core\Container.cs" />
     <Compile Include="Models\core\TransitBill.cs" />
     <Compile Include="Models\core\User.cs" />
     <Compile Include="Models\engine\DataCSV\TransitBillCheckoutCSVItem.cs" />
