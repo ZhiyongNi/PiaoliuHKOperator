@@ -13,6 +13,7 @@ using PiaoliuHKOperator.Models.engine.DataCSV;
 using static PiaoliuHKOperator.Global;
 using Windows.UI.ViewManagement;
 using Windows.Foundation;
+using System.Collections.ObjectModel;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -25,9 +26,11 @@ namespace PiaoliuHKOperator.Views
     {
         List<TransitBillCheckoutCSVItem> TransitBillCheckoutCSVItem_List;
         TransitBillList TransitBillList_Instance;
-        TransitBill TransitBill_Instance;
         PackageList PackageList_Instance;
+        TransitBill TransitBill_Instance;
         Package Package_Instance;
+        ObservableCollection<TransitBill> TransitBillRemoveItem_Collection;
+        ObservableCollection<Package> PackageRemoveItem_Collection;
 
         public TransitBillCheckoutPage()
         {
@@ -36,6 +39,9 @@ namespace PiaoliuHKOperator.Views
             TransitBill_Instance = new TransitBill();
             PackageList_Instance = new PackageList();
             Package_Instance = new Package();
+            TransitBillRemoveItem_Collection = new ObservableCollection<TransitBill>();
+            PackageRemoveItem_Collection = new ObservableCollection<Package>();
+
             TransitBillCheckoutCSVItem_List = new List<TransitBillCheckoutCSVItem>();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -64,6 +70,7 @@ namespace PiaoliuHKOperator.Views
             TransitBillList_Instance.findINSYSTransitBillbyFilter(FilterArray);
 
             TransitBillSelecting_ListView.ItemsSource = TransitBillList_Instance.TransitBillItemList;
+            TransitBillRemoved_ListView.ItemsSource = TransitBillRemoveItem_Collection;
         }
         private List<string> getFilterArrayinPage()
         {
@@ -81,21 +88,16 @@ namespace PiaoliuHKOperator.Views
             return FilterArray;
         }
 
-
-        private void IgnorePackage_Button_Click(object sender, RoutedEventArgs e)
+        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
-            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
+            TransitBill_Instance = (TransitBill)TransitBillSelecting_ListView.SelectedItem;
 
-            /*List<string> FilterArray = new List<string>();
+            List<string> FilterArray = new List<string>();
             FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findAllPackagebyFilter(FilterArray);
+            PackageList_Instance.findINSYSPackagebyFilter(FilterArray);
 
-            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
-            {
-                ListViewItem PackageListViewItem = new ListViewItem();
-                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
-                PackageSelecting_ListView.Items.Add(PackageListViewItem);
-            }*/
+            PackageSelecting_ListView.ItemsSource = PackageList_Instance.PackageItemList;
+            PackageRemoved_ListView.ItemsSource = PackageRemoveItem_Collection;
         }
 
         private void PackupTransitBill_Button_Click(object sender, RoutedEventArgs e)
@@ -158,20 +160,38 @@ namespace PiaoliuHKOperator.Views
             }
         }
 
-        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        private void RemoveTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
-            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
+            ExtendTransitBill_Button.IsEnabled = false;
+            TransitBillRemoveItem_Collection.Add((TransitBill)TransitBillSelecting_ListView.SelectedItem);
+            TransitBillList_Instance.TransitBillItemList.Remove((TransitBill)TransitBillSelecting_ListView.SelectedItem);
+        }
 
-            List<string> FilterArray = new List<string>();
-            FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findINSYSPackagebyFilter(FilterArray);
+        private void RemovePackage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ExtendTransitBill_Button.IsEnabled = false;
+            PackageRemoveItem_Collection.Add((Package)PackageSelecting_ListView.SelectedItem);
+            PackageList_Instance.PackageItemList.Remove((Package)PackageSelecting_ListView.SelectedItem);
+        }
 
-            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
-            {
-                ListViewItem PackageListViewItem = new ListViewItem();
-                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
-                PackageSelecting_ListView.Items.Add(PackageListViewItem);
-            }
+        private void SubmitTransitbill_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void IgnoreTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SubmitPackage_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void IgnorePackage_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -2,6 +2,7 @@
 using PiaoliuHKOperator.Models.core;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -12,7 +13,7 @@ namespace PiaoliuHKOperator.Models.engine
     class PackageList
     {
         public List<string> SQLExecuteArray;
-        public List<Package> PackageItemList = new List<Package>();
+        public ObservableCollection<Package> PackageItemList = new ObservableCollection<Package>();
         public void findALLPackagebyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;

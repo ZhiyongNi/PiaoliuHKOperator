@@ -11,23 +11,70 @@
         <ComboBox x:Name="TransitBillStatus_ComboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="150">
             <ComboBoxItem Content="All" IsSelected="True"/>
         </ComboBox>
-        <Button x:Name="SearchTransitBill_Button" Content="搜索" HorizontalAlignment="Left" Margin="320,10,0,0" VerticalAlignment="Top" Click="SearchTransitBill_Button_Click"/>
-        <Button x:Name="ExtendTransitBill_Button" Content="展开" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Click="ExtendTransitBill_Button_Click"/>
-        <Button x:Name="IgnorePackage_Button" Content="去除" HorizontalAlignment="Left" Margin="765,400,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
-        <Button x:Name="PackupTransitBill_Button" Content="打包" HorizontalAlignment="Left" Margin="765,10,0,0" VerticalAlignment="Top" Click="PackupTransitBill_Button_Click"/>
-        <Button x:Name="CSVDownload_Button" Content="下载CSV" HorizontalAlignment="Left" Margin="375,10,0,0" VerticalAlignment="Top" Click="CSVDownload_Button_Click"/>
-        <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Margin="10,47,0,363" Width="750" Background="Gray" Height="310"/>
-        <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Margin="10,400,0,10" Width="750" Background="Gray" Height="310"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="457,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <ComboBox x:Name="TransitBillAddress_ComboBox" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" Width="150">
             <ComboBoxItem Content="All" IsSelected="True"/>
         </ComboBox>
-        <Button x:Name="IgnorePackage_Button_Copy" Content="去除" HorizontalAlignment="Left" Margin="765,47,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
-        <ListView x:Name="PackageSelecting_ListView_Copy" HorizontalAlignment="Left" Margin="820,400,0,10" Width="450" Background="Gray" Height="310"/>
-        <ListView x:Name="TransitBillSelecting_ListView_Copy" HorizontalAlignment="Left" Margin="820,47,0,363" Width="450" Background="Gray" Height="310"/>
-        <Button x:Name="IgnorePackage_Button_Copy1" Content="撤销" HorizontalAlignment="Left" Margin="765,678,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
-        <Button x:Name="IgnorePackage_Button_Copy2" Content="确定" HorizontalAlignment="Left" Margin="765,641,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
-        <Button x:Name="IgnorePackage_Button_Copy3" Content="确定" HorizontalAlignment="Left" Margin="765,288,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
-        <Button x:Name="IgnorePackage_Button_Copy4" Content="撤销" HorizontalAlignment="Left" Margin="765,325,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
+        <Button x:Name="SearchTransitBill_Button" Content="搜索" HorizontalAlignment="Left" Margin="320,10,0,0" VerticalAlignment="Top" Click="SearchTransitBill_Button_Click"/>
+        <Button x:Name="ExtendTransitBill_Button" Content="展开" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Click="ExtendTransitBill_Button_Click"/>
+        <Button x:Name="RemoveTransitBill_Button" Content="去除" HorizontalAlignment="Left" Margin="765,47,0,0" VerticalAlignment="Top" Click="RemoveTransitBill_Button_Click"/>
+        <Button x:Name="SubmitTransitbill_Button" Content="确定" HorizontalAlignment="Left" Margin="765,288,0,0" VerticalAlignment="Top" Click="SubmitTransitbill_Button_Click"/>
+        <Button x:Name="IgnoreTransitBill_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,325,0,0" VerticalAlignment="Top" Click="IgnoreTransitBill_Button_Click"/>
+        <Button x:Name="RemovePackage_Button" Content="去除" HorizontalAlignment="Left" Margin="765,400,0,0" VerticalAlignment="Top" Click="RemovePackage_Button_Click"/>
+        <Button x:Name="SubmitPackage_Button" Content="确定" HorizontalAlignment="Left" Margin="765,641,0,0" VerticalAlignment="Top" Click="SubmitPackage_Button_Click"/>
+        <Button x:Name="IgnorePackage_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,678,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
+        <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Margin="10,47,0,363" Width="750" Background="Gray" Height="310">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding TransitBillSerialID}" FontWeight="Bold" Margin="12" Width="160"/>
+                        <TextBlock Text="{Binding TransitBillRelatedPackageQuantity}" TextWrapping="NoWrap" Margin="12"  Width="160"/>
+                        <TextBlock Text="{Binding TransitBillPrice}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding TransitBillStatus}" TextWrapping="NoWrap" Margin="12"  Width="200"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="TransitBillRemoved_ListView" HorizontalAlignment="Left" Margin="820,47,0,363" Width="450" Background="Gray" Height="310">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding TransitBillSerialID}" FontWeight="Bold" Margin="12" Width="160"/>
+                        <TextBlock Text="{Binding TransitBillRelatedPackageQuantity}" TextWrapping="NoWrap" Margin="12"  Width="160"/>
+                        <TextBlock Text="{Binding TransitBillStatus}" TextWrapping="NoWrap" Margin="12"  Width="200"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="PackageSelecting_ListView" HorizontalAlignment="Left" Margin="10,400,0,10" Width="750" Background="Gray" Height="310">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding PackageSerialID}" FontWeight="Bold" Margin="12" Width="160"/>
+                        <TextBlock Text="{Binding PackageExpressCompany}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageExpressTrackNumber}" TextWrapping="NoWrap" Margin="12"  Width="160"/>
+                        <TextBlock Text="{Binding PackageWeight}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageStatus}" TextWrapping="NoWrap" Margin="12"  Width="120"/>
+                        <TextBlock Text="{Binding PackageRemarks}" TextWrapping="NoWrap" Margin="12"  Width="200"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="PackageRemoved_ListView" HorizontalAlignment="Left" Margin="820,437,0,10" Width="450" Background="Gray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding PackageSerialID}" FontWeight="Bold" Margin="12" Width="160"/>
+                        <TextBlock Text="{Binding PackageWeight}" TextWrapping="NoWrap" Margin="12"  Width="80"/>
+                        <TextBlock Text="{Binding PackageStatus}" TextWrapping="NoWrap" Margin="12"  Width="120"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ComboBox x:Name="TransitBillTarget_ComboBox" HorizontalAlignment="Left" Margin="820,400,0,0" VerticalAlignment="Top" Width="450">
+            <ComboBoxItem Content="All" IsSelected="True"/>
+        </ComboBox>
+        <Button x:Name="PackupTransitBill_Button" Content="打包" HorizontalAlignment="Left" Margin="765,10,0,0" VerticalAlignment="Top" Click="PackupTransitBill_Button_Click"/>
+        <Button x:Name="CSVDownload_Button" Content="下载CSV" HorizontalAlignment="Left" Margin="375,10,0,0" VerticalAlignment="Top" Click="CSVDownload_Button_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="457,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
     </Grid>
 </Page>
