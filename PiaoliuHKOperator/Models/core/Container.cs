@@ -24,10 +24,23 @@ namespace PiaoliuHKOperator.Models.core
 
         public List<string> ContainerCell_Argument_List = new List<string>();
 
-        public void updateContainerArgumentInfo(List<string> f_Argument_List)
+        public Container()
+        {
+            ContainerRelatedTransitBillSerialID = new List<string>();
+        }
+        public void addContainerNewRecoder()
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "addContainerNewRecoder", JsonConvert.SerializeObject(this));
+            SyncClass_Instance.SyncbySocket();
+            if (SyncClass_Instance.SyncSucceed)
+            {
+                CloneThis(JsonConvert.DeserializeObject<Container>(SyncClass_Instance.SyncJsonString));
+            }
+        }
+        public void updateContainerRecoderbyArgumentInfo(List<string> f_Argument_List)
         {
             this.ContainerCell_Argument_List = f_Argument_List;
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updateContainerArgumentInfo", JsonConvert.SerializeObject(this));
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updateContainerRecoderbyArgumentInfo", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {

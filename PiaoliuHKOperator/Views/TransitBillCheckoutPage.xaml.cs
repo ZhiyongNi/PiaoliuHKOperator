@@ -117,18 +117,15 @@ namespace PiaoliuHKOperator.Views
 
         private void PackupTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
-            TransitBill_Instance = this.TransitBillList_Instance.TransitBillItemList[TransitBillSelecting_ListView.SelectedIndex];
+            Container Container_Instance = new Container();
+            Container_Instance.ContainerSerialID="CO309174981";
 
-            List<string> FilterArray = new List<string>();
-            FilterArray.Add("PackageRelatedTransitBillSerialID = \'" + TransitBill_Instance.TransitBillSerialID + "\'");
-            PackageList_Instance.findALLPackagebyFilter(FilterArray);
-
-            for (int i = 0; i < PackageList_Instance.PackageItemList.Count; i++)
+            foreach (TransitBill TransitBill_Cell in this.TransitBillList_Instance.TransitBillItemList)
             {
-                ListViewItem PackageListViewItem = new ListViewItem();
-                PackageListViewItem.Content = PackageList_Instance.PackageItemList[i].PackageSerialID;
-                PackageSelecting_ListView.Items.Add(PackageListViewItem);
+                Container_Instance.ContainerRelatedTransitBillSerialID.Add(TransitBill_Cell.TransitBillSerialID);
             }
+            Container_Instance.addContainerNewRecoder();
+
         }
 
         private async void CSVDownload_Button_Click(object sender, RoutedEventArgs e)

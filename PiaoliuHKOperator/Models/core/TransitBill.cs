@@ -25,6 +25,11 @@ namespace PiaoliuHKOperator.Models.core
 
         public List<string> TransitBillCell_Argument_List = new List<string>();
 
+        public TransitBill()
+        {
+            TransitBillRelatedPackageSerialID = new List<string>();
+        }
+
         public void updateTransitBillArgumentInfo(List<string> f_Argument_List)
         {
             this.TransitBillCell_Argument_List = f_Argument_List;
