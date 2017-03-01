@@ -30,6 +30,7 @@ namespace PiaoliuHKOperator.Models.core
         }
         public void addContainerNewRecoder()
         {
+            setPackageSerialNumber();
             SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "addContainerNewRecoder", JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
@@ -37,6 +38,13 @@ namespace PiaoliuHKOperator.Models.core
                 CloneThis(JsonConvert.DeserializeObject<Container>(SyncClass_Instance.SyncJsonString));
             }
         }
+
+        public void setPackageSerialNumber()
+        {
+            string SerialNumber = "COTEMP";
+            this.ContainerSerialID = SerialNumber;
+        }
+
         public void updateContainerRecoderbyArgumentInfo(List<string> f_Argument_List)
         {
             this.ContainerCell_Argument_List = f_Argument_List;

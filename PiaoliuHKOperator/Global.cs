@@ -13,7 +13,7 @@ namespace PiaoliuHKOperator
     {
         public static TcpClient OperatorClientSocket;
         public static String OperatorServer_Host = "127.0.0.1";
-        //public static String OperatorServer_Host = "192.168.31.142";
+        //public static String OperatorServer_Host = "120.77.253.194";
         public static Int16 OperatorServer_Port = 20000;
         public static char SocketDelimiter = '\n';
         public static char SyncDelimiter = '|';
