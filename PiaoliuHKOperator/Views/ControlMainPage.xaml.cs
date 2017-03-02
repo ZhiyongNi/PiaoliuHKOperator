@@ -90,5 +90,25 @@ namespace PiaoliuHKOperator.Views
         {
 
         }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Repeat_AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AllShortcut_AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Back_AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

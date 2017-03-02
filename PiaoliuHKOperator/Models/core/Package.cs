@@ -40,6 +40,12 @@ namespace PiaoliuHKOperator.Models.core
                 CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
             }
         }
+        public void setPackageSerialNumber()
+        {
+            string SerialNumber = "PATEMP";
+            this.PackageSerialID = SerialNumber;
+        }
+
         private void CloneThis(Package f_Package)
         {
             this.PackageID = f_Package.PackageID;
