@@ -31,31 +31,28 @@ namespace PiaoliuHKOperator.Models.core
         public void addContainerNewRecoder()
         {
             setContainerSerialNumber();
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "addContainerNewRecoder", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<Container>(SyncClass_Instance.SyncJsonString));
-            }
-        }
-
-        public void setContainerSerialNumber()
-        {
-            string SerialNumber = "COTEMP";
-            this.ContainerSerialID = SerialNumber;
+            SyncThisbyMethod("addContainerNewRecoder");
         }
 
         public void updateContainerRecoderbyArgumentInfo(List<string> f_Argument_List)
         {
             this.ContainerCell_Argument_List = f_Argument_List;
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updateContainerRecoderbyArgumentInfo", JsonConvert.SerializeObject(this));
+            SyncThisbyMethod("updateContainerRecoderbyArgumentInfo");
+        }
+        private void setContainerSerialNumber()
+        {
+            string SerialNumber = "COTEMP";
+            this.ContainerSerialID = SerialNumber;
+        }
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<Container>(SyncClass_Instance.SyncJsonString));
             }
         }
-
         private void CloneThis(Container f_Container)
         {
             this.ContainerID = f_Container.ContainerID;

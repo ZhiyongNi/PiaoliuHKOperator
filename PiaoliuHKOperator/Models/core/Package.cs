@@ -33,19 +33,28 @@ namespace PiaoliuHKOperator.Models.core
         public void updatePackageArgumentInfo(List<string> f_Argument_List)
         {
             this.PackageCell_Argument_List = f_Argument_List;
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updatePackageArgumentInfo", JsonConvert.SerializeObject(this));
+            SyncThisbyMethod("updatePackageArgumentInfo");
+        }
+        public void addPackageNewRecoder()
+        {
+            setPackageSerialNumber();
+            SyncThisbyMethod("addPackageNewRecoder");
+        }
+
+        private void setPackageSerialNumber()
+        {
+            string SerialNumber = "PATEMP";
+            this.PackageSerialID = SerialNumber;
+        }
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<Package>(SyncClass_Instance.SyncJsonString));
             }
         }
-        public void setPackageSerialNumber()
-        {
-            string SerialNumber = "PATEMP";
-            this.PackageSerialID = SerialNumber;
-        }
-
         private void CloneThis(Package f_Package)
         {
             this.PackageID = f_Package.PackageID;

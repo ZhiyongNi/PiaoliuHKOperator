@@ -27,17 +27,22 @@ namespace PiaoliuHKOperator.Models.core
             this.AdminName = f_UserName;
             this.AdminPassword = f_Password;
 
-            SyncClass SyncClass_Instance = new SyncClass("Admin", "AuthAdminbyNameandPassword", JsonConvert.SerializeObject(this));
+            SyncThisbyMethod("AuthAdminbyNameandPassword");
+
+        }
+        public void addAdminNewRecoder() { }
+
+        private void setAdminID() { }
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
 
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<Admin>(SyncClass_Instance.SyncJsonString));
             }
-
         }
-        private void AuthAdminbyNameandPassword() { }
-
         private void CloneThis(Admin f_Admin)
         {
             this.AdminID = f_Admin.AdminID;

@@ -33,7 +33,14 @@ namespace PiaoliuHKOperator.Models.core
         public void updateCustomerArgumentInfo(List<string> f_Argument_List)
         {
             this.CustomerCell_Argument_List = f_Argument_List;
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "updateCustomerArgumentInfo", JsonConvert.SerializeObject(this));
+            SyncThisbyMethod("updateCustomerArgumentInfo");
+        }
+        public void addCustomerNewRecoder() { }
+
+        private void setCustomerID() { }
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {

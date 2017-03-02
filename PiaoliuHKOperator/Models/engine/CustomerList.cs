@@ -5,20 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using PiaoliuHKOperator.Models.core;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace PiaoliuHKOperator.Models.engine
 {
     class CustomerList
     {
-        public List<string> SQLExecuteArray;
-        public List<Customer> CustomerItemList = new List<Customer>();
+        public List<string> SQLExecuteArray { get; set; }
+        public ObservableCollection<Customer> CustomerItemList { get; set; }
+
+        public CustomerList()
+        {
+            SQLExecuteArray = new List<string>();
+            CustomerItemList = new ObservableCollection<Customer>();
+        }
         public void findAllCustomerbyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
+            SyncThisbyMethod("findAllCustomerbyFilter");
+        }
 
-            SyncClass SyncClass_Instance = new SyncClass("CustomerList", "findAllCustomerbyFilter", JsonConvert.SerializeObject(this));
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
-
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<CustomerList>(SyncClass_Instance.SyncJsonString));

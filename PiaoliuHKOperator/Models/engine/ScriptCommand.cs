@@ -9,52 +9,42 @@ namespace PiaoliuHKOperator.Models.engine
 {
     class ScriptCommand
     {
-        public List<string> ResultReturnList = new List<string>();
+        public List<string> ResultReturnList { get; set; }
+
+        public ScriptCommand()
+        {
+            ResultReturnList = new List<string>();
+        }
 
         public void IDRepeatChecks()
         {
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "IDRepeatChecks", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<ScriptCommand>(SyncClass_Instance.SyncJsonString));
-            }
+            SyncThisbyMethod("IDRepeatChecks");
         }
 
         public void INSYSPackageRelatedTransitBillCheck()
         {
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "INSYSPackageRelatedTransitBillCheck", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<ScriptCommand>(SyncClass_Instance.SyncJsonString));
-            }
+            SyncThisbyMethod("INSYSPackageRelatedTransitBillCheck");
         }
 
         public void SIGNEDPackageRelatedTransitBillCheck()
         {
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "SIGNEDPackageRelatedTransitBillCheck", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<ScriptCommand>(SyncClass_Instance.SyncJsonString));
-            }
+            SyncThisbyMethod("SIGNEDPackageRelatedTransitBillCheck");
         }
 
         public void PendingtoCheckoutTransitBill()
         {
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "PendingtoCheckoutTransitBill", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
+            SyncThisbyMethod("PendingtoCheckoutTransitBill");
+        }
 
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
+            SyncClass_Instance.SyncbySocket();
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<ScriptCommand>(SyncClass_Instance.SyncJsonString));
             }
         }
-
         private void CloneThis(ScriptCommand f_ScriptCommand)
         {
             this.ResultReturnList = f_ScriptCommand.ResultReturnList;

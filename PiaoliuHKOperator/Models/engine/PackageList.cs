@@ -12,46 +12,39 @@ namespace PiaoliuHKOperator.Models.engine
 {
     class PackageList
     {
-        public List<string> SQLExecuteArray;
-        public ObservableCollection<Package> PackageItemList = new ObservableCollection<Package>();
+        public List<string> SQLExecuteArray { get; set; }
+        public ObservableCollection<Package> PackageItemList { get; set; }
+
+        public PackageList()
+        {
+            SQLExecuteArray = new List<string>();
+            PackageItemList = new ObservableCollection<Package>();
+        }
         public void findALLPackagebyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
-
-            //SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, "findALLPackagebyFilter", JsonConvert.SerializeObject(this));
-            SyncClass SyncClass_Instance = new SyncClass(this.GetType().Name, "findALLPackagebyFilter", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<PackageList>(SyncClass_Instance.SyncJsonString));
-            }
+            SyncThisbyMethod("findALLPackagebyFilter");
         }
         public void findSIGNEDPackagebyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
-
-            SyncClass SyncClass_Instance = new SyncClass("PackageList", "findSIGNEDPackagebyFilter", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<PackageList>(SyncClass_Instance.SyncJsonString));
-            }
+            SyncThisbyMethod("findSIGNEDPackagebyFilter");
         }
         public void findINSYSPackagebyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
+            SyncThisbyMethod("findINSYSPackagebyFilter");
+        }
 
-            SyncClass SyncClass_Instance = new SyncClass("PackageList", "findINSYSPackagebyFilter", JsonConvert.SerializeObject(this));
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
-
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<PackageList>(SyncClass_Instance.SyncJsonString));
             }
         }
-
         private void CloneThis(PackageList f_PackageList)
         {
             this.SQLExecuteArray = f_PackageList.SQLExecuteArray;

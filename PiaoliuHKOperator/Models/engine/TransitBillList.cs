@@ -11,46 +11,40 @@ namespace PiaoliuHKOperator.Models.engine
 {
     class TransitBillList
     {
-        public List<string> SQLExecuteArray;
-        public ObservableCollection<TransitBill> TransitBillItemList = new ObservableCollection<TransitBill>();
+        public List<string> SQLExecuteArray { get; set; }
+        public ObservableCollection<TransitBill> TransitBillItemList { get; set; }
+
+        public TransitBillList()
+        {
+            SQLExecuteArray = new List<string>();
+            TransitBillItemList = new ObservableCollection<TransitBill>();
+        }
         public void findAllTransitBillbyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
-
-            SyncClass SyncClass_Instance = new SyncClass("TransitBillList", "findAllTransitBillbyFilter", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<TransitBillList>(SyncClass_Instance.SyncJsonString));
-            }
+            SyncThisbyMethod("findAllTransitBillbyFilter");
         }
         public void findSIGNEDTransitBillbyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
-
-            SyncClass SyncClass_Instance = new SyncClass("TransitBillList", "findSIGNEDTransitBillbyFilter", JsonConvert.SerializeObject(this));
-            SyncClass_Instance.SyncbySocket();
-
-            if (SyncClass_Instance.SyncSucceed)
-            {
-                CloneThis(JsonConvert.DeserializeObject<TransitBillList>(SyncClass_Instance.SyncJsonString));
-            }
+            SyncThisbyMethod("findSIGNEDTransitBillbyFilter");
         }
 
         public void findINSYSTransitBillbyFilter(List<string> FilterArray)
         {
             this.SQLExecuteArray = FilterArray;
+            SyncThisbyMethod("findINSYSTransitBillbyFilter");
+        }
 
-            SyncClass SyncClass_Instance = new SyncClass("TransitBillList", "findINSYSTransitBillbyFilter", JsonConvert.SerializeObject(this));
+        private void SyncThisbyMethod(string f_TargetMethod)
+        {
+            SyncClass SyncClass_Instance = new SyncClass(this.GetType().FullName, f_TargetMethod, JsonConvert.SerializeObject(this));
             SyncClass_Instance.SyncbySocket();
-
             if (SyncClass_Instance.SyncSucceed)
             {
                 CloneThis(JsonConvert.DeserializeObject<TransitBillList>(SyncClass_Instance.SyncJsonString));
             }
         }
-
         private void CloneThis(TransitBillList f_TransitBillList)
         {
             this.SQLExecuteArray = f_TransitBillList.SQLExecuteArray;
