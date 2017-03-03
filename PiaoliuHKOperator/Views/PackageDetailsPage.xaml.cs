@@ -32,11 +32,15 @@ namespace PiaoliuHKOperator.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.PackageDetails_Instance = (Package)e.Parameter;
-            PackageID_TextBox.Text = PackageDetails_Instance.PackageID == null ? "" : PackageDetails_Instance.PackageID.ToString();
-            PackageSerialID_TextBox.Text = PackageDetails_Instance.PackageSerialID == null ? "" : PackageDetails_Instance.PackageSerialID;
-            PackageOwnerID_TextBox.Text = PackageDetails_Instance.PackageOwnerID == null ? "" : PackageDetails_Instance.PackageOwnerID.ToString();
-            PackageOwnerMobile_TextBox.Text = PackageDetails_Instance.PackageOwnerMobile == null ? "" : PackageDetails_Instance.PackageOwnerMobile;
+            ViewPackageinPage();
+        }
 
+        private void ViewPackageinPage()
+        {
+            PackageID_TextBox.Text = PackageDetails_Instance.PackageID == 0 ? "" : PackageDetails_Instance.PackageID.ToString();
+            PackageSerialID_TextBox.Text = PackageDetails_Instance.PackageSerialID == null ? "" : PackageDetails_Instance.PackageSerialID;
+            PackageOwnerID_TextBox.Text = PackageDetails_Instance.PackageOwnerID == 0 ? "" : PackageDetails_Instance.PackageOwnerID.ToString();
+            PackageOwnerMobile_TextBox.Text = PackageDetails_Instance.PackageOwnerMobile == null ? "" : PackageDetails_Instance.PackageOwnerMobile;
             foreach (Global.PackageExpressCompany_Struct PackageExpressCompany_Struct_Item in Global.PackageExpressCompany_Dictionary.Values)
             {
                 ComboBoxItem PackageExpressCompany_ComboBoxItem = new ComboBoxItem();
@@ -49,14 +53,12 @@ namespace PiaoliuHKOperator.Views
                     PackageExpressCompany_ComboBox.SelectedItem = PackageExpressCompany_ComboBoxItem;
                 }
             }
-
             PackageExpressTrackNumber_TextBox.Text = PackageDetails_Instance.PackageExpressTrackNumber == null ? "" : PackageDetails_Instance.PackageExpressTrackNumber;
             PackageSnapshot_TextBox.Text = PackageDetails_Instance.PackageSnapshot == null ? "" : PackageDetails_Instance.PackageSnapshot;
-            PackageWeight_TextBox.Text = PackageDetails_Instance.PackageWeight == null ? "" : PackageDetails_Instance.PackageWeight.ToString();
-            PackageFee_TextBox.Text = PackageDetails_Instance.PackageFee == null ? "" : PackageDetails_Instance.PackageFee.ToString();
-            PackageInTimeStamp_TextBox.Text = PackageDetails_Instance.PackageInTimeStamp == null ? "" : PackageDetails_Instance.PackageInTimeStamp.ToString();
-            PackageOutTimeStamp_TextBox.Text = PackageDetails_Instance.PackageOutTimeStamp == null ? "" : PackageDetails_Instance.PackageOutTimeStamp.ToString();
-
+            PackageWeight_TextBox.Text = PackageDetails_Instance.PackageWeight == 0 ? "" : PackageDetails_Instance.PackageWeight.ToString();
+            PackageFee_TextBox.Text = PackageDetails_Instance.PackageFee == 0 ? "" : PackageDetails_Instance.PackageFee.ToString();
+            PackageInTimeStamp_TextBox.Text = new DateTime(1970, 1, 1).AddSeconds(PackageDetails_Instance.PackageInTimeStamp).ToLocalTime().ToString();
+            PackageOutTimeStamp_TextBox.Text = new DateTime(1970, 1, 1).AddSeconds(PackageDetails_Instance.PackageOutTimeStamp).ToLocalTime().ToString();
             foreach (Global.PackageStatus_Struct PackageStatus_Struct_Item in Global.PackageStatus_Dictionary.Values)
             {
                 ComboBoxItem PackageStatus_ComboBoxItem = new ComboBoxItem();
@@ -69,23 +71,28 @@ namespace PiaoliuHKOperator.Views
                     PackageStatus_ComboBox.SelectedItem = PackageStatus_ComboBoxItem;
                 }
             }
-
             PackageRemarks_TextBox.Text = PackageDetails_Instance.PackageRemarks == null ? "" : PackageDetails_Instance.PackageRemarks;
-            PackageWorkerID_TextBox.Text = PackageDetails_Instance.PackageWorkerID == null ? "" : PackageDetails_Instance.PackageWorkerID.ToString();
+            PackageWorkerID_TextBox.Text = PackageDetails_Instance.PackageWorkerID == 0 ? "" : PackageDetails_Instance.PackageWorkerID.ToString();
             PackageRelatedTransitBillSerialID_TextBox.Text = PackageDetails_Instance.PackageRelatedTransitBillSerialID == null ? "" : PackageDetails_Instance.PackageRelatedTransitBillSerialID;
-
         }
 
-        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        private void getPackageinPage()
         {
-            if (PackageID_TextBox.Equals(String.Empty) && PackageSerialID_TextBox.Equals(String.Empty))
-            {
-                this.PackageDetails_Instance.addPackageNewRecoder();
-            }
-            else
-            {
-                this.PackageDetails_Instance.updatePackageArgumentInfo(getArgumentArrayinPage());
-            }
+            this.PackageDetails_Instance.PackageID = Convert.ToInt16(PackageID_TextBox.Text);
+            this.PackageDetails_Instance.PackageSerialID = PackageSerialID_TextBox.Text;
+            this.PackageDetails_Instance.PackageOwnerID = Convert.ToInt16(PackageOwnerID_TextBox.Text);
+            this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
+            this.PackageDetails_Instance.PackageExpressCompany = Convert.ToString(((ComboBoxItem)PackageExpressCompany_ComboBox.SelectedItem).Tag);
+            this.PackageDetails_Instance.PackageExpressTrackNumber = PackageExpressTrackNumber_TextBox.Text;
+            this.PackageDetails_Instance.PackageSnapshot = PackageSnapshot_TextBox.Text;
+            this.PackageDetails_Instance.PackageWeight = Convert.ToSingle(PackageWeight_TextBox.Text);
+            this.PackageDetails_Instance.PackageFee = Convert.ToSingle(PackageFee_TextBox.Text);
+            this.PackageDetails_Instance.PackageInTimeStamp = (Convert.ToDateTime(PackageInTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds;
+            this.PackageDetails_Instance.PackageOutTimeStamp = (Convert.ToDateTime(PackageOutTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds;
+            this.PackageDetails_Instance.PackageStatus = Convert.ToInt16(((ComboBoxItem)PackageStatus_ComboBox.SelectedItem).Tag);
+            this.PackageDetails_Instance.PackageRemarks = PackageRemarks_TextBox.Text;
+            this.PackageDetails_Instance.PackageWorkerID = Convert.ToInt16(PackageWorkerID_TextBox.Text);
+            this.PackageDetails_Instance.PackageRelatedTransitBillSerialID = PackageRelatedTransitBillSerialID_TextBox.Text;
         }
 
         private List<string> getArgumentArrayinPage()
@@ -107,10 +114,10 @@ namespace PiaoliuHKOperator.Views
             {
                 ArgumentArray.Add("PackageOwnerMobile = \'" + PackageOwnerMobile_TextBox.Text + "\'");
             }
-            /*if (PackageExpressCompany_CheckBox.IsChecked == true)
+            if (PackageExpressCompany_CheckBox.IsChecked == true)
             {
-                ArgumentArray.Add("PackageExpressCompany = \'" + PackageExpressCompany_TextBox.Text + "\'");
-            }*/
+                ArgumentArray.Add("PackageExpressCompany = \'" + Convert.ToString(((ComboBoxItem)PackageExpressCompany_ComboBox.SelectedItem).Tag) + "\'");
+            }
             if (PackageExpressTrackNumber_CheckBox.IsChecked == true)
             {
                 ArgumentArray.Add("PackageExpressTrackNumber = \'" + PackageExpressTrackNumber_TextBox.Text + "\'");
@@ -129,16 +136,16 @@ namespace PiaoliuHKOperator.Views
             }
             if (PackageInTimeStamp_CheckBox.IsChecked == true)
             {
-                ArgumentArray.Add("PackageInTimeStamp = \'" + PackageInTimeStamp_TextBox.Text + "\'");
+                ArgumentArray.Add("PackageInTimeStamp = \'" + (Convert.ToDateTime(PackageInTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds + "\'");
             }
             if (PackageOutTimeStamp_CheckBox.IsChecked == true)
             {
-                ArgumentArray.Add("PackageOutTimeStamp = \'" + PackageOutTimeStamp_TextBox.Text + "\'");
+                ArgumentArray.Add("PackageOutTimeStamp = \'" + (Convert.ToDateTime(PackageOutTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds + "\'");
             }
-            /*if (PackageStatus_CheckBox.IsChecked == true)
+            if (PackageStatus_CheckBox.IsChecked == true)
             {
-                ArgumentArray.Add("PackageStatus=" + PackageStatus_TextBox.Text);
-            }*/
+                ArgumentArray.Add("PackageStatus = \'" + Convert.ToString(((ComboBoxItem)PackageStatus_ComboBox.SelectedItem).Tag) + "\'");
+            }
             if (PackageRemarks_CheckBox.IsChecked == true)
             {
                 ArgumentArray.Add("PackageRemarks = \'" + PackageRemarks_TextBox.Text + "\'");
@@ -153,6 +160,20 @@ namespace PiaoliuHKOperator.Views
             }
             return ArgumentArray;
         }
+
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (PackageID_CheckBox.IsChecked == true)
+            {
+                this.PackageDetails_Instance.updatePackageArgumentInfo(getArgumentArrayinPage());
+            }
+            else
+            {
+                getPackageinPage();
+                this.PackageDetails_Instance.addPackageNewRecoder();
+            }
+        }
+
         private void CustomerOwnerList_Button_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
