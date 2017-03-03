@@ -33,11 +33,11 @@ namespace PiaoliuHKOperator.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            for (int i = 0; i < Global.CustomerSelfDefaultAddress_List.Count; i++)
+            foreach (Global.CustomerSelfDefaultAddress_Struct CustomerSelfDefaultAddress_Struct_Item in Global.CustomerSelfDefaultAddress_Dictionary.Values)
             {
                 ComboBoxItem CustomerSelfDefaultAddress_ComboBoxItem = new ComboBoxItem();
-                CustomerSelfDefaultAddress_ComboBoxItem.Tag = Global.CustomerSelfDefaultAddress_List[i].Tag;
-                CustomerSelfDefaultAddress_ComboBoxItem.Content = Global.CustomerSelfDefaultAddress_List[i].ChineseName;
+                CustomerSelfDefaultAddress_ComboBoxItem.Tag = CustomerSelfDefaultAddress_Struct_Item.Tag;
+                CustomerSelfDefaultAddress_ComboBoxItem.Content = CustomerSelfDefaultAddress_Struct_Item.Chinese;
 
                 CustomerSelfDefaultAddress_ComboBox.Items.Add(CustomerSelfDefaultAddress_ComboBoxItem);
             }

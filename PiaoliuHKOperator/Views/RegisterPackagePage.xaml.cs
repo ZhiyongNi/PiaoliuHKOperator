@@ -38,13 +38,7 @@ namespace PiaoliuHKOperator.Views
             PackageList_Instance = new PackageList();
             PackageList_Instance.findINSYSPackagebyFilter(getFilterArrayinPage());
 
-            if (PackageList_Instance.PackageItemList.Count != 0)
-            {
-                PackageSelecting_ListView.ItemsSource = PackageList_Instance.PackageItemList;
-
-                Matched_CheckBox.IsChecked = true;
-                PackageSelecting_ListView.SelectedIndex = 0;
-            }
+            PackageSelecting_ListView.ItemsSource = PackageList_Instance.PackageItemList;
         }
 
         private void SubmitDetails_Button_Click(object sender, RoutedEventArgs e)
@@ -52,7 +46,7 @@ namespace PiaoliuHKOperator.Views
             Package PackageDetails_Instance = new Package();
             if (Matched_CheckBox.IsChecked == true)
             {
-                PackageDetails_Instance = this.PackageList_Instance.PackageItemList[PackageSelecting_ListView.SelectedIndex];
+                PackageDetails_Instance = (Package)PackageSelecting_ListView.SelectedItem;
             }
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(PackageDetailsPage), PackageDetails_Instance);
@@ -61,19 +55,19 @@ namespace PiaoliuHKOperator.Views
         {
 
             List<string> FilterArray = new List<string>();
-            if (PackageExpressTrackNumber_TextBox.Text != "")
+            if (!PackageExpressTrackNumber_TextBox.Text.Equals(String.Empty))
             {
                 FilterArray.Add("PackageExpressTrackNumber = \'" + PackageExpressTrackNumber_TextBox.Text + "\'");
             }
-            if (PackageExpressCompany_TextBox.Text != "")
+            if (!PackageExpressCompany_TextBox.Text.Equals(String.Empty))
             {
                 FilterArray.Add("PackageExpressCompany = \'" + PackageExpressCompany_TextBox.Text + "\'");
             }
-            if (PackageOwnerMobile_TextBox.Text != "")
+            if (!PackageOwnerMobile_TextBox.Text.Equals(String.Empty))
             {
                 FilterArray.Add("PackageOwnerMobile = \'" + PackageOwnerMobile_TextBox.Text + "\'");
             }
-            if (PackageOwnerName_TextBox.Text != "")
+            if (!PackageOwnerName_TextBox.Text.Equals(String.Empty))
             {
                 FilterArray.Add("PackageOwnerName = \'" + PackageOwnerName_TextBox.Text + "\'");
             }

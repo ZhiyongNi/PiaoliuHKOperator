@@ -41,13 +41,13 @@ namespace PiaoliuHKOperator.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            for (int i = 0; i < Global.CustomerSelfDefaultAddress_List.Count; i++)
+            foreach (Global.CustomerSelfDefaultAddress_Struct CustomerSelfDefaultAddress_Struct_Item in Global.CustomerSelfDefaultAddress_Dictionary.Values)
             {
-                ComboBoxItem TransitBill_ComboBoxItem = new ComboBoxItem();
-                TransitBill_ComboBoxItem.Tag = Global.CustomerSelfDefaultAddress_List[i].Tag;
-                TransitBill_ComboBoxItem.Content = Global.CustomerSelfDefaultAddress_List[i].ChineseName;
+                ComboBoxItem CustomerSelfDefaultAddress_ComboBoxItem = new ComboBoxItem();
+                CustomerSelfDefaultAddress_ComboBoxItem.Tag = CustomerSelfDefaultAddress_Struct_Item.Tag;
+                CustomerSelfDefaultAddress_ComboBoxItem.Content = CustomerSelfDefaultAddress_Struct_Item.Chinese;
 
-                TransitBillAddress_ComboBox.Items.Add(TransitBill_ComboBoxItem);
+                TransitBillAddress_ComboBox.Items.Add(CustomerSelfDefaultAddress_ComboBoxItem);
             }
         }
         private void SearchTransitBill_Button_Click(object sender, RoutedEventArgs e)
