@@ -23,6 +23,9 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class PackageDetailsPage : Page
     {
+        private const int NewPackage_Action = 1;
+        private const int UpdatePackage_Action = 2;
+
         public Package PackageDetails_Instance;
         public PackageDetailsPage()
         {
@@ -32,10 +35,18 @@ namespace PiaoliuHKOperator.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.PackageDetails_Instance = (Package)e.Parameter;
-            ViewPackageinPage();
+            if (PackageDetails_Instance.PackageID == 0)
+            {
+                ViewPackageinPage(NewPackage_Action);
+            }
+            else
+            {
+                ViewPackageinPage(UpdatePackage_Action);
+            }
+
         }
 
-        private void ViewPackageinPage()
+        private void ViewPackageinPage(int f_Action)
         {
             PackageID_TextBox.Text = PackageDetails_Instance.PackageID == 0 ? "" : PackageDetails_Instance.PackageID.ToString();
             PackageSerialID_TextBox.Text = PackageDetails_Instance.PackageSerialID == null ? "" : PackageDetails_Instance.PackageSerialID;
@@ -74,28 +85,68 @@ namespace PiaoliuHKOperator.Views
             PackageRemarks_TextBox.Text = PackageDetails_Instance.PackageRemarks == null ? "" : PackageDetails_Instance.PackageRemarks;
             PackageWorkerID_TextBox.Text = PackageDetails_Instance.PackageWorkerID == 0 ? "" : PackageDetails_Instance.PackageWorkerID.ToString();
             PackageRelatedTransitBillSerialID_TextBox.Text = PackageDetails_Instance.PackageRelatedTransitBillSerialID == null ? "" : PackageDetails_Instance.PackageRelatedTransitBillSerialID;
+
+            switch (f_Action)
+            {
+                case NewPackage_Action:
+                    PackageID_CheckBox.IsEnabled = false;
+                    PackageID_CheckBox.IsChecked = false;
+                    PackageID_TextBox.IsEnabled = false;
+                    PackageID_TextBox.Text = String.Empty;
+                    PackageSerialID_CheckBox.IsEnabled = false;
+                    PackageSerialID_CheckBox.IsChecked = false;
+                    PackageSerialID_TextBox.IsEnabled = false;
+                    PackageSerialID_TextBox.Text = String.Empty;
+                    PackageOwnerMobile_CheckBox.IsChecked = true;
+                    PackageExpressCompany_CheckBox.IsChecked = true;
+                    PackageInTimeStamp_CheckBox.IsEnabled = false;
+                    PackageInTimeStamp_CheckBox.IsChecked = false;
+                    PackageInTimeStamp_TextBox.IsEnabled = false;
+                    PackageInTimeStamp_TextBox.Text = String.Empty;
+                    PackageOutTimeStamp_CheckBox.IsEnabled = false;
+                    PackageOutTimeStamp_CheckBox.IsChecked = false;
+                    PackageOutTimeStamp_TextBox.IsEnabled = false;
+                    PackageOutTimeStamp_TextBox.Text = String.Empty;
+                    PackageStatus_CheckBox.IsEnabled = false;
+                    PackageStatus_CheckBox.IsChecked = false;
+                    PackageStatus_ComboBox.IsEnabled = false;
+                    PackageStatus_ComboBox.SelectedItem = null;
+                    PackageWorkerID_CheckBox.IsEnabled = false;
+                    PackageWorkerID_CheckBox.IsChecked = false;
+                    PackageWorkerID_TextBox.IsEnabled = false;
+                    PackageWorkerID_TextBox.Text = String.Empty;
+                    break;
+                case UpdatePackage_Action:
+                    PackageID_CheckBox.IsEnabled = false;
+                    PackageID_CheckBox.IsChecked = false;
+                    PackageID_TextBox.IsEnabled = false;
+                    PackageStatus_CheckBox.IsEnabled = true;
+                    PackageStatus_CheckBox.IsChecked = true;
+                    PackageStatus_ComboBox.IsEnabled = true;
+                    break;
+            }
         }
 
         private void getPackageinPage()
         {
-            this.PackageDetails_Instance.PackageID = Convert.ToInt16(PackageID_TextBox.Text);
-            this.PackageDetails_Instance.PackageSerialID = PackageSerialID_TextBox.Text;
-            this.PackageDetails_Instance.PackageOwnerID = Convert.ToInt16(PackageOwnerID_TextBox.Text);
-            this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text;
-            this.PackageDetails_Instance.PackageExpressCompany = Convert.ToString(((ComboBoxItem)PackageExpressCompany_ComboBox.SelectedItem).Tag);
-            this.PackageDetails_Instance.PackageExpressTrackNumber = PackageExpressTrackNumber_TextBox.Text;
-            this.PackageDetails_Instance.PackageSnapshot = PackageSnapshot_TextBox.Text;
-            this.PackageDetails_Instance.PackageWeight = Convert.ToSingle(PackageWeight_TextBox.Text);
-            this.PackageDetails_Instance.PackageFee = Convert.ToSingle(PackageFee_TextBox.Text);
-            this.PackageDetails_Instance.PackageInTimeStamp = (Convert.ToDateTime(PackageInTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds;
-            this.PackageDetails_Instance.PackageOutTimeStamp = (Convert.ToDateTime(PackageOutTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds;
-            this.PackageDetails_Instance.PackageStatus = Convert.ToInt16(((ComboBoxItem)PackageStatus_ComboBox.SelectedItem).Tag);
-            this.PackageDetails_Instance.PackageRemarks = PackageRemarks_TextBox.Text;
-            this.PackageDetails_Instance.PackageWorkerID = Convert.ToInt16(PackageWorkerID_TextBox.Text);
-            this.PackageDetails_Instance.PackageRelatedTransitBillSerialID = PackageRelatedTransitBillSerialID_TextBox.Text;
+            if (PackageID_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageID = Convert.ToInt16(PackageID_TextBox.Text); }
+            if (PackageSerialID_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageSerialID = PackageSerialID_TextBox.Text; }
+            if (PackageOwnerID_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageOwnerID = Convert.ToInt16(PackageOwnerID_TextBox.Text); }
+            if (PackageOwnerMobile_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text; }
+            if (PackageExpressCompany_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageExpressCompany = Convert.ToString(((ComboBoxItem)PackageExpressCompany_ComboBox.SelectedItem).Tag); }
+            if (PackageExpressTrackNumber_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageExpressTrackNumber = PackageExpressTrackNumber_TextBox.Text; }
+            if (PackageSnapshot_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageSnapshot = PackageSnapshot_TextBox.Text; }
+            if (PackageWeight_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageWeight = Convert.ToSingle(PackageWeight_TextBox.Text); }
+            if (PackageFee_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageFee = Convert.ToSingle(PackageFee_TextBox.Text); }
+            if (PackageInTimeStamp_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageInTimeStamp = (Convert.ToDateTime(PackageInTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds; }
+            if (PackageOutTimeStamp_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageOutTimeStamp = (Convert.ToDateTime(PackageOutTimeStamp_TextBox.Text).ToUniversalTime() - new DateTime(1970, 1, 1)).Seconds; }
+            if (PackageStatus_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageStatus = Convert.ToInt16(((ComboBoxItem)PackageStatus_ComboBox.SelectedItem).Tag); }
+            if (PackageRemarks_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageRemarks = PackageRemarks_TextBox.Text; }
+            if (PackageWorkerID_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageWorkerID = Convert.ToInt16(PackageWorkerID_TextBox.Text); }
+            if (PackageRelatedTransitBillSerialID_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageRelatedTransitBillSerialID = PackageRelatedTransitBillSerialID_TextBox.Text; }
         }
 
-        private List<string> getArgumentArrayinPage()
+        private List<string> getPackageArgumentArrayinPage()
         {
             List<string> ArgumentArray = new List<string>();
             if (PackageID_CheckBox.IsChecked == true)
@@ -161,11 +212,11 @@ namespace PiaoliuHKOperator.Views
             return ArgumentArray;
         }
 
-        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (PackageID_CheckBox.IsChecked == true)
+            if (PackageDetails_Instance.PackageID != 0)
             {
-                this.PackageDetails_Instance.updatePackageArgumentInfo(getArgumentArrayinPage());
+                this.PackageDetails_Instance.updatePackageArgumentInfo(getPackageArgumentArrayinPage());
             }
             else
             {
@@ -229,5 +280,7 @@ namespace PiaoliuHKOperator.Views
             PackageOwnerMobile_TextBox.IsEnabled = false;
             PackageOwnerMobile_TextBox.Text = PackageDetails_Instance.PackageOwnerMobile == null ? "" : PackageDetails_Instance.PackageOwnerMobile;
         }
+
+
     }
 }
