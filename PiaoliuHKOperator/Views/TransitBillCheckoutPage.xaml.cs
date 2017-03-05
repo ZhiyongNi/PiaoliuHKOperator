@@ -127,41 +127,16 @@ namespace PiaoliuHKOperator.Views
 
             foreach (TransitBill TransitBill_Cell in this.TransitBillList_Instance.TransitBillItemList)
             {
-                TransitBillCheckoutCSVItem CheckoutCSVItem_Cell = new TransitBillCheckoutCSVItem(TransitBill_Cell);
-                CheckoutCSVItem_Cell.CompleteSelfInfo();
-                TransitBillCheckoutCSVItem_List.Add(CheckoutCSVItem_Cell);
+                TransitBillCheckoutCSVItem TransitBillCheckoutCSVItem_Cell = new TransitBillCheckoutCSVItem(TransitBill_Cell);
+                TransitBillCheckoutCSVItem_Cell.CompleteSelfInfo();
+                TransitBillCheckoutCSVItem_List.Add(TransitBillCheckoutCSVItem_Cell);
             }
-            string CSVContent = DataToCSV.parseListToCSV(this.TransitBillCheckoutCSVItem_List);
+            DataToCSV DataToCSV_Instance = new DataToCSV();
+            DataToCSV_Instance.setCSVItem_List(this.TransitBillCheckoutCSVItem_List);
+            string CSVFileName = DateTime.Now.ToString("yyyyMMdd") + ".SZ." + (string)ComboBoxItem_Selected.Content + "_List";
+            DataToCSV_Instance.FileName = CSVFileName;
 
-            FileSavePicker FileSavePicker_Instance = new FileSavePicker();
-            FileSavePicker_Instance.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
-
-            FileSavePicker_Instance.FileTypeChoices.Add("CSV（逗号分隔）", new List<string>() { ".csv" });
-            FileSavePicker_Instance.SuggestedFileName = DateTime.Now.ToString("yyyyMMdd") + ".SZ." + (string)ComboBoxItem_Selected.Content + "_List";
-
-
-            StorageFile TargetCSVFile = await FileSavePicker_Instance.PickSaveFileAsync();
-            if (TargetCSVFile != null)
-            {
-                // 在用户完成更改并调用CompleteUpdatesAsync之前，阻止对文件的更新
-                CachedFileManager.DeferUpdates(TargetCSVFile);
-
-                await FileIO.WriteBytesAsync(TargetCSVFile, Encoding.UTF8.GetBytes(CSVContent));
-                // 当完成更改时，其他应用程序才可以对该文件进行更改。
-                FileUpdateStatus updateStatus = await CachedFileManager.CompleteUpdatesAsync(TargetCSVFile);
-                if (updateStatus == FileUpdateStatus.Complete)
-                {
-                    textBlock.Text = TargetCSVFile.Name + " 已经保存好了。";
-                }
-                else
-                {
-                    textBlock.Text = TargetCSVFile.Name + " 保存失败了。";
-                }
-            }
-            else
-            {
-                textBlock.Text = "保存操作被取消。";
-            }
+           
         }
 
         private void TransitBillRemove_Button_Click(object sender, RoutedEventArgs e)
