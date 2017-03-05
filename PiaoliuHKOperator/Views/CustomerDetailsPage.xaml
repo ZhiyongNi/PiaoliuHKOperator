@@ -28,22 +28,22 @@
         <TextBox x:Name="CustomerAvatarMobile_TextBox" HorizontalAlignment="Left" Margin="10,528,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="CustomerAvatarMobile"/>
         <TextBox x:Name="CustomerAvatarAddress_TextBox" HorizontalAlignment="Left" Margin="10,565,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="CustomerAvatarAddress"/>
         <TextBox x:Name="CustomerAccountStatus_TextBox" HorizontalAlignment="Left" Margin="10,602,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="CustomerAccountStatus"/>
-        <CheckBox x:Name="CustomerID_CheckBox" Content="ID" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" Checked="CustomerID_CheckBox_Checked" Unchecked="CustomerID_CheckBox_Unchecked"/>
-        <CheckBox x:Name="CustomerName_CheckBox" Content="Name" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerPassword_CheckBox" Content="Password" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerRealName_CheckBox" Content="RealName" HorizontalAlignment="Left" Margin="165,121,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerSelfMobile_CheckBox" Content="SelfMobile" HorizontalAlignment="Left" Margin="165,195,0,0" VerticalAlignment="Top" Checked="CustomerSelfMobile_CheckBox_Checked" Unchecked="CustomerSelfMobile_CheckBox_Unchecked"/>
-        <CheckBox x:Name="CustomerSelfDirectAddress_CheckBox" Content="SelfDirectAddress" HorizontalAlignment="Left" Margin="165,269,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerCollage_CheckBox" Content="Collage" HorizontalAlignment="Left" Margin="165,343,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerQQ_CheckBox" Content="QQ" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerGender_CheckBox" Content="Gender" HorizontalAlignment="Left" Margin="165,158,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerSelfDefaultAddress_CheckBox" Content="SelfDefaultAddress" HorizontalAlignment="Left" Margin="165,232,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerSelfOtherAddress_CheckBox" Content="SelfOtherAddress" HorizontalAlignment="Left" Margin="165,306,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerEmail_CheckBox" Content="Email" HorizontalAlignment="Left" Margin="165,380,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerWeixin_CheckBox" Content="Weixin" HorizontalAlignment="Left" Margin="165,454,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerAlipay_CheckBox" Content="Alipay" HorizontalAlignment="Left" Margin="165,491,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerAvatarMobile_CheckBox" Content="AvatarMobile" HorizontalAlignment="Left" Margin="165,528,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerAvatarAddress_CheckBox" Content="AvatarAddress" HorizontalAlignment="Left" Margin="165,565,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CustomerAccountStatus_CheckBox" Content="AccountStatus" HorizontalAlignment="Left" Margin="165,602,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CustomerID_CheckBox" Content="ID" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerName_CheckBox" Content="Name" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerPassword_CheckBox" Content="Password" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerRealName_CheckBox" Content="RealName" HorizontalAlignment="Left" Margin="165,121,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerSelfMobile_CheckBox" Content="SelfMobile" HorizontalAlignment="Left" Margin="165,195,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerSelfDirectAddress_CheckBox" Content="SelfDirectAddress" HorizontalAlignment="Left" Margin="165,269,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerCollage_CheckBox" Content="Collage" HorizontalAlignment="Left" Margin="165,343,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerQQ_CheckBox" Content="QQ" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerGender_CheckBox" Content="Gender" HorizontalAlignment="Left" Margin="165,158,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerSelfDefaultAddress_CheckBox" Content="SelfDefaultAddress" HorizontalAlignment="Left" Margin="165,232,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerSelfOtherAddress_CheckBox" Content="SelfOtherAddress" HorizontalAlignment="Left" Margin="165,306,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerEmail_CheckBox" Content="Email" HorizontalAlignment="Left" Margin="165,380,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerWeixin_CheckBox" Content="Weixin" HorizontalAlignment="Left" Margin="165,454,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerAlipay_CheckBox" Content="Alipay" HorizontalAlignment="Left" Margin="165,491,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerAvatarMobile_CheckBox" Content="AvatarMobile" HorizontalAlignment="Left" Margin="165,528,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerAvatarAddress_CheckBox" Content="AvatarAddress" HorizontalAlignment="Left" Margin="165,565,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="CustomerAccountStatus_CheckBox" Content="AccountStatus" HorizontalAlignment="Left" Margin="165,602,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
     </Grid>
 </Page>

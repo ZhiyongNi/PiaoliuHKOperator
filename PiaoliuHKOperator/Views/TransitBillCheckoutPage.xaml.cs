@@ -68,14 +68,6 @@ namespace PiaoliuHKOperator.Views
         }
         private void SearchTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
-            List<string> FilterArray = getFilterArrayinPage();
-            TransitBillList_Instance.findINSYSTransitBillbyFilter(FilterArray);
-
-            TransitBillSelecting_ListView.ItemsSource = TransitBillList_Instance.TransitBillItemList;
-            TransitBillRemoved_ListView.ItemsSource = TransitBillRemoveItem_Collection;
-        }
-        private List<string> getFilterArrayinPage()
-        {
             List<string> FilterArray = new List<string>();
             ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)TransitBillAddress_ComboBox.SelectedItem;
             if ((string)ComboBoxItem_Selected.Content != "All")
@@ -87,9 +79,11 @@ namespace PiaoliuHKOperator.Views
             {
                 FilterArray.Add("TransitBillStatus = \'" + ComboBoxItem_Selected.Tag + "\'");
             }
-            return FilterArray;
-        }
+            TransitBillList_Instance.findINSYSTransitBillbyFilter(FilterArray);
 
+            TransitBillSelecting_ListView.ItemsSource = TransitBillList_Instance.TransitBillItemList;
+            TransitBillRemoved_ListView.ItemsSource = TransitBillRemoveItem_Collection;
+        }
         private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
             TransitBill_Instance = (TransitBill)TransitBillSelecting_ListView.SelectedItem;
@@ -120,7 +114,6 @@ namespace PiaoliuHKOperator.Views
         private void PackupTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
             Container Container_Instance = new Container();
-            Container_Instance.ContainerSerialID="CO309174981";
 
             foreach (TransitBill TransitBill_Cell in this.TransitBillList_Instance.TransitBillItemList)
             {
