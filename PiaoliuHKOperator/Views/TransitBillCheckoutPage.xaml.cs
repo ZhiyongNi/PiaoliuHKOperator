@@ -84,7 +84,7 @@ namespace PiaoliuHKOperator.Views
             TransitBillSelecting_ListView.ItemsSource = TransitBillList_Instance.TransitBillItemList;
             TransitBillRemoved_ListView.ItemsSource = TransitBillRemoveItem_Collection;
         }
-        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        private void ExtendTransitBill_Button_Click(object sender, RoutedEventArgs e)//unFinished
         {
             TransitBill_Instance = (TransitBill)TransitBillSelecting_ListView.SelectedItem;
 
@@ -99,28 +99,25 @@ namespace PiaoliuHKOperator.Views
             FilterArray = new List<string>();
             FilterArray.Add("TransitBillOwnerID = \'" + TransitBill_Instance.TransitBillOwnerID + "\'");
             FilterArray.Add("TransitBillStatus = \'" + (TransitBill_Instance.TransitBillStatus + 1) + "\'");
-            TransitBillList TransitBillListTemp = new TransitBillList();
-            TransitBillListTemp.findINSYSTransitBillbyFilter(FilterArray);
-            foreach (TransitBill TransitBillItem in TransitBillListTemp.TransitBillItemList)
+            TransitBillList TransitBillFollow_List = new TransitBillList();
+            TransitBillFollow_List.findINSYSTransitBillbyFilter(FilterArray);
+            foreach (TransitBill TransitBillItem in TransitBillFollow_List.TransitBillItemList)
             {
                 ComboBoxItem TransitBillItem_ComboBoxItem = new ComboBoxItem();
                 TransitBillItem_ComboBoxItem.Tag = TransitBillItem.TransitBillID;
                 TransitBillItem_ComboBoxItem.Content = TransitBillItem.TransitBillSerialID;
                 TransitBillTarget_ComboBox.Items.Add(TransitBillItem_ComboBoxItem);
             }
-            TransitBillTargetQuantity_TextBlock.Text = "Row: " + (TransitBillListTemp.TransitBillItemList.Count + 1).ToString();
+            TransitBillTargetQuantity_TextBlock.Text = "Row: " + (TransitBillFollow_List.TransitBillItemList.Count + 1).ToString();
         }
-
         private void PackupTransitBill_Button_Click(object sender, RoutedEventArgs e)
         {
             Container Container_Instance = new Container();
-
             foreach (TransitBill TransitBill_Cell in this.TransitBillList_Instance.TransitBillItemList)
             {
                 Container_Instance.ContainerRelatedTransitBillSerialID.Add(TransitBill_Cell.TransitBillSerialID);
             }
             Container_Instance.addContainerNewRecoder();
-
         }
 
         private async void CSVDownload_Button_Click(object sender, RoutedEventArgs e)
@@ -167,38 +164,66 @@ namespace PiaoliuHKOperator.Views
             }
         }
 
-        private void RemoveTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        private void TransitBillRemove_Button_Click(object sender, RoutedEventArgs e)
         {
-            ExtendTransitBill_Button.IsEnabled = false;
-            TransitBillRemoveItem_Collection.Add((TransitBill)TransitBillSelecting_ListView.SelectedItem);
-            TransitBillList_Instance.TransitBillItemList.Remove((TransitBill)TransitBillSelecting_ListView.SelectedItem);
+            Button Source_Button = (Button)e.OriginalSource;
+            switch (Source_Button.Name)
+            {
+                case "TransitBillRemoveRight_Button":
+                    ExtendTransitBill_Button.IsEnabled = false;
+                    TransitBillRemoveItem_Collection.Add((TransitBill)TransitBillSelecting_ListView.SelectedItem);
+                    TransitBillList_Instance.TransitBillItemList.Remove((TransitBill)TransitBillSelecting_ListView.SelectedItem);
+                    break;
+                case "TransitBillRemoveLeft_Button":
+                    ExtendTransitBill_Button.IsEnabled = false;
+                    TransitBillRemoveItem_Collection.Add((TransitBill)TransitBillSelecting_ListView.SelectedItem);
+                    TransitBillList_Instance.TransitBillItemList.Remove((TransitBill)TransitBillSelecting_ListView.SelectedItem);
+                    break;
+            }
         }
 
-        private void RemovePackage_Button_Click(object sender, RoutedEventArgs e)
+        private void PackageRemove_Button_Click(object sender, RoutedEventArgs e)
         {
-            ExtendTransitBill_Button.IsEnabled = false;
-            PackageRemoveItem_Collection.Add((Package)PackageSelecting_ListView.SelectedItem);
-            PackageList_Instance.PackageItemList.Remove((Package)PackageSelecting_ListView.SelectedItem);
+            Button Source_Button = (Button)e.OriginalSource;
+            switch (Source_Button.Name)
+            {
+                case "PackageRemoveRight_Button":
+                    ExtendTransitBill_Button.IsEnabled = false;
+                    PackageRemoveItem_Collection.Add((Package)PackageSelecting_ListView.SelectedItem);
+                    PackageList_Instance.PackageItemList.Remove((Package)PackageSelecting_ListView.SelectedItem);
+                    break;
+                case "PackageRemoveLeft_Button":
+                    ExtendTransitBill_Button.IsEnabled = false;
+                    PackageList_Instance.PackageItemList.Add((Package)PackageRemoved_ListView.SelectedItem);
+                    PackageRemoveItem_Collection.Remove((Package)PackageRemoved_ListView.SelectedItem);
+                    break;
+            }
         }
 
-        private void SubmitTransitbill_Button_Click(object sender, RoutedEventArgs e)
+        private void TransitbillListChanging_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Button Source_Button = (Button)e.OriginalSource;
+            switch (Source_Button.Name)
+            {
+                case "TransitbillChangingSubmit_Button":
+                    break;
+                case "TransitBillChangingIgnore_Button":
+                    break;
+            }
         }
 
-        private void IgnoreTransitBill_Button_Click(object sender, RoutedEventArgs e)
+        private void PackageListChanging_Button_Click(object sender, RoutedEventArgs e)//unFinished
         {
+            Button Source_Button = (Button)e.OriginalSource;
+            switch (Source_Button.Name)
+            {
+                case "PackageListChangingSubmit_Button":
 
+                    break;
+                case "PackageListChangingIgnore_Button":
+                    break;
+            }
         }
 
-        private void SubmitPackage_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void IgnorePackage_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

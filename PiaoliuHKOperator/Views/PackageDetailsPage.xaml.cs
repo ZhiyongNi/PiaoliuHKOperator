@@ -244,7 +244,7 @@ namespace PiaoliuHKOperator.Views
 
         private void ALL_CheckBox_Checking(object sender, RoutedEventArgs e)
         {
-            CheckBox Source_Checkbox = ((CheckBox)e.OriginalSource);
+            CheckBox Source_Checkbox = (CheckBox)e.OriginalSource;
             switch (Source_Checkbox.Name)
             {
                 case "PackageID_CheckBox":

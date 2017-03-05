@@ -17,12 +17,14 @@
         <Button x:Name="SearchTransitBill_Button" Content="搜索" HorizontalAlignment="Left" Margin="320,10,0,0" VerticalAlignment="Top" Click="SearchTransitBill_Button_Click"/>
         <Button x:Name="ExtendTransitBill_Button" Content="展开" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Click="ExtendTransitBill_Button_Click"/>
         <TextBlock x:Name="TransitBill_TextBlock" HorizontalAlignment="Left" Margin="65,369,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <Button x:Name="RemoveTransitBill_Button" Content="移除" HorizontalAlignment="Left" Margin="765,47,0,0" VerticalAlignment="Top" Click="RemoveTransitBill_Button_Click"/>
-        <Button x:Name="SubmitTransitbill_Button" Content="确定" HorizontalAlignment="Left" Margin="765,288,0,0" VerticalAlignment="Top" Click="SubmitTransitbill_Button_Click"/>
-        <Button x:Name="IgnoreTransitBill_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,325,0,0" VerticalAlignment="Top" Click="IgnoreTransitBill_Button_Click"/>
-        <Button x:Name="RemovePackage_Button" Content="移除" HorizontalAlignment="Left" Margin="765,400,0,0" VerticalAlignment="Top" Click="RemovePackage_Button_Click"/>
-        <Button x:Name="SubmitPackage_Button" Content="确定" HorizontalAlignment="Left" Margin="765,641,0,0" VerticalAlignment="Top" Click="SubmitPackage_Button_Click"/>
-        <Button x:Name="IgnorePackage_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,678,0,0" VerticalAlignment="Top" Click="IgnorePackage_Button_Click"/>
+        <Button x:Name="TransitBillRemoveRight_Button" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="765,47,0,0" VerticalAlignment="Top" Click="TransitBillRemove_Button_Click"/>
+        <Button x:Name="TransitBillRemoveLeft_Button" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="765,84,0,0" VerticalAlignment="Top" Click="TransitBillRemove_Button_Click"/>
+        <Button x:Name="TransitbillChangingSubmit_Button" Content="确定" HorizontalAlignment="Left" Margin="765,288,0,0" VerticalAlignment="Top" Click="TransitbillListChanging_Button_Click"/>
+        <Button x:Name="TransitBillChangingIgnore_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,325,0,0" VerticalAlignment="Top" Click="TransitbillListChanging_Button_Click"/>
+        <Button x:Name="PackageRemoveRight_Button" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="765,400,0,0" VerticalAlignment="Top" Click="PackageRemove_Button_Click"/>
+        <Button x:Name="PackageRemoveLeft_Button" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="765,437,0,0" VerticalAlignment="Top" Click="PackageRemove_Button_Click"/>
+        <Button x:Name="PackageListChangingSubmit_Button" Content="确定" HorizontalAlignment="Left" Margin="765,641,0,0" VerticalAlignment="Top" Click="PackageListChanging_Button_Click"/>
+        <Button x:Name="PackageListChangingIgnore_Button" Content="撤销" HorizontalAlignment="Left" Margin="765,678,0,0" VerticalAlignment="Top" Click="PackageListChanging_Button_Click"/>
         <ListView x:Name="TransitBillSelecting_ListView" HorizontalAlignment="Left" Margin="10,47,0,363" Width="750" Background="Gray" Height="310">
             <ListView.ItemTemplate>
                 <DataTemplate>
