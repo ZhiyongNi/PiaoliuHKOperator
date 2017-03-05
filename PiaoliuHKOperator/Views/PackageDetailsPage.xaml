@@ -26,20 +26,20 @@
         <TextBox x:Name="PackageRemarks_TextBox" HorizontalAlignment="Left" Margin="10,454,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageRemarks"/>
         <TextBox x:Name="PackageWorkerID_TextBox" HorizontalAlignment="Left" Margin="10,491,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageWorkerID"/>
         <TextBox x:Name="PackageRelatedTransitBillSerialID_TextBox" HorizontalAlignment="Left" Margin="10,528,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="PackageRelatedTransitBillSerialID"/>
-        <CheckBox x:Name="PackageID_CheckBox" Content="ID" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" Checked="PackageID_CheckBox_Checked" Unchecked="PackageID_CheckBox_Unchecked"/>
-        <CheckBox x:Name="PackageSerialID_CheckBox" Content="SerialID" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top" Checked="PackageSerialID_CheckBox_Checked" Unchecked="PackageSerialID_CheckBox_Unchecked"/>
-        <CheckBox x:Name="PackageOwnerID_CheckBox" Content="OwnerID" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top" Checked="PackageOwnerID_CheckBox_Checked" Unchecked="PackageOwnerID_CheckBox_Unchecked"/>
-        <CheckBox x:Name="PackageOwnerMobile_CheckBox" Content="OwnerMobile" HorizontalAlignment="Left" Margin="165,121,0,0" VerticalAlignment="Top" Checked="PackageOwnerMobile_CheckBox_Checked" Unchecked="PackageOwnerMobile_CheckBox_Unchecked"/>
-        <CheckBox x:Name="PackageExpressCompany_CheckBox" Content="ExpressCompany" HorizontalAlignment="Left" Margin="165,158,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageExpressTrackNumber_CheckBox" Content="ExpressTrackNumber" HorizontalAlignment="Left" Margin="165,195,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageSnapshot_CheckBox" Content="Snapshot" HorizontalAlignment="Left" Margin="165,232,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageWeight_CheckBox" Content="Weight" HorizontalAlignment="Left" Margin="165,269,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageFee_CheckBox" Content="Fee" HorizontalAlignment="Left" Margin="165,306,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageInTimeStamp_CheckBox" Content="InTimeStamp" HorizontalAlignment="Left" Margin="165,343,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageOutTimeStamp_CheckBox" Content="OutTimeStamp" HorizontalAlignment="Left" Margin="165,380,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageStatus_CheckBox" Content="Status" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageRemarks_CheckBox" Content="Remarks" HorizontalAlignment="Left" Margin="165,454,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageWorkerID_CheckBox" Content="WorkerID" HorizontalAlignment="Left" Margin="165,491,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="PackageRelatedTransitBillSerialID_CheckBox" Content="RelatedTransitBillSerialID" HorizontalAlignment="Left" Margin="165,528,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PackageID_CheckBox" Content="ID" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageSerialID_CheckBox" Content="SerialID" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageOwnerID_CheckBox" Content="OwnerID" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageOwnerMobile_CheckBox" Content="OwnerMobile" HorizontalAlignment="Left" Margin="165,121,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageExpressCompany_CheckBox" Content="ExpressCompany" HorizontalAlignment="Left" Margin="165,158,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageExpressTrackNumber_CheckBox" Content="ExpressTrackNumber" HorizontalAlignment="Left" Margin="165,195,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageSnapshot_CheckBox" Content="Snapshot" HorizontalAlignment="Left" Margin="165,232,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageWeight_CheckBox" Content="Weight" HorizontalAlignment="Left" Margin="165,269,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageFee_CheckBox" Content="Fee" HorizontalAlignment="Left" Margin="165,306,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageInTimeStamp_CheckBox" Content="InTimeStamp" HorizontalAlignment="Left" Margin="165,343,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageOutTimeStamp_CheckBox" Content="OutTimeStamp" HorizontalAlignment="Left" Margin="165,380,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageStatus_CheckBox" Content="Status" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageRemarks_CheckBox" Content="Remarks" HorizontalAlignment="Left" Margin="165,454,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageWorkerID_CheckBox" Content="WorkerID" HorizontalAlignment="Left" Margin="165,491,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <CheckBox x:Name="PackageRelatedTransitBillSerialID_CheckBox" Content="RelatedTransitBillSerialID" HorizontalAlignment="Left" Margin="165,528,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
     </Grid>
 </Page>

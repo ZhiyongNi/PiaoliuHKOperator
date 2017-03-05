@@ -20,8 +20,8 @@ namespace PiaoliuHKOperator.Models.core
         public string PackageSnapshot { get; set; }
         public float PackageWeight { get; set; }
         public float PackageFee { get; set; }
-        public int PackageInTimeStamp { get; set; }
-        public int PackageOutTimeStamp { get; set; }
+        public double PackageInTimeStamp { get; set; }
+        public double PackageOutTimeStamp { get; set; }
         public int PackageStatus { get; set; }
         public string PackageRemarks { get; set; }
         public int PackageWorkerID { get; set; }

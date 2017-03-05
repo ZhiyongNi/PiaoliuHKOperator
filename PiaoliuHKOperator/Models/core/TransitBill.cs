@@ -19,8 +19,8 @@ namespace PiaoliuHKOperator.Models.core
         public int TransitBillMethod { get; set; }
         public string TransitBillAddress { get; set; }
         public int TransitBillSettlement { get; set; }
-        public int TransitBillInitializationTimeStamp { get; set; }
-        public int TransitBillSignTimeStamp { get; set; }
+        public double TransitBillInitializationTimeStamp { get; set; }
+        public double TransitBillSignTimeStamp { get; set; }
         public int TransitBillStatus { get; set; }
 
         public List<string> TransitBillCell_Argument_List = new List<string>();

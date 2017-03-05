@@ -18,8 +18,8 @@ namespace PiaoliuHKOperator.Models.core
         public string ContainerExpressCompany { get; set; }
         public string ContainerExpressTrackNumber { get; set; }
         public float ContainerPrice { get; set; }
-        public int ContainerInitializationTimeStamp { get; set; }
-        public int ContainerSignTimeStamp { get; set; }
+        public double ContainerInitializationTimeStamp { get; set; }
+        public double ContainerSignTimeStamp { get; set; }
         public int ContainerStatus { get; set; }
 
         public List<string> ContainerCell_Argument_List = new List<string>();
