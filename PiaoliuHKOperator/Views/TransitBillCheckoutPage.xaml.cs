@@ -36,9 +36,11 @@ namespace PiaoliuHKOperator.Views
         {
             this.InitializeComponent();
             TransitBillList_Instance = new TransitBillList();
-            TransitBill_Instance = new TransitBill();
             PackageList_Instance = new PackageList();
+
+            TransitBill_Instance = new TransitBill();
             Package_Instance = new Package();
+
             TransitBillRemoveItem_Collection = new ObservableCollection<TransitBill>();
             PackageRemoveItem_Collection = new ObservableCollection<Package>();
 
