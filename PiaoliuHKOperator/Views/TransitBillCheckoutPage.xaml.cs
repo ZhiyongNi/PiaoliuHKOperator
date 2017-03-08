@@ -5,15 +5,8 @@ using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Windows.Storage.Pickers;
-using Windows.Storage;
-using Windows.Storage.Provider;
-using System.Text;
-using PiaoliuHKOperator.Models.engine.DataCSV;
-using static PiaoliuHKOperator.Global;
-using Windows.UI.ViewManagement;
-using Windows.Foundation;
 using System.Collections.ObjectModel;
+using PiaoliuHKOperator.Models.DataCSV;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -24,7 +17,7 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class TransitBillCheckoutPage : Page
     {
-        List<TransitBillCheckoutCSVItem> TransitBillCheckoutCSVItem_List;
+        List<CheckoutItemListFactory> TransitBillCheckoutCSVItem_List;
         TransitBillList TransitBillList_Instance;
         PackageList PackageList_Instance;
         TransitBill TransitBill_Instance;
@@ -44,7 +37,7 @@ namespace PiaoliuHKOperator.Views
             TransitBillRemoveItem_Collection = new ObservableCollection<TransitBill>();
             PackageRemoveItem_Collection = new ObservableCollection<Package>();
 
-            TransitBillCheckoutCSVItem_List = new List<TransitBillCheckoutCSVItem>();
+            TransitBillCheckoutCSVItem_List = new List<CheckoutItemListFactory>();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -124,19 +117,16 @@ namespace PiaoliuHKOperator.Views
         {
 
             ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)TransitBillAddress_ComboBox.SelectedItem;
+            CheckoutItemListFactory CheckoutListFactory_Instance = new CheckoutItemListFactory(TransitBillList_Instance.TransitBillItemList);
+            CheckoutListFactory_Instance.CompleteALLItemInfo();
 
-            foreach (TransitBill TransitBill_Cell in this.TransitBillList_Instance.TransitBillItemList)
-            {
-                TransitBillCheckoutCSVItem TransitBillCheckoutCSVItem_Cell = new TransitBillCheckoutCSVItem(TransitBill_Cell);
-                TransitBillCheckoutCSVItem_Cell.CompleteSelfInfo();
-                TransitBillCheckoutCSVItem_List.Add(TransitBillCheckoutCSVItem_Cell);
-            }
-            DataToCSV DataToCSV_Instance = new DataToCSV();
-            DataToCSV_Instance.setCSVItem_List(this.TransitBillCheckoutCSVItem_List);
-            string CSVFileName = DateTime.Now.ToString("yyyyMMdd") + ".SZ." + (string)ComboBoxItem_Selected.Content + "_List";
-            DataToCSV_Instance.FileName = CSVFileName;
+            DataToCSVFile DataToCSVFile_Instance = new DataToCSVFile();
 
-           
+            DataToCSVFile_Instance.setCSVData_List(CheckoutListFactory_Instance.FlattenItemInfo());
+
+            DataToCSVFile_Instance.FileName = DateTime.Now.ToString("yyyyMMdd") + ".SZ." + (string)ComboBoxItem_Selected.Content + "_List";
+            await DataToCSVFile_Instance.WriteCSVFileAsync();
+
         }
 
         private void TransitBillRemove_Button_Click(object sender, RoutedEventArgs e)

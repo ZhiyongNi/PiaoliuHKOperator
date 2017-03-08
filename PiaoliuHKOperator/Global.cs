@@ -17,6 +17,7 @@ namespace PiaoliuHKOperator
         public static Int16 OperatorServer_Port = 20000;
         public static char SocketDelimiter = '\n';
         public static char SyncDelimiter = '|';
+        public static char CSVCellSeparator = ',';
 
         public static Admin myAdmin;
 
