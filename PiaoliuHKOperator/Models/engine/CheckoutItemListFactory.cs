@@ -88,7 +88,7 @@ namespace PiaoliuHKOperator.Models.engine
 
                     CheckoutItemLite_Instance.TransitBillSerialID = CheckoutItem_Instance.TransitBillSerialID;
                     CheckoutItemLite_Instance.TransitBillOwnerID = CheckoutItem_Instance.TransitBillOwnerID;
-                    if (CheckoutItem_Instance.CustomerInfo_List.Count == 0)
+                    if (CheckoutItem_Instance.CustomerInfo_List.Count == 1)
                     {
                         CheckoutItemLite_Instance.CustomerRealName = CheckoutItem_Instance.CustomerInfo_List[0].CustomerRealName;
                         CheckoutItemLite_Instance.CustomerSelfMobile = CheckoutItem_Instance.CustomerInfo_List[0].CustomerSelfMobile;

@@ -66,22 +66,22 @@ namespace PiaoliuHKOperator.Models.engine
         public string CustomerRealName { get; set; }
         public string CustomerSelfMobile { get; set; }
 
-        public string PackageSerialID_1 { get; set; }
         public float PackageWeight_1 { get; set; }
-        public string PackageSerialID_2 { get; set; }
         public float PackageWeight_2 { get; set; }
-        public string PackageSerialID_3 { get; set; }
         public float PackageWeight_3 { get; set; }
-        public string PackageSerialID_4 { get; set; }
         public float PackageWeight_4 { get; set; }
-        public string PackageSerialID_5 { get; set; }
         public float PackageWeight_5 { get; set; }
-        public string PackageSerialID_6 { get; set; }
         public float PackageWeight_6 { get; set; }
-        public string PackageSerialID_7 { get; set; }
         public float PackageWeight_7 { get; set; }
-        public string PackageSerialID_8 { get; set; }
         public float PackageWeight_8 { get; set; }
+        public string PackageSerialID_1 { get; set; }
+        public string PackageSerialID_2 { get; set; }
+        public string PackageSerialID_3 { get; set; }
+        public string PackageSerialID_4 { get; set; }
+        public string PackageSerialID_5 { get; set; }
+        public string PackageSerialID_6 { get; set; }
+        public string PackageSerialID_7 { get; set; }
+        public string PackageSerialID_8 { get; set; }
 
         public int TransitBillRelatedPackageQuantity { get; set; }
         public float TransitBillPrice { get; set; }

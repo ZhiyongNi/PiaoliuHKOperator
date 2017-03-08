@@ -21,7 +21,7 @@ namespace PiaoliuHKOperator.Models.DataCSV
 
         public void setCSVData_List(IList f_List)
         {
-            string CSVFileContent = parseListToData(f_List);
+            this.CSVFileContent = parseListToData(f_List);
         }
 
         public async System.Threading.Tasks.Task WriteCSVFileAsync()
@@ -52,30 +52,30 @@ namespace PiaoliuHKOperator.Models.DataCSV
         }
 
 
-        public string parseListToData(IList f_List)
+        private string parseListToData(IList f_List)
         {
             StringBuilder Data_string = new StringBuilder();
-            f_List[0].GetType();
             for (int i = 0; i < f_List.Count; i++)
             {
-                object ew = f_List[i];
-
-
-                foreach (PropertyInfo PropertyInfo_Cell in ew.GetType().GetProperties())
+                object Item = f_List[i];
+                if (i == 0 && Item != null)
                 {
+                    foreach (PropertyInfo PropertyInfo_Cell in Item.GetType().GetProperties())
+                    {
 
-                    Data_string.Append(PropertyInfo_Cell.Name).Append(Global.CSVCellSeparator);
+                        Data_string.Append(PropertyInfo_Cell.Name).Append(Global.CSVCellSeparator);
 
+                    }
+                    Data_string.Remove(Data_string.Length - 1, 1).AppendLine();
                 }
-                Data_string.Remove(Data_string.Length - 1, 1).AppendLine();
-                foreach (PropertyInfo PropertyInfo_Cell in ew.GetType().GetProperties())
+
+                foreach (PropertyInfo PropertyInfo_Cell in Item.GetType().GetProperties())
                 {
-                    Data_string.Append(MakeValueCsvFriendly(PropertyInfo_Cell.GetValue(ew, null))).Append(Global.CSVCellSeparator);
+                    Data_string.Append(MakeValueCsvFriendly(PropertyInfo_Cell.GetValue(Item, null))).Append(Global.CSVCellSeparator);
                 }
 
                 Data_string.Remove(Data_string.Length - 1, 1).AppendLine();
             }
-
 
             return Data_string.ToString();
         }
