@@ -21,6 +21,14 @@ namespace PiaoliuHKOperator.Models.network
 
         }
 
+
+        public static void disconnectSocketServer()
+        {
+
+            //await Task.Run(() => { });
+            Global.OperatorClientSocket.Dispose();
+        }
+
         public static string DialoguebySocket(string SendString)
         {
             //await Task.Run(() => { });

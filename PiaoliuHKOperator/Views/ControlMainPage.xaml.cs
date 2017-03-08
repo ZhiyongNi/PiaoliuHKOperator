@@ -16,6 +16,7 @@ using PiaoliuHKOperator.Views;
 using PiaoliuHKOperator.Models.core;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
+using PiaoliuHKOperator.Models.network;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -88,7 +89,7 @@ namespace PiaoliuHKOperator.Views
 
         private void ContainerWorkflow_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            OperatorSocket.disconnectSocketServer();
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
