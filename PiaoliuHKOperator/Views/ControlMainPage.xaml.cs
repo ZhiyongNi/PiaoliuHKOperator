@@ -89,7 +89,9 @@ namespace PiaoliuHKOperator.Views
 
         private void ContainerWorkflow_Button_Click(object sender, RoutedEventArgs e)
         {
-            OperatorSocket.disconnectSocketServer();
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(ContainerWorkflow));
+            //OperatorSocket.disconnectSocketServer();
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
