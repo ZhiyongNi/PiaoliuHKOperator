@@ -31,5 +31,6 @@
         <Button x:Name="TransitBillList_Button" Content="运单列表" HorizontalAlignment="Left" Margin="10,334,0,0" VerticalAlignment="Top" Click="TransitBillList_Button_Click" />
         <Button x:Name="ContainerList_Button" Content="大包列表" HorizontalAlignment="Left" Margin="10,371,0,0" VerticalAlignment="Top" Click="ContainerList_Button_Click" />
         <TextBlock x:Name="AdminStatus_TextBlock" HorizontalAlignment="Left" Margin="10,610,0,0" TextWrapping="Wrap" Text="未登录" VerticalAlignment="Top"/>
+        <Button x:Name="Logout_Button" Content="签退" HorizontalAlignment="Left" Margin="10,573,0,0" VerticalAlignment="Top" Click="Logout_Button_Click" />
     </Grid>
 </Page>

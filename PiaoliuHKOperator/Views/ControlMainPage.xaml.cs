@@ -119,5 +119,19 @@ namespace PiaoliuHKOperator.Views
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(Nullable));
         }
+
+        private void Logout_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OperatorSocket.disconnectSocketServer();
+            }
+            catch (Exception) { }
+            finally
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(MainPage));
+            }
+        }
     }
 }

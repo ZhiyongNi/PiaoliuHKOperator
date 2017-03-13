@@ -124,19 +124,19 @@
     <Compile Include="Views\ControlMainPage.xaml.cs">
       <DependentUpon>ControlMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomerDetailsPage.xaml.cs">
+    <Compile Include="Views\Search\CustomerDetailsPage.xaml.cs">
       <DependentUpon>CustomerDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PackageDetailsPage.xaml.cs">
+    <Compile Include="Views\Search\PackageDetailsPage.xaml.cs">
       <DependentUpon>PackageDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PackageListPage.xaml.cs">
+    <Compile Include="Views\Search\PackageListPage.xaml.cs">
       <DependentUpon>PackageListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomerListPage.xaml.cs">
+    <Compile Include="Views\Search\CustomerListPage.xaml.cs">
       <DependentUpon>CustomerListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterPackagePage.xaml.cs">
@@ -145,22 +145,22 @@
     <Compile Include="Views\runScript.xaml.cs">
       <DependentUpon>runScript.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ContainerDetailsPage.xaml.cs">
+    <Compile Include="Views\Search\ContainerDetailsPage.xaml.cs">
       <DependentUpon>ContainerDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TransitBillinOrderPage.xaml.cs">
       <DependentUpon>TransitBillinOrderPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TransitBillDetailsPage.xaml.cs">
+    <Compile Include="Views\Search\TransitBillDetailsPage.xaml.cs">
       <DependentUpon>TransitBillDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TransitBillCheckoutPage.xaml.cs">
       <DependentUpon>TransitBillCheckoutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ContainerListPage.xaml.cs">
+    <Compile Include="Views\Search\ContainerListPage.xaml.cs">
       <DependentUpon>ContainerListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TransitBillListPage.xaml.cs">
+    <Compile Include="Views\Search\TransitBillListPage.xaml.cs">
       <DependentUpon>TransitBillListPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -197,7 +197,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\CustomerDetailsPage.xaml">
+    <Page Include="Views\Search\CustomerDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,15 +205,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PackageDetailsPage.xaml">
+    <Page Include="Views\Search\PackageDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PackageListPage.xaml">
+    <Page Include="Views\Search\PackageListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CustomerListPage.xaml">
+    <Page Include="Views\Search\CustomerListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,7 +225,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ContainerDetailsPage.xaml">
+    <Page Include="Views\Search\ContainerDetailsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -233,7 +233,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TransitBillDetailsPage.xaml">
+    <Page Include="Views\Search\TransitBillDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,11 +241,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ContainerListPage.xaml">
+    <Page Include="Views\Search\ContainerListPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TransitBillListPage.xaml">
+    <Page Include="Views\Search\TransitBillListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
