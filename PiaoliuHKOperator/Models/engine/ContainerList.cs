@@ -12,7 +12,7 @@ namespace PiaoliuHKOperator.Models.engine
     class ContainerList
     {
         public List<string> SQLExecuteArray { get; set; }
-        public ObservableCollection<ContainerList> ContainerItemList { get; set; }
+        public ObservableCollection<Container> ContainerItemList { get; set; }
 
         public ContainerList()
         {

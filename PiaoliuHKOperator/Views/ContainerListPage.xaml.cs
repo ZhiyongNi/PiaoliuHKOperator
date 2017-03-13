@@ -47,13 +47,13 @@ namespace PiaoliuHKOperator.Views
             {
                 switch (TempObject.GetType().FullName)
                 {
-                    case "PiaoliuHKOperator.Models.core.Customer":
-                        Customer CustomerOwner = (Customer)TempObject;
-                        ContainerOwnerID_TextBox.Text = CustomerOwner.CustomerID.ToString();
+                    case "PiaoliuHKOperator.Models.core.TransitBill":
+                        TransitBill TransitBillRelated = (TransitBill)TempObject;
+                        ContainerRelatedTransitBillSerialID_TextBox.Text = TransitBillRelated.TransitBillSerialID;
                         break;
                     case "PiaoliuHKOperator.Models.core.Package":
                         Package PackageRelated = (Package)TempObject;
-                        ContainerSerialID_TextBox.Text = PackageRelated.PackageRelatedContainerSerialID;
+                        ContainerRelatedTransitBillSerialID_TextBox.Text = PackageRelated.PackageRelatedTransitBillSerialID;
                         break;
                 }
                 Search_Button_Click(null, null);
@@ -82,9 +82,9 @@ namespace PiaoliuHKOperator.Views
             {
                 FilterArray.Add("ContainerSerialID = \'" + ContainerSerialID_TextBox.Text + "\'");
             }
-            if (ContainerOwnerID_TextBox.Text != "")
+            if (ContainerRelatedTransitBillSerialID_TextBox.Text != "")
             {
-                FilterArray.Add("ContainerOwnerID = \'" + ContainerOwnerID_TextBox.Text + "\'");
+                FilterArray.Add("ContainerOwnerID = \'" + ContainerRelatedTransitBillSerialID_TextBox.Text + "\'");
             }
 
             ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)ContainerStatus_ComboBox.SelectedItem;

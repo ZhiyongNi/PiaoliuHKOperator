@@ -33,7 +33,7 @@ namespace PiaoliuHKOperator
             static String Mobile = "15818786460";
             static String Tele = "12345678";
         }
-        public static class PiaoliuHK_Configs_GlobalConstant_ContainerMethod
+        public static class PiaoliuHK_Configs_GlobalConstant_TransitBillMethod
         {
             static int ExpressPick = 0;
             static String ExpressChinese = "A.学校及居住区定点派送 ";
@@ -47,21 +47,21 @@ namespace PiaoliuHKOperator
         }
 
 
-        public struct ContainerStatus_Struct
+        public struct TransitBillStatus_Struct
         {
             public int Tag;
             public string Chinese;
             public string English;
         };
-        public static Dictionary<string, ContainerStatus_Struct> ContainerStatus_Dictionary = new Dictionary<string, ContainerStatus_Struct>() {
-           { "Signed", new ContainerStatus_Struct { Tag = 1, Chinese = "已签收", English = "Signed" } },
-           { "Pickingup", new ContainerStatus_Struct { Tag = 2, Chinese = "派件中", English = "Pickingup" } },
-           { "Loading", new ContainerStatus_Struct { Tag = 3, Chinese = "已装车", English = "Loading" } },
-           { "Scheduling", new ContainerStatus_Struct { Tag = 4, Chinese = "正安排出库", English = "Scheduling" } },
-           { "Checkin", new ContainerStatus_Struct { Tag = 5, Chinese = "待香港收包", English = "Checkin" } },
-           { "inCustoms", new ContainerStatus_Struct { Tag = 6, Chinese = "海关清关中", English = "inCustoms" } },
-           { "Checkout", new ContainerStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" } },
-           { "Pending", new ContainerStatus_Struct { Tag = 8, Chinese = "待配齐", English = "Pending" } }
+        public static Dictionary<string, TransitBillStatus_Struct> TransitBillStatus_Dictionary = new Dictionary<string, TransitBillStatus_Struct>() {
+           { "Signed", new TransitBillStatus_Struct { Tag = 1, Chinese = "已签收", English = "Signed" } },
+           { "Pickingup", new TransitBillStatus_Struct { Tag = 2, Chinese = "派件中", English = "Pickingup" } },
+           { "Loading", new TransitBillStatus_Struct { Tag = 3, Chinese = "已装车", English = "Loading" } },
+           { "Scheduling", new TransitBillStatus_Struct { Tag = 4, Chinese = "正安排出库", English = "Scheduling" } },
+           { "Checkin", new TransitBillStatus_Struct { Tag = 5, Chinese = "待香港收包", English = "Checkin" } },
+           { "inCustoms", new TransitBillStatus_Struct { Tag = 6, Chinese = "海关清关中", English = "inCustoms" } },
+           { "Checkout", new TransitBillStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" } },
+           { "Pending", new TransitBillStatus_Struct { Tag = 8, Chinese = "待配齐", English = "Pending" } }
         };
 
         public struct PackageStatus_Struct
@@ -80,6 +80,23 @@ namespace PiaoliuHKOperator
             { "Checkout", new PackageStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" } },
             { "Pending", new PackageStatus_Struct { Tag = 8, Chinese = "待配齐", English = "Pending" } },
             { "unMatched", new PackageStatus_Struct { Tag = 9, Chinese = "未查询匹配", English = "unMatched" } }
+        };
+
+        public struct ContainerStatus_Struct
+        {
+            public int Tag;
+            public string Chinese;
+            public string English;
+        };
+        public static Dictionary<string, ContainerStatus_Struct> ContainerStatus_Dictionary = new Dictionary<string, ContainerStatus_Struct>() {
+            { "Signed", new ContainerStatus_Struct { Tag = 1, Chinese = "已签收", English = "Signed" } },
+            { "Pickingup", new ContainerStatus_Struct { Tag = 2, Chinese = "派件中", English = "Pickingup" } },
+            { "Loading", new ContainerStatus_Struct { Tag = 3, Chinese = "已装车", English = "Loading" } },
+            { "Scheduling", new ContainerStatus_Struct { Tag = 4, Chinese = "正安排出库", English = "Scheduling" } },
+            { "Checkin", new ContainerStatus_Struct { Tag = 5, Chinese = "待香港收包", English = "Checkin" } },
+            { "inCustoms", new ContainerStatus_Struct { Tag = 6, Chinese = "海关清关中", English = "inCustoms" } },
+            { "Checkout", new ContainerStatus_Struct { Tag = 7, Chinese = "待深圳库出包", English = "Checkout" } },
+            { "Pending", new ContainerStatus_Struct { Tag = 8, Chinese = "待配齐", English = "Pending" } },
         };
 
         public struct CustomerSelfDefaultAddress_Struct

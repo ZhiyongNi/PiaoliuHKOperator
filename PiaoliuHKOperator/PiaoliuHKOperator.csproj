@@ -113,6 +113,7 @@
     <Compile Include="Models\engine\CustomerList.cs" />
     <Compile Include="Models\engine\PackageList.cs" />
     <Compile Include="Models\engine\ScriptCommand.cs" />
+    <Compile Include="Models\engine\ContainerList.cs" />
     <Compile Include="Models\network\SyncClass.cs" />
     <Compile Include="Models\engine\TransitBillList.cs" />
     <Compile Include="Models\network\OperatorClient.cs" />
@@ -155,6 +156,9 @@
     </Compile>
     <Compile Include="Views\TransitBillCheckoutPage.xaml.cs">
       <DependentUpon>TransitBillCheckoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContainerListPage.xaml.cs">
+      <DependentUpon>ContainerListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TransitBillListPage.xaml.cs">
       <DependentUpon>TransitBillListPage.xaml</DependentUpon>
@@ -236,6 +240,10 @@
     <Page Include="Views\TransitBillCheckoutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContainerListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\TransitBillListPage.xaml">
       <SubType>Designer</SubType>
