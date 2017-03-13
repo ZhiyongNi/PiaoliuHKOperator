@@ -8,6 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="ContainerSerialID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="CustomerSelfDefaultAddress"/>
+        <TextBox x:Name="WorkID_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="CustomerSelfDefaultAddress"/>
 
     </Grid>
 </Page>
