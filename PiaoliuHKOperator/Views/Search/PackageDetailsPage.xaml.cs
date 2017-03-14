@@ -60,7 +60,7 @@ namespace PiaoliuHKOperator.Views
                 PackageExpressCompany_ComboBoxItem.Content = PackageExpressCompany_Struct_Item.Chinese;
 
                 PackageExpressCompany_ComboBox.Items.Add(PackageExpressCompany_ComboBoxItem);
-                if (PackageExpressCompany_ComboBoxItem.Tag.Equals(PackageDetails_Instance.PackageStatus))
+                if (PackageExpressCompany_ComboBoxItem.Tag.Equals(PackageDetails_Instance.PackageExpressCompany))
                 {
                     PackageExpressCompany_ComboBox.SelectedItem = PackageExpressCompany_ComboBoxItem;
                 }
@@ -138,7 +138,7 @@ namespace PiaoliuHKOperator.Views
             if (PackageSerialID_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageSerialID = PackageSerialID_TextBox.Text; }
             if (PackageOwnerID_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageOwnerID = Convert.ToInt16(PackageOwnerID_TextBox.Text); }
             if (PackageOwnerMobile_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageOwnerMobile = PackageOwnerMobile_TextBox.Text; }
-            if (PackageExpressCompany_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageExpressCompany = Convert.ToString(((ComboBoxItem)PackageExpressCompany_ComboBox.SelectedItem).Tag); }
+            if (PackageExpressCompany_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageExpressCompany = Convert.ToInt16(((ComboBoxItem)PackageExpressCompany_ComboBox.SelectedItem).Tag); }
             if (PackageExpressTrackNumber_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageExpressTrackNumber = PackageExpressTrackNumber_TextBox.Text; }
             if (PackageSnapshot_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageSnapshot = PackageSnapshot_TextBox.Text; }
             if (PackageWeight_CheckBox.IsChecked == true) { this.PackageDetails_Instance.PackageWeight = Convert.ToSingle(PackageWeight_TextBox.Text); }

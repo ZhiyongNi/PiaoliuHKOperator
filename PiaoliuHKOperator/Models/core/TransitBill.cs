@@ -23,10 +23,11 @@ namespace PiaoliuHKOperator.Models.core
         public double TransitBillSignTimeStamp { get; set; }
         public int TransitBillStatus { get; set; }
 
-        public List<string> TransitBillCell_Argument_List = new List<string>();
+        public List<string> TransitBillCell_Argument_List { get; set; }
 
         public TransitBill()
         {
+            TransitBillCell_Argument_List = new List<string>();
             TransitBillRelatedPackageSerialID = new List<string>();
         }
 

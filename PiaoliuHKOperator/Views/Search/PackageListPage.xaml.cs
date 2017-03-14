@@ -89,7 +89,7 @@ namespace PiaoliuHKOperator.Views
             }
 
             ComboBoxItem ComboBoxItem_Selected = (ComboBoxItem)PackageStatus_ComboBox.SelectedItem;
-            if (!ComboBoxItem_Selected.Tag.Equals("0"))
+            if (!ComboBoxItem_Selected.Content.Equals("ALL"))
             {
                 FilterArray.Add("PackageStatus = \'" + ComboBoxItem_Selected.Tag + "\'");
             }

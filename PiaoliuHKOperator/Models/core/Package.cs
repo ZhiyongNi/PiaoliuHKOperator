@@ -15,7 +15,7 @@ namespace PiaoliuHKOperator.Models.core
         public string PackageSerialID { get; set; }
         public int PackageOwnerID { get; set; }
         public string PackageOwnerMobile { get; set; }
-        public string PackageExpressCompany { get; set; }
+        public int PackageExpressCompany { get; set; }
         public string PackageExpressTrackNumber { get; set; }
         public string PackageSnapshot { get; set; }
         public float PackageWeight { get; set; }
@@ -27,9 +27,12 @@ namespace PiaoliuHKOperator.Models.core
         public int PackageWorkerID { get; set; }
         public string PackageRelatedTransitBillSerialID { get; set; }
 
-        public List<string> PackageCell_Argument_List = new List<string>();
+        public List<string> PackageCell_Argument_List { get; set; }
 
-
+        public Package()
+        {
+            PackageCell_Argument_List = new List<string>();
+        }
         public void updatePackageArgumentInfo(List<string> f_Argument_List)
         {
             this.PackageCell_Argument_List = f_Argument_List;
