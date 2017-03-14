@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using static PiaoliuHKOperator.Global;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -74,7 +75,7 @@ namespace PiaoliuHKOperator.Views
             PackageOutTimeStamp_TextBox.Text = new DateTime(1970, 1, 1).AddSeconds(PackageDetails_Instance.PackageOutTimeStamp).ToLocalTime().ToString();
 
             PackageStatus_ComboBox.Items.Clear();
-            foreach (Global.PackageStatus_Struct PackageStatus_Struct_Item in Global.PackageStatus_Dictionary.Values)
+            foreach (PackageStatus_Struct PackageStatus_Struct_Item in Global.PackageStatus_Dictionary.Values)
             {
                 ComboBoxItem PackageStatus_ComboBoxItem = new ComboBoxItem();
                 PackageStatus_ComboBoxItem.Tag = PackageStatus_Struct_Item.Tag;
