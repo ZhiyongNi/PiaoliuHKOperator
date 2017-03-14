@@ -23,8 +23,8 @@ namespace PiaoliuHKOperator.Views
     /// </summary>
     public sealed partial class PackageDetailsPage : Page
     {
-        private const int NewPackage_Action = 1;
-        private const int UpdatePackage_Action = 2;
+        private const int AddNew_Action = 1;
+        private const int Update_Action = 2;
 
         public Package PackageDetails_Instance;
         public PackageDetailsPage()
@@ -37,11 +37,11 @@ namespace PiaoliuHKOperator.Views
             this.PackageDetails_Instance = (Package)e.Parameter;
             if (PackageDetails_Instance.PackageID == 0)
             {
-                ViewPackageinPage(NewPackage_Action);
+                ViewPackageinPage(AddNew_Action);
             }
             else
             {
-                ViewPackageinPage(UpdatePackage_Action);
+                ViewPackageinPage(Update_Action);
             }
         }
 
@@ -93,7 +93,7 @@ namespace PiaoliuHKOperator.Views
 
             switch (f_Action)
             {
-                case NewPackage_Action:
+                case AddNew_Action:
                     PackageID_CheckBox.IsEnabled = false;
                     PackageID_CheckBox.IsChecked = false;
                     PackageID_TextBox.IsEnabled = false;
@@ -121,7 +121,7 @@ namespace PiaoliuHKOperator.Views
                     PackageWorkerID_TextBox.IsEnabled = false;
                     PackageWorkerID_TextBox.Text = String.Empty;
                     break;
-                case UpdatePackage_Action:
+                case Update_Action:
                     PackageID_CheckBox.IsEnabled = false;
                     PackageID_CheckBox.IsChecked = false;
                     PackageID_TextBox.IsEnabled = false;

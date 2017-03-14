@@ -8,12 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="Update_Button" Content="更新" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Click="Update_Button_Click"/>
+        <Button x:Name="Submit_Button" Content="提交" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Click="Submit_Button_Click"/>
         <Button x:Name="CustomerOwnerList_Button" Content="Ta的主人" HorizontalAlignment="Left" Margin="265,47,0,0" VerticalAlignment="Top" Click="CustomerOwnerList_Button_Click"/>
         <Button x:Name="RelatedPackageList_Button" Content="关联包裹" HorizontalAlignment="Left" Margin="265,84,0,0" VerticalAlignment="Top" Click="RelatedPackageList_Button_Click"/>
-        <TextBox x:Name="TransitBillID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="TransitBillID" Width="150" IsEnabled="False"/>
-        <TextBox x:Name="TransitBillSerialID_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillSerialID" IsEnabled="False"/>
-        <TextBox x:Name="TransitBillOwnerID_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillOwnerID" IsEnabled="False"/>
+        <TextBox x:Name="TransitBillID_TextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PlaceholderText="TransitBillID" Width="150" />
+        <TextBox x:Name="TransitBillSerialID_TextBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillSerialID"/>
+        <TextBox x:Name="TransitBillOwnerID_TextBox" HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillOwnerID"/>
         <TextBox x:Name="TransitBillRelatedPackageQuantity_TextBox" HorizontalAlignment="Left" Margin="10,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillRelatedPackageQuantity"/>
         <TextBox x:Name="TransitBillPrice_TextBox" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillPrice"/>
         <TextBox x:Name="TransitBillMethod_TextBox" HorizontalAlignment="Left" Margin="10,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillMethod"/>

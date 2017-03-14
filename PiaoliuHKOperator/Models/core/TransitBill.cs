@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PiaoliuHKOperator.Models.core
 {
-    class TransitBill
+    public class TransitBill
     {
         public int TransitBillID { get; set; }
         public string TransitBillSerialID { get; set; }
