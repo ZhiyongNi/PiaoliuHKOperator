@@ -22,7 +22,6 @@
         <TextBox x:Name="TransitBillSettlement_TextBox" HorizontalAlignment="Left" Margin="10,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillSettlement"/>
         <TextBox x:Name="TransitBillInitializationTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillInitializationTimeStamp"/>
         <TextBox x:Name="TransitBillSignTimeStamp_TextBox" HorizontalAlignment="Left" Margin="10,380,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" PlaceholderText="TransitBillSignTimeStamp"/>
-        <ComboBox x:Name="TransitBillStatus_ComboBox" HorizontalAlignment="Left" Margin="10,417,0,0" VerticalAlignment="Top" Width="150" />
         <CheckBox x:Name="TransitBillID_CheckBox" Content="ID" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
         <CheckBox x:Name="TransitBillStatus_CheckBox" Content="Status" HorizontalAlignment="Left" Margin="165,417,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="TransitBillSignTimeStamp_CheckBox" Content="SignTimeStamp" HorizontalAlignment="Left" Margin="165,380,0,0" VerticalAlignment="Top"/>
@@ -35,5 +34,6 @@
         <CheckBox x:Name="TransitBillRelatedPackageSerialID_CheckBox" Content="RelatedPackageSerialID" HorizontalAlignment="Left" Margin="165,121,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="TransitBillOwnerID_CheckBox" Content="OwnerID" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
         <CheckBox x:Name="TransitBillSerialID_CheckBox" Content="SerialID" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top" Checked="ALL_CheckBox_Checking" Unchecked="ALL_CheckBox_Checking"/>
+        <ComboBox x:Name="TransitBillStatus_ComboBox" HorizontalAlignment="Left" Margin="10,417,0,0" VerticalAlignment="Top" Width="150"/>
     </Grid>
 </Page>
